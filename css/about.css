@@ -1,15 +1,18 @@
 /* ==========================================================================
-   About Page Specific Styles (Refined)
+   About Page Styles
    ========================================================================== */
 
+/* Introduction Section */
 .about-intro-section {
     text-align: center;
     padding-bottom: var(--spacing-unit-lg);
     margin-bottom: var(--spacing-unit-xl);
 }
+
 .about-intro-section h1 {
     margin-bottom: var(--spacing-unit-sm);
 }
+
 .about-intro-section .about-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     color: var(--color-text-secondary);
@@ -18,79 +21,83 @@
     line-height: 1.7;
 }
 
+/* Common Section Styles */
 .my-story-section,
-.education-details-section, /* Added */
+.education-details-section,
 .skills-philosophy-section,
 .outside-work-section {
     margin-bottom: var(--spacing-unit-xl);
-    padding: var(--spacing-unit-lg) 0; 
+    padding: var(--spacing-unit-lg) 0;
 }
-.my-story-section:not(:first-of-type), 
-.education-details-section, /* Added */
+
+.my-story-section:not(:first-of-type),
+.education-details-section,
 .skills-philosophy-section,
 .outside-work-section {
     border-top: 1px solid var(--color-border);
 }
 
+/* Section Headers */
 .my-story-section h2,
-.education-details-section h2, /* Added */
+.education-details-section h2,
 .skills-philosophy-section h2,
 .outside-work-section h2 {
     text-align: center;
     margin-bottom: var(--spacing-unit-lg);
     position: relative;
 }
+
 .my-story-section h2::after,
-.education-details-section h2::after, /* Added */
+.education-details-section h2::after,
 .skills-philosophy-section h2::after,
 .outside-work-section h2::after {
     content: '';
     display: block;
-    width: 70px; 
+    width: 70px;
     height: 3px;
     background-color: var(--color-primary-accent);
-    border-radius: 2px; 
-    margin: var(--spacing-unit-sm) auto 0; 
+    border-radius: 2px;
+    margin: var(--spacing-unit-sm) auto 0;
 }
 
+/* Story Content Grid */
 .story-content {
-    display: grid; 
-    grid-template-columns: 1fr; 
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--spacing-unit-lg);
-    align-items: center; 
+    align-items: center;
 }
-@media (min-width: 769px) {
-    .story-content {
-        grid-template-columns: 0.8fr 1.2fr; 
-        gap: var(--spacing-unit-xl); 
-        align-items: flex-start;
-    }
-}
+
+/* Story Image */
 .story-image-wrapper {
-    max-width: 380px; 
+    max-width: 380px;
     width: 100%;
-    margin: 0 auto; 
-    border-radius: var(--border-radius-lg); 
+    margin: 0 auto;
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-dark); 
+    box-shadow: var(--shadow-dark);
 }
-.story-image-wrapper .story-image { 
+
+.story-image-wrapper .story-image {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 5; 
+    aspect-ratio: 4 / 5;
     object-fit: cover;
 }
+
+/* Story Text */
 .story-text p {
-    margin-bottom: var(--spacing-unit-md); 
-    line-height: 1.8; 
-    font-size: 1.05rem; 
+    margin-bottom: var(--spacing-unit-md);
+    line-height: 1.8;
+    font-size: 1.05rem;
 }
+
 .story-text p:last-child {
     margin-bottom: 0;
 }
 
-/* Education Section Styles */
+/* Education Cards */
 .education-card {
     background-color: var(--color-background-light);
     padding: var(--spacing-unit-lg);
@@ -99,7 +106,8 @@
     display: inline-block;
     max-width: 550px;
     text-align: center;
-    transition: transform 0.3s var(--transition-easing), box-shadow 0.3s var(--transition-easing);
+    transition: transform 0.3s var(--transition-easing),
+                box-shadow 0.3s var(--transition-easing);
 }
 
 .education-card:hover {
@@ -127,43 +135,47 @@
     line-height: 1.7;
 }
 
-.philosophy-content-grid { 
+/* Philosophy Grid */
+.philosophy-content-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-unit-lg);
 }
-@media (min-width: 769px) {
-    .philosophy-content-grid {
-        grid-template-columns: 1fr 1fr; 
-    }
-}
 
-.skills-list-container, .design-philosophy-container {
+/* Skills and Philosophy Containers */
+.skills-list-container,
+.design-philosophy-container {
     padding: var(--spacing-unit-lg);
-    background-color: var(--color-background-content); 
+    background-color: var(--color-background-content);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-medium);
-    border-left: 4px solid var(--color-primary-accent); 
+    border-left: 4px solid var(--color-primary-accent);
 }
-.skills-list-container h3, .design-philosophy-container h3 {
-    margin-bottom: var(--spacing-unit-md); 
+
+.skills-list-container h3,
+.design-philosophy-container h3 {
+    margin-bottom: var(--spacing-unit-md);
     color: var(--color-primary-accent);
-    font-size: 1.5rem; 
-    text-align: left; 
+    font-size: 1.5rem;
+    text-align: left;
 }
+
+/* Skills List */
 .skills-list {
-    list-style: none; 
+    list-style: none;
     padding-left: 0;
 }
+
 .skills-list li {
-    padding: var(--spacing-unit-sm) 0; 
-    border-bottom: 1px solid var(--color-border); 
+    padding: var(--spacing-unit-sm) 0;
+    border-bottom: 1px solid var(--color-border);
     font-size: 1rem;
     position: relative;
-    padding-left: var(--spacing-unit-md); 
+    padding-left: var(--spacing-unit-md);
 }
-.skills-list li::before { 
-    content: '✓'; 
+
+.skills-list li::before {
+    content: '✓';
     color: var(--color-secondary-accent);
     font-weight: bold;
     position: absolute;
@@ -171,54 +183,84 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
 .skills-list li:last-child {
     border-bottom: none;
 }
+
+/* Philosophy Text */
 .design-philosophy-container p {
     line-height: 1.8;
     font-size: 1.05rem;
 }
 
+/* Outside Work Section */
 .outside-work-section {
     text-align: center;
-    padding-top: var(--spacing-unit-lg); 
+    padding-top: var(--spacing-unit-lg);
 }
+
 .outside-work-section p {
     max-width: 700px;
     margin: 0 auto;
-    font-size: 1.15rem; 
+    font-size: 1.15rem;
     line-height: 1.8;
 }
-.text-link-arrow { 
+
+/* Link Styles */
+.text-link-arrow {
     font-weight: 600;
     color: var(--color-primary-accent);
-    transition: letter-spacing var(--transition-speed-fast) var(--transition-easing), color var(--transition-speed-fast) var(--transition-easing), transform var(--transition-speed-fast) var(--transition-easing);
-    display: inline-block; 
-    position: relative; 
-    padding-bottom: 3px; 
+    transition: letter-spacing var(--transition-speed-fast) var(--transition-easing),
+                color var(--transition-speed-fast) var(--transition-easing),
+                transform var(--transition-speed-fast) var(--transition-easing);
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
 }
+
 .text-link-arrow::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 2px;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
     background-color: var(--color-secondary-accent);
     transition: width var(--transition-speed-normal) var(--transition-easing);
 }
+
 .text-link-arrow:hover,
 .text-link-arrow:focus-visible {
     color: var(--color-secondary-accent);
-    text-decoration: none; 
-    transform: translateX(5px); 
+    text-decoration: none;
+    transform: translateX(5px);
 }
+
 .text-link-arrow:hover::after,
 .text-link-arrow:focus-visible::after {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .story-content, .philosophy-content-grid {
-        grid-template-columns: 1fr; 
+/* Desktop Layout */
+@media (min-width: 769px) {
+    .story-content {
+        grid-template-columns: 0.8fr 1.2fr;
     }
+
+    .philosophy-content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .story-content,
+    .philosophy-content-grid {
+        grid-template-columns: 1fr;
+    }
+
     .story-image-wrapper {
-        max-width: 300px; 
+        max-width: 300px;
     }
 }

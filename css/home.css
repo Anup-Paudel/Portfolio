@@ -76,14 +76,6 @@
     margin-bottom: 0.3em; 
     transform-origin: center bottom;
 }
-.animated-tagline span .letter-span { /* If using letter-by-letter from JS */
-    display: inline-block;
-    opacity: 0; 
-    position: relative;
-    padding: 0 0.01em;
-    will-change: transform, opacity;
-}
-
 .hero-content .cta-button {
     margin-top: var(--spacing-unit-lg);
     padding: calc(var(--spacing-unit-sm) * 1.25) calc(var(--spacing-unit-lg) * 1.25);

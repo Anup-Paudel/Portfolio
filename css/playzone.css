@@ -145,12 +145,12 @@
 .interest-card-icon {
     margin-bottom: var(--spacing-unit-xs); 
 }
-.interest-card-icon img { /* Icons will retain original color, not made white */
+.interest-card-icon img {
     width: 30px; 
     height: 30px;
     transition: transform 0.3s var(--transition-easing);
 }
-.interest-card:hover .interest-card-icon img { /* Added subtle icon animation on card hover */
+.interest-card:hover .interest-card-icon img {
     transform: scale(1.1) rotate(3deg);
 }
 

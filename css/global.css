@@ -799,37 +799,7 @@ main {
     box-shadow: 0 2px 5px rgba(var(--color-primary-accent-rgb), 0.2);
 }
 
-/* Outline style CTA for project cards */
-.cta-button-outline {
-    display: inline-flex; /* Align icon and text */
-    align-items: center;
-    gap: 0.5em;
-    padding: calc(var(--spacing-unit-xs)*1.5) var(--spacing-unit-md);
-    background-color: transparent;
-    color: var(--color-primary-accent);
-    border: 2px solid var(--color-primary-accent);
-    border-radius: var(--border-radius-sm);
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color var(--transition-speed-fast) var(--transition-easing), 
-                color var(--transition-speed-fast) var(--transition-easing),
-                transform var(--transition-speed-fast) var(--transition-easing),
-                box-shadow var(--transition-speed-fast) var(--transition-easing);
-}
-.cta-button-outline .arrow {
-    transition: transform 0.2s ease-out;
-    display: inline-block;
-}
-.cta-button-outline:hover,
-.cta-button-outline:focus-visible {
-    background-color: var(--color-primary-accent); 
-    color: var(--color-background-content);
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: var(--shadow-light);
-}
-.cta-button-outline:hover .arrow {
-    transform: translateX(5px);
-}
+/* Additional button styles can be added here as needed */
 
 
 /* --- Scroll Reveal --- */
@@ -857,26 +827,19 @@ main {
     display: flex;
     align-items: center;
     z-index: 1003;
-    position: relative; /* Base position */
+    position: relative;
     margin-left: var(--spacing-unit-md);
 }
 
 /* Mobile view: Position the theme toggle inside the navbar */
-@media (max-width: 768px) {    .theme-toggle-wrapper {
+@media (max-width: 768px) {
+    .theme-toggle-wrapper {
         margin-left: 0;
         position: absolute;
         left: var(--spacing-unit-sm);
         top: 50%;
         transform: translateY(-50%);
         z-index: 1003;
-    }    .theme-toggle {
-        width: 52px;
-        height: 52px;
-        padding: 0.8rem;
-        background-color: rgba(var(--color-background-light-rgb), 0.95);
-        border: 1px solid var(--color-border);
-        box-shadow: var(--shadow-light);
-        margin-top: var(--spacing-unit-lg);
     }
 
     .nav-overlay.active .theme-toggle {
@@ -886,18 +849,8 @@ main {
         left: var(--spacing-unit-md);
     }
 
-    .theme-toggle:hover, .theme-toggle:focus-visible {
-        background-color: rgba(var(--color-primary-accent-rgb), 0.1);
-        transform: scale(1.05);
-        box-shadow: var(--shadow-medium);
-    }    .theme-toggle-icon {
-        width: 26px;
-        height: 26px;
-        stroke-width: 1.75px;
-        color: var(--color-text-primary);
-    }
-
-    /* Fix hamburger menu visibility when closed */    .nav-overlay {
+    /* Fix hamburger menu visibility when closed */
+    .nav-overlay {
         display: flex;
         pointer-events: none;
         opacity: 0;
@@ -942,36 +895,6 @@ main {
     background-color: rgba(var(--color-primary-accent-rgb), 0.1);
     transform: scale(1.05);
     box-shadow: var(--shadow-light);
-}
-
-.theme-toggle-icon {
-    width: 20px;
-    height: 20px;
-    stroke-width: 2px;
-    color: var(--color-text-primary);
-    transition: transform 0.5s var(--transition-easing),
-                opacity 0.3s var(--transition-easing);
-}
-
-.theme-toggle-icon.sun {
-    opacity: 1;
-    transform: rotate(0) scale(1);
-}
-
-.theme-toggle-icon.moon {
-    position: absolute;
-    opacity: 0;
-    transform: rotate(90deg) scale(0);
-}
-
-[data-theme="dark"] .theme-toggle-icon.sun {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0);
-}
-
-[data-theme="dark"] .theme-toggle-icon.moon {
-    opacity: 1;
-    transform: rotate(0) scale(1);
 }
 
 /* Dark theme specific overrides */
@@ -1113,18 +1036,4 @@ main {
 }
 
 /* Hover filters */
-.hover-brighten {
-    transition: filter var(--transition-speed-fast) var(--transition-easing);
-}
-
-.hover-brighten:hover {
-    filter: brightness(1.1);
-}
-
-.hover-saturate {
-    transition: filter var(--transition-speed-fast) var(--transition-easing);
-}
-
-.hover-saturate:hover {
-    filter: saturate(1.2);
-}
+/* Additional hover effects can be added here as needed */
