@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Zone - Anup Paudel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="../css/playzone.css" />
+  </head>
+  <body class="playzone-body">
+    <header class="site-header">
+      <div class="logo-container">
+        <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="nav-overlay">
+          <ul class="nav-list" id="navList">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <img src="../assets/icons/home-icon.png" alt="Home Icon" class="nav-icon" />
+                <span class="nav-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <img src="../assets/icons/about-icon.png" alt="About Icon" class="nav-icon" />
+                <span class="nav-text">About</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link">
+                <img src="../assets/icons/projects-icon.png" alt="Projects Icon" class="nav-icon" />
+                <span class="nav-text">Projects</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">
+                <img src="../assets/icons/contact-icon.png" alt="Contact Icon" class="nav-icon" />
+                <span class="nav-text">Contact</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="playzone.html" class="nav-link active-link">
+                <img src="../assets/icons/playzone-icon.png" alt="Play Zone Icon" class="nav-icon" />
+                <span class="nav-text">Play Zone</span>
+              </a>
+            </li>
+          </ul>
+          <div class="theme-toggle-wrapper">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+              <div class="theme-icon">
+                <span class="sun-icon"></span>
+                <span class="moon-icon"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="playzone-main-content">
+      <section class="playzone-intro-section scroll-reveal fade-in">
+        <h1>The Play Zone</h1>
+        <p>Exploring passions, creative pursuits, and moments of learning beyond the main portfolio.</p>
+      </section>
+
+      <section class="hobby-section-revised interests-hobbies-container scroll-reveal slide-from-bottom">
+        <h2 class="section-title-playzone">Interests & Hobbies</h2>
+        <div class="interest-cards-grid">
+          <a href="#chess-corner-detailed-anchor" class="interest-card type-chess hover-lift-small">
+            <div class="interest-card-pin"></div>
+            <div class="interest-card-icon">
+              <img src="../assets/icons/icon-chess.svg" alt="Chess Icon" />
+            </div>
+            <h3>Chess</h3>
+            <p>Strategic thinking & problem solving.</p>
+          </a>
+          <a href="YOUR_YOUTUBE_CHANNEL_LINK" target="_blank" class="interest-card type-youtube">
+            <div class="interest-card-pin"></div>
+            <div class="interest-card-icon">
+              <img src="../assets/icons/icon-youtube.svg" alt="YouTube Icon" />
+            </div>
+            <h3>YouTube Channel</h3>
+            <p>Sharing Tech & Interests.</p>
+          </a>
+          <a href="#photo-gallery-detailed-anchor" class="interest-card type-photo">
+            <div class="interest-card-pin"></div>
+            <div class="interest-card-icon">
+              <img src="../assets/icons/icon-camera.svg" alt="Photography Icon" />
+            </div>
+            <h3>Photography</h3>
+            <p>Capturing moments & perspectives.</p>
+          </a>
+          <a href="#travel-log-anchor" class="interest-card type-travel">
+            <div class="interest-card-pin"></div>
+            <div class="interest-card-icon">
+              <img src="../assets/icons/icon-travel.svg" alt="Travel Icon" />
+            </div>
+            <h3>Traveling</h3>
+            <p>Exploring new places & cultures.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="hobby-section-revised education-section scroll-reveal fade-in" style="animation-delay: 0.1s">
+        <h2 class="section-title-playzone">Learning Journey</h2>
+        <div class="education-card">
+          <img src="../assets/icons/graduation-cap-solid-orange.svg" alt="Education Icon" class="education-icon" />
+          <h3>Academic Pursuits</h3>
+          <p>Currently deepening my knowledge in Computer Science, bridging theoretical concepts with practical application and design principles.</p>
+        </div>
+      </section>
+
+      <section
+        id="chess-corner-detailed-anchor"
+        class="hobby-section-revised chess-corner-final scroll-reveal slide-from-bottom"
+        style="animation-delay: 0.2s"
+      >
+        <h2 class="section-title-playzone--sub">
+          <img src="../assets/icons/chess-knight-icon.svg" alt="Chess Knight Icon" class="hobby-section-icon-creative" />
+          The Grand Game: Chess
+        </h2>
+        <div class="chess-showcase-area">
+          <p class="chess-personal-note">
+            "Chess is a miniature battlefield where wits clash and strategies unfold. It's my go-to for mental gymnastics and a constant reminder that
+            every move counts."
+          </p>
+          <div class="chess-profile-link-creative-wrapper">
+            <a
+              href="YOUR_CHESS_COM_PROFILE_URL_HERE"
+              target="_blank"
+              class="chess-profile-link-creative"
+              aria-label="Anup Paudel's Chess.com Profile"
+            >
+              <img src="../assets/icons/chess-com-icon.png" alt="Chess.com Logo" class="chess-creative-icon" />
+              <span class="chess-link-text">
+                View My Profile
+                <small>on Chess.com (YourUsername)</small>
+              </span>
+              <span class="chess-creative-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        {/* Interactive Chessboard.js puzzle removed as per request */}
+      </section>
+
+      <section
+        id="photo-gallery-detailed-anchor"
+        class="hobby-section-revised photo-gallery-final scroll-reveal slide-from-bottom"
+        style="animation-delay: 0.3s"
+      >
+        <h2 class="section-title-playzone--sub">
+          <img src="../assets/icons/camera-retro-solid.svg" alt="Camera Icon" class="hobby-section-icon-creative" />
+          Through My Lens
+        </h2>
+        <p class="hobby-description-creative">A few snapshots from my collection – life, captured.</p>
+        <div class="gallery-grid-uniform">
+          <div class="gallery-image-uniform-item hover-lift-small hover-zoom">
+            <img src="../assets/images/photo_portrait_1.jpg" alt="Portrait photo example 1" />
+          </div>
+          <div class="gallery-image-uniform-item hover-lift-small hover-zoom">
+            <img src="../assets/images/photo_square_1.jpg" alt="Square photo example 1" />
+          </div>
+          <div class="gallery-image-uniform-item hover-lift-small hover-zoom">
+            <img src="../assets/images/photo_portrait_2.jpg" alt="Portrait photo example 2" />
+          </div>
+          <div class="gallery-image-uniform-item hover-lift-small hover-zoom wide-image-example">
+            <img src="../assets/images/photo_landscape_1.jpg" alt="Landscape photo example 1" />
+          </div>
+          <div class="gallery-image-uniform-item hover-lift-small hover-zoom">
+            <img src="../assets/images/photo_square_2.jpg" alt="Square photo example 2" />
+          </div>
+          <div class="gallery-image-uniform-item hover-lift-small hover-zoom">
+            <img src="../assets/images/photo_portrait_3.jpg" alt="Portrait photo example 3" />
+          </div>
+        </div>
+        <div class="gallery-more-link">
+          <a href="YOUR_PHOTO_ALBUM_LINK_HERE" target="_blank" class="cta-button">Explore Full Album</a>
+        </div>
+      </section>
+
+      <section id="travel-log-anchor" class="hobby-section-revised travel-log-final scroll-reveal slide-from-bottom" style="animation-delay: 0.4s">
+        <h2 class="section-title-playzone--sub">
+          <img src="../assets/icons/map-marked-alt-solid.svg" alt="Map Icon" class="hobby-section-icon-creative" />
+          Wanderings
+        </h2>
+        <p class="hobby-description-creative">Collecting memories, one journey at a time.</p>
+        <div class="travel-log-grid">
+          <div class="travel-log-item hover-lift">
+            <img src="../assets/images/travel_nepal_kathmandu.jpg" alt="Kathmandu, Nepal" />
+            <div class="travel-log-content">
+              <h4>Kathmandu, Nepal</h4>
+              <p>Ancient temples, vibrant culture, and the heart of the Himalayas.</p>
+            </div>
+          </div>
+          <div class="travel-log-item hover-lift">
+            <img src="../assets/images/travel_usa_nyc.jpg" alt="New York City, USA" />
+            <div class="travel-log-content">
+              <h4>New York City, USA</h4>
+              <p>The city's iconic energy, diverse neighborhoods, and endless inspiration.</p>
+            </div>
+          </div>
+          <div class="travel-log-item hover-lift">
+            <img src="../assets/images/travel_placeholder_1.jpg" alt="Future destination idea" />
+            <div class="travel-log-content">
+              <h4>[Future Destination]</h4>
+              <p>Dreaming of new adventures and exploring different corners of the world.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content-wrapper">
+        <div class="footer-top-row">
+          <div class="footer-logo">
+            <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
+          </div>
+          <div class="footer-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="playzone.html" class="nav-link">Play Zone</a>
+          </div>
+        </div>
+        <div class="footer-social-row">
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/anuppaudel25/"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on LinkedIn"
+              title="LinkedIn"
+              ><img src="../assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" /><span class="social-link-label"
+                >LinkedIn</span
+              ></a
+            >
+            <a href="https://github.com/Anup-Paudel" target="_blank" class="social-link-item" aria-label="Anup Paudel on GitHub" title="GitHub"
+              ><img src="../assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" /><span class="social-link-label">GitHub</span></a
+            >
+            <a
+              href="https://discordapp.com/users/anup_29731"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on Discord (anup_29731)"
+              title="Discord"
+              ><img src="../assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" /><span class="social-link-label">Discord</span></a
+            >
+          </div>
+        </div>
+        <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/playzone.js"></script>
+    <script src="../js/interactions.js"></script>
+  </body>
+</html>

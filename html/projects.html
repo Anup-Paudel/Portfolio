@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Anup Paudel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="../css/projects.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-container">
+        <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="nav-overlay">
+          <ul class="nav-list" id="navList">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <img src="../assets/icons/home-icon.png" alt="Home Icon" class="nav-icon" />
+                <span class="nav-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <img src="../assets/icons/about-icon.png" alt="About Icon" class="nav-icon" />
+                <span class="nav-text">About</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link active-link">
+                <img src="../assets/icons/projects-icon.png" alt="Projects Icon" class="nav-icon" />
+                <span class="nav-text">Projects</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">
+                <img src="../assets/icons/contact-icon.png" alt="Contact Icon" class="nav-icon" />
+                <span class="nav-text">Contact</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="playzone.html" class="nav-link">
+                <img src="../assets/icons/playzone-icon.png" alt="Play Zone Icon" class="nav-icon" />
+                <span class="nav-text">Play Zone</span>
+              </a>
+            </li>
+          </ul>
+          <div class="theme-toggle-wrapper">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+              <div class="theme-icon">
+                <span class="sun-icon"></span>
+                <span class="moon-icon"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="projects-intro-section scroll-reveal fade-in">
+        <h1>My Work</h1>
+        <p>
+          A selection of projects where I've applied my UI/UX design and development skills. <br />Each project is a journey in problem-solving and
+          creative execution, detailed in the case studies below.
+        </p>
+      </section>
+
+      <section class="project-grid-section">
+        <div class="project-grid">
+          <article class="project-card hover-lift scroll-reveal slide-from-bottom" id="project1" style="animation-delay: 0.1s">
+            <div class="card-image-container hover-zoom">
+              <img src="../assets/images/fairalyze-main.jpg" alt="Fairalyze AI Project Showcase" />
+            </div>
+            <div class="card-content-container">
+              <h2>GNEC Hackathon 2025: Fairalyze AI</h2>
+              <p class="project-tags"><span>AI Ethics</span> <span>Web Application</span> <span>UX/UI Design</span></p>
+              <p class="project-summary">
+                Developed "Fairalyze AI" during the GNEC Hackathon, a tool designed to detect and analyze biases in AI models, with a focus on
+                addressing UN Sustainable Development Goals 5 (Gender Equality) and 10 (Reduced Inequalities).
+              </p>
+              <div class="project-links">
+                <a href="YOUR_FAIRALYZE_REPO_LINK_HERE" target="_blank" class="project-link">GitHub Repo <span class="arrow">&rarr;</span></a>
+                <a href="YOUR_FAIRALYZE_LIVE_SITE_LINK_HERE" target="_blank" class="project-link">Live Site <span class="arrow">&rarr;</span></a>
+              </div>
+              <button class="case-study-toggle cta-button-outline" data-target="case-study-1-details" aria-expanded="false">
+                View Details <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+          <div class="case-study-details" id="case-study-1-details">
+            <div class="case-study-content-wrapper">
+              <h3>Case Study: Fairalyze AI (GNEC Hackathon 2025)</h3>
+              <div class="case-study-section">
+                <h4>The Challenge</h4>
+                <p>
+                  Artificial intelligence models can inadvertently perpetuate and amplify societal biases, particularly concerning gender and other
+                  protected characteristics. This project aimed to create an accessible tool to help developers and researchers identify such biases
+                  in their models, contributing to fairer AI systems aligned with UN SDGs 5 and 10.
+                </p>
+              </div>
+              <div class="case-study-section">
+                <h4>My Role & Approach</h4>
+                <p>
+                  As part of a [Your Team Size, e.g., 3-person] team, I took on responsibilities for [Specify Your Role, e.g., UI/UX design, front-end
+                  development, and integrating the bias detection logic]. We adopted a rapid prototyping approach due to the hackathon's time
+                  constraints, focusing on core functionality and a clear user interface.
+                </p>
+              </div>
+              <div class="case-study-section">
+                <h4>Research & Discovery</h4>
+                <p>
+                  Brief research into existing AI bias detection tools and the specific challenges related to SDGs 5 and 10. We identified common
+                  types of biases (e.g., gender bias in language models, demographic imbalances in training data) that Fairalyze AI should aim to
+                  highlight.
+                </p>
+                {/* <img src="../assets/images/fairalyze-research.jpg" alt="Fairalyze AI Research Phase Visual" class="case-study-image" /> */}
+              </div>
+              <div class="case-study-section">
+                <h4>Design Process & Iterations</h4>
+                <p>
+                  We sketched initial UI concepts focusing on simplicity: allowing users to input model data/predictions and receive clear, actionable
+                  bias reports. Iterations were quick, focusing on a dashboard-like interface to present findings. Due to time, extensive user testing
+                  was limited, but we received peer feedback during the hackathon.
+                </p>
+                <div class="image-gallery">
+                  <img src="../assets/images/fairalyze-wireframes.jpg" alt="Fairalyze AI Wireframes" class="case-study-image" />
+                  <img src="../assets/images/fairalyze-hifi.jpg" alt="Fairalyze AI High Fidelity Design" class="case-study-image" />
+                </div>
+              </div>
+              <div class="case-study-section">
+                <h4>Solution & Key Features</h4>
+                <p>
+                  Fairalyze AI allows users to [describe core functionality, e.g., upload a dataset and model predictions, or connect to a model API].
+                  It then presents a visual report highlighting potential biases based on [mention metrics or methods, e.g., disparate impact
+                  analysis, representation disparities]. The UI was designed to be intuitive, making complex data understandable.
+                </p>
+                <img src="../assets/images/fairalyze-solution.jpg" alt="Fairalyze AI Final Solution" class="case-study-image" />
+              </div>
+              <div class="case-study-section">
+                <h4>Tools & Technologies</h4>
+                <p>
+                  Frontend: [e.g., HTML, CSS, JavaScript, React/Vue]. Backend/AI Logic: [e.g., Python, Flask, scikit-learn]. Design: [e.g., Figma].
+                  Version Control: Git/GitHub.
+                </p>
+              </div>
+              <div class="case-study-section">
+                <h4>Outcome & Learnings</h4>
+                <p>
+                  [Mention any hackathon results, e.g., Placed X, Received Y feedback]. Key learnings included rapid ideation, teamwork under
+                  pressure, and the complexities of visualizing AI ethics issues. This project solidified my interest in responsible AI development.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <article class="project-card scroll-reveal slide-from-bottom" id="project2" style="animation-delay: 0.25s">
+            <div class="card-image-container">
+              <img src="../assets/images/calculator-main.jpg" alt="Calculator Project Showcase" />
+            </div>
+            <div class="card-content-container">
+              <h2>Responsive Calculator Application</h2>
+              <p class="project-tags"><span>Web Development</span> <span>UI Design</span> <span>JavaScript</span></p>
+              <p class="project-summary">
+                A clean, user-friendly, and fully responsive calculator built with HTML, CSS, and JavaScript. Features standard arithmetic operations
+                and a modern interface.
+              </p>
+              <div class="project-links">
+                <a href="YOUR_CALCULATOR_REPO_LINK_HERE" target="_blank" class="project-link">GitHub Repo <span class="arrow">&rarr;</span></a>
+              </div>
+              <button class="case-study-toggle cta-button-outline" data-target="case-study-2-details" aria-expanded="false">
+                View Details <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+          <div class="case-study-details" id="case-study-2-details">
+            <div class="case-study-content-wrapper">
+              <h3>Case Study: Responsive Calculator</h3>
+              <div class="case-study-section">
+                <h4>The Objective</h4>
+                <p>
+                  To develop a practical, visually appealing, and fully functional calculator application using core web technologies. The primary
+                  goals were to ensure accurate calculations, an intuitive user interface, and responsiveness across all device sizes.
+                </p>
+              </div>
+              <div class="case-study-section">
+                <h4>My Role & Approach</h4>
+                <p>
+                  This was a solo project where I handled all aspects: UI design, front-end development, and JavaScript logic for the calculations. I
+                  focused on a clean, minimalist design aesthetic and robust functionality.
+                </p>
+              </div>
+              <div class="case-study-section">
+                <h4>Design Process</h4>
+                <p>
+                  I started by sketching various layouts for the calculator interface, aiming for clarity and ease of use. The design emphasized
+                  large, easily tappable buttons and a clear display for input and results. I chose a modern, flat design style with a simple color
+                  scheme.
+                </p>
+                <img src="../assets/images/calculator-design.jpg" alt="Calculator Design Sketches/Mockups" class="case-study-image" />
+              </div>
+              <div class="case-study-section">
+                <h4>Development & Key Features</h4>
+                <p>
+                  The calculator was built using HTML for structure, CSS (including Flexbox/Grid) for layout and styling, and vanilla JavaScript for
+                  all the calculation logic. Key features include:
+                </p>
+                <ul>
+                  <li>Standard arithmetic operations: addition, subtraction, multiplication, division.</li>
+                  <li>Percentage and clear (AC/C) functions.</li>
+                  <li>Handling of decimal points and sequential operations.</li>
+                  <li>Error handling for invalid operations (e.g., division by zero).</li>
+                  <li>Fully responsive design that adapts to desktop, tablet, and mobile screens.</li>
+                </ul>
+                <img src="../assets/images/calculator-solution.jpg" alt="Calculator App Screenshot" class="case-study-image" />
+              </div>
+              <div class="case-study-section">
+                <h4>Tools & Technologies</h4>
+                <p>HTML5, CSS3, JavaScript (ES6+), Git/GitHub.</p>
+              </div>
+              <div class="case-study-section">
+                <h4>Outcome & Learnings</h4>
+                <p>
+                  The project resulted in a fully functional and responsive web-based calculator. It was a great exercise in practicing JavaScript
+                  logic for state management and arithmetic operations, as well as honing my skills in creating clean, user-friendly interfaces with
+                  CSS.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Add more project articles and their detail divs as needed */}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content-wrapper">
+        <div class="footer-top-row">
+          <div class="footer-logo">
+            <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
+          </div>
+          <div class="footer-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="playzone.html" class="nav-link">Play Zone</a>
+          </div>
+        </div>
+        <div class="footer-social-row">
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/anuppaudel25/"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on LinkedIn"
+              title="LinkedIn"
+              ><img src="../assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" /><span class="social-link-label"
+                >LinkedIn</span
+              ></a
+            >
+            <a href="https://github.com/Anup-Paudel" target="_blank" class="social-link-item" aria-label="Anup Paudel on GitHub" title="GitHub"
+              ><img src="../assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" /><span class="social-link-label">GitHub</span></a
+            >
+            <a
+              href="https://discordapp.com/users/anup_29731"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on Discord (anup_29731)"
+              title="Discord"
+              ><img src="../assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" /><span class="social-link-label">Discord</span></a
+            >
+          </div>
+        </div>
+        <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/projects.js"></script>
+    <script src="../js/interactions.js"></script>
+  </body>
+</html>

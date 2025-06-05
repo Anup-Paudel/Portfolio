@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Anup Paudel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="../css/contact.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-container">
+        <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="nav-overlay">
+          <ul class="nav-list" id="navList">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <img src="../assets/icons/home-icon.png" alt="Home Icon" class="nav-icon" />
+                <span class="nav-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <img src="../assets/icons/about-icon.png" alt="About Icon" class="nav-icon" />
+                <span class="nav-text">About</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link">
+                <img src="../assets/icons/projects-icon.png" alt="Projects Icon" class="nav-icon" />
+                <span class="nav-text">Projects</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link active-link">
+                <img src="../assets/icons/contact-icon.png" alt="Contact Icon" class="nav-icon" />
+                <span class="nav-text">Contact</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="playzone.html" class="nav-link">
+                <img src="../assets/icons/playzone-icon.png" alt="Play Zone Icon" class="nav-icon" />
+                <span class="nav-text">Play Zone</span>
+              </a>
+            </li>
+          </ul>
+          <div class="theme-toggle-wrapper">            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+              <div class="theme-icon">
+                <span class="sun-icon"></span>
+                <span class="moon-icon"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-section scroll-reveal fade-in">
+        <h1>Get in Touch</h1>
+        <p>
+          I'm always open to discussing new projects, creative ideas, or opportunities to collaborate. <br />Feel free to reach out through the form
+          below or connect with me directly.
+        </p>
+
+        <div class="contact-container">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="e.g., Jane Doe" />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required placeholder="e.g., jane.doe@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Let's talk about..."></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+            <p id="formMessage" class="form-status-message"></p>
+          </form>
+
+          <div class="direct-links-container">
+            <h2>Direct Connect</h2>
+            <p>Prefer other channels? Here's how to find me:</p>
+            <ul class="direct-contact-list">
+              <li>
+                <a href="mailto:YOUR_ACTUAL_EMAIL@example.com" class="direct-contact-item">
+                  <img src="../assets/icons/email-icon.png" alt="Email" class="contact-method-icon" />
+                  <span class="contact-method-text">YOUR_ACTUAL_EMAIL@example.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/anuppaudel25/" target="_blank" class="direct-contact-item">
+                  <img src="../assets/icons/linkedin-icon.png" alt="LinkedIn" class="contact-method-icon" />
+                  <span class="contact-method-text">LinkedIn Profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Anup-Paudel" target="_blank" class="direct-contact-item">
+                  <img src="../assets/icons/github-icon.png" alt="GitHub" class="contact-method-icon" />
+                  <span class="contact-method-text">GitHub Repositories</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://discordapp.com/users/anup_29731" target="_blank" class="direct-contact-item">
+                  <img src="../assets/icons/discord-icon.png" alt="Discord" class="contact-method-icon" />
+                  <span class="contact-method-text">Discord: anup_29731</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content-wrapper">
+        <div class="footer-top-row">
+          <div class="footer-logo">
+            <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
+          </div>
+          <div class="footer-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="playzone.html" class="nav-link">Play Zone</a>
+          </div>
+        </div>
+        <div class="footer-social-row">
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/anuppaudel25/"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on LinkedIn"
+              title="LinkedIn"
+              ><img src="../assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" /><span class="social-link-label"
+                >LinkedIn</span
+              ></a
+            >
+            <a href="https://github.com/Anup-Paudel" target="_blank" class="social-link-item" aria-label="Anup Paudel on GitHub" title="GitHub"
+              ><img src="../assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" /><span class="social-link-label">GitHub</span></a
+            >
+            <a
+              href="https://discordapp.com/users/anup_29731"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on Discord (anup_29731)"
+              title="Discord"
+              ><img src="../assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" /><span class="social-link-label">Discord</span></a
+            >
+          </div>
+        </div>
+        <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+    <script src="../js/interactions.js"></script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Contact Page Specific Styles (Refined)
+   ========================================================================== */
+
+.contact-section {
+    text-align: center;
+    padding-bottom: var(--spacing-unit-xl);
+}
+.contact-section h1 {
+    margin-bottom: var(--spacing-unit-sm);
+}
+.contact-section > p { 
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    max-width: 750px;
+    margin: 0 auto var(--spacing-unit-xl);
+    line-height: 1.7;
+}
+
+.contact-container {
+    display: grid; 
+    grid-template-columns: 1.5fr 1fr; 
+    gap: var(--spacing-unit-xl);
+    text-align: left;
+    max-width: 1000px; 
+    margin: 0 auto;
+    background-color: var(--color-background-content);
+    padding: var(--spacing-unit-xl); 
+    border-radius: var(--border-radius-lg); 
+    box-shadow: var(--shadow-dark); 
+}
+
+.contact-form {
+    /* Form takes more space from grid */
+}
+.form-group {
+    margin-bottom: var(--spacing-unit-md);
+}
+.form-group label {
+    display: block;
+    margin-bottom: calc(var(--spacing-unit-xs) * 1.5); /* Slightly more space */
+    font-weight: 600; 
+    font-size: 0.9rem; 
+    color: var(--color-text-secondary);
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-unit-sm);
+    border: 1px solid var(--color-border); 
+    border-radius: var(--border-radius-sm);
+    transition: border-color var(--transition-speed-fast) ease, box-shadow var(--transition-speed-fast) ease;
+    background-color: var(--color-background-light); 
+    font-size: 1rem;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary-accent);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-accent-rgb), 0.2); 
+    background-color: var(--color-background-content);
+}
+.form-group textarea {
+    resize: vertical; 
+    min-height: 150px; 
+}
+
+.contact-form .cta-button {
+    width: 100%; 
+    font-size: 1.1rem;
+    padding: var(--spacing-unit-md); 
+}
+.form-status-message {
+    margin-top: var(--spacing-unit-md); 
+    font-weight: 500;
+    padding: var(--spacing-unit-sm);
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    opacity: 0; 
+    max-height: 0; 
+    overflow: hidden;
+    transition: opacity var(--transition-speed-fast) ease, max-height var(--transition-speed-fast) ease, padding var(--transition-speed-fast) ease,
+                background-color var(--transition-speed-fast) ease, color var(--transition-speed-fast) ease, border-color var(--transition-speed-fast) ease;
+}
+.form-status-message.visible {
+    opacity: 1;
+    max-height: 100px; /* Adjust as needed based on message length */
+    padding: var(--spacing-unit-sm);
+}
+.form-status-message.success { background-color: rgba(40, 167, 69, 0.1); color: #28a745; border: 1px solid rgba(40, 167, 69, 0.3); }
+.form-status-message.error { background-color: rgba(220, 53, 69, 0.1); color: #dc3545; border: 1px solid rgba(220, 53, 69, 0.3); }
+
+
+.direct-links-container {
+    padding-left: var(--spacing-unit-lg);
+    border-left: 1px solid var(--color-border); 
+}
+.direct-links-container h2 {
+    font-size: 1.6rem; 
+    margin-bottom: var(--spacing-unit-sm);
+    color: var(--color-text-primary);
+}
+.direct-links-container > p { 
+    margin-bottom: var(--spacing-unit-lg); 
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
+.direct-contact-list {
+    list-style: none;
+    padding: 0;
+}
+.direct-contact-list li {
+    margin-bottom: 0; /* Remove bottom margin, handled by item padding */
+}
+.direct-contact-item { /* Styling for the <a> tag or wrapper */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-unit-sm);
+    padding: var(--spacing-unit-sm) 0; /* Vertical padding only */
+    border-bottom: 1px solid var(--color-border); /* Separator lines */
+    color: var(--color-text-primary); /* Default text color for links */
+    font-weight: 500;
+    transition: background-color var(--transition-speed-fast) ease, color var(--transition-speed-fast) ease;
+}
+.direct-contact-list li:last-child .direct-contact-item {
+    border-bottom: none;
+}
+.direct-contact-item:hover, .direct-contact-item:focus-visible {
+    background-color: rgba(var(--color-primary-accent-rgb), 0.05);
+    color: var(--color-primary-accent);
+    opacity: 1; /* Ensure full opacity on hover */
+}
+.contact-method-icon {
+    width: 22px; /* Consistent icon size */
+    height: 22px;
+    fill: currentColor; /* Icon inherits color from parent <a> */
+    opacity: 0.7;
+    transition: opacity var(--transition-speed-fast) ease, transform var(--transition-speed-fast) ease;
+}
+.direct-contact-item:hover .contact-method-icon,
+.direct-contact-item:focus-visible .contact-method-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.contact-method-text { /* For the text part of the link */
+    font-size: 0.95rem;
+}
+/* For non-link span within li (like Discord handle) */
+.direct-contact-list li > span { 
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-unit-sm);
+    padding: var(--spacing-unit-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+.direct-contact-list li:last-child > span {
+    border-bottom: none;
+}
+
+
+@media (max-width: 992px) { 
+    .contact-container {
+        grid-template-columns: 1fr; 
+    }
+    .direct-links-container {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+        padding-top: var(--spacing-unit-lg);
+        margin-top: var(--spacing-unit-lg);
+    }
+}
+@media (max-width: 768px) {
+    .contact-container {
+        padding: var(--spacing-unit-md);
+    }
+}

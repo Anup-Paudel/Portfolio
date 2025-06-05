@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Home Page Specific Styles (Refined)
+   ========================================================================== */
+
+.hero-section {
+    min-height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-unit-xl) var(--spacing-unit-md);
+    position: relative;
+    overflow: hidden; 
+}
+.background-gradient-blur {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    z-index: -1; 
+}
+.background-gradient-blur::before,
+.background-gradient-blur::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px); 
+    opacity: 0; 
+    animation: slowPulseAndDrift 25s infinite alternate ease-in-out;
+}
+.background-gradient-blur::before { 
+    width: clamp(300px, 50vw, 600px); 
+    height: clamp(300px, 50vw, 600px);
+    background-color: var(--color-primary-accent);
+    top: 5%; left: -10%;
+    animation-delay: 0s;
+}
+.background-gradient-blur::after { 
+    width: clamp(250px, 40vw, 500px); 
+    height: clamp(250px, 40vw, 500px);
+    background-color: var(--color-secondary-accent);
+    bottom: -5%; right: -10%;
+    animation-delay: -12.5s; 
+}
+@keyframes slowPulseAndDrift {
+    0% { transform: scale(0.85) translate(-30px, 20px); opacity: 0.12; }
+    100% { transform: scale(1.15) translate(30px, -20px); opacity: 0.22; }
+}
+
+.hero-content .hero-title {
+    font-size: clamp(3rem, 8vw, 5.5rem); 
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-unit-sm); 
+    line-height: 1.15;
+    opacity: 0; /* GSAP handles initial state and animation */
+}
+
+.hero-content .hero-tagline-wrapper {
+    margin-top: var(--spacing-unit-xs);
+    margin-bottom: var(--spacing-unit-lg);
+    perspective: 800px;
+}
+.hero-content .hero-tagline {
+    font-size: clamp(1.1rem, 3vw, 1.65rem); 
+    color: var(--color-text-secondary);
+    font-weight: 400; 
+    line-height: 1.7; 
+    letter-spacing: 0.02em; 
+    max-width: 680px;
+    margin: 0 auto;
+}
+.animated-tagline span { 
+    display: block; 
+    opacity: 0; 
+    margin-bottom: 0.3em; 
+    transform-origin: center bottom;
+}
+.animated-tagline span .letter-span { /* If using letter-by-letter from JS */
+    display: inline-block;
+    opacity: 0; 
+    position: relative;
+    padding: 0 0.01em;
+    will-change: transform, opacity;
+}
+
+.hero-content .cta-button {
+    margin-top: var(--spacing-unit-lg);
+    padding: calc(var(--spacing-unit-sm) * 1.25) calc(var(--spacing-unit-lg) * 1.25);
+    font-size: 1.15rem;
+    opacity: 0; /* GSAP handles initial state and animation */
+}
+
+/* Featured Projects Preview Section */
+.featured-projects-preview {
+    padding: var(--spacing-unit-xl) var(--spacing-unit-md);
+    text-align: center;
+    background-color: var(--color-background-content);
+}
+
+.featured-projects-preview h2 {
+    margin-bottom: var(--spacing-unit-lg);
+    color: var(--color-text-primary);
+}
+
+.project-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-unit-lg);
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.project-preview-card {
+    background-color: var(--color-background-content);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    position: relative;
+    box-shadow: var(--shadow-light);
+}
+
+.project-preview-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.project-preview-card .card-image-container {
+    height: 220px;
+    background-color: var(--color-background-light);
+}
+
+.project-preview-card .card-content-container {
+    padding: var(--spacing-unit-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-preview-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-unit-xs);
+}
+
+.project-preview-card .project-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--spacing-unit-sm);
+}
+
+.project-preview-card p {
+    font-size: 0.9rem;
+    padding: 0;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-unit-md);
+}
+
+.card-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-unit-sm);
+}
+
+.card-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-primary-accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    padding: calc(var(--spacing-unit-xs) * 0.8) var(--spacing-unit-sm);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-speed-fast) var(--transition-easing);
+    background-color: rgba(var(--color-primary-accent-rgb), 0.1);
+}
+
+.card-link:hover {
+    background-color: rgba(var(--color-primary-accent-rgb), 0.15);
+}
+
+.card-link .arrow {
+    transition: transform var(--transition-speed-fast) var(--transition-easing);
+}
+
+.card-link:hover .arrow {
+    transform: translateX(3px);
+}
+
+/* My Approach Section - Adjust heights */
+.approach-item {
+    min-height: 280px;
+    padding: var(--spacing-unit-md);
+}
+
+@media (max-width: 992px) {
+    .project-preview-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-preview-card:nth-child(3) {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section { min-height: 80vh; }
+    .project-preview-grid { grid-template-columns: 1fr; }
+    .approach-items-container { grid-template-columns: 1fr; }
+    .approach-item { min-height: auto; padding: var(--spacing-unit-md); }
+    .background-gradient-blur::before,
+    .background-gradient-blur::after {
+        filter: blur(60px);
+        opacity: 0.1;
+    }
+}

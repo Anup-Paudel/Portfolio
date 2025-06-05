@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Anup Paudel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="../css/about.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-container">
+        <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="nav-overlay">
+          <ul class="nav-list" id="navList">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <img src="../assets/icons/home-icon.png" alt="Home Icon" class="nav-icon" />
+                <span class="nav-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link active-link">
+                <img src="../assets/icons/about-icon.png" alt="About Icon" class="nav-icon" />
+                <span class="nav-text">About</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link">
+                <img src="../assets/icons/projects-icon.png" alt="Projects Icon" class="nav-icon" />
+                <span class="nav-text">Projects</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">
+                <img src="../assets/icons/contact-icon.png" alt="Contact Icon" class="nav-icon" />
+                <span class="nav-text">Contact</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="playzone.html" class="nav-link">
+                <img src="../assets/icons/playzone-icon.png" alt="Play Zone Icon" class="nav-icon" />
+                <span class="nav-text">Play Zone</span>
+              </a>
+            </li>
+          </ul>
+          <div class="theme-toggle-wrapper">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+              <div class="theme-icon">
+                <span class="sun-icon"></span>
+                <span class="moon-icon"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-intro-section scroll-reveal fade-in">
+        <h1>About Me</h1>
+        <p class="about-subtitle">A passionate learner at the crossroads of technology and human-centered design.</p>
+      </section>
+
+      <section class="my-story-section scroll-reveal slide-from-bottom">
+        <h2>My Journey</h2>
+        <div class="story-content">
+          <div class="story-image-wrapper">
+            <img src="../assets/images/anup-profile.jpg" alt="Anup Paudel" class="story-image" />
+          </div>
+          <div class="story-text">
+            <p>
+              Hello! I’m Anup Paudel, a Computer Science student deeply fascinated by the intersection of technology and human experience. Originally
+              from the beautiful landscapes of Nepal, I'm currently pursuing my studies in the U.S., constantly seeking opportunities to learn and
+              grow.
+            </p>
+            <p>
+              My path to UI/UX design wasn't a straight line but rather an evolution of my interest in problem-solving through code and a growing
+              appreciation for how thoughtful design can elevate technology. I believe in creating digital products that are not only functional but
+              also intuitive, accessible, and delightful to use.
+            </p>
+            <p>
+              This unique blend of technical understanding and design sensibility allows me to approach challenges holistically, ensuring that
+              creative visions are grounded in practical, efficient implementation. I'm passionate about lifelong learning and excited by the
+              ever-evolving landscape of digital design and development.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="education-details-section scroll-reveal fade-in">
+        <h2>Education</h2>
+        <div class="education-items-container">
+          <div class="education-item">
+            <img src="../assets/icons/education-webster.png" alt="Webster University Icon" class="education-institution-icon" />
+            <h3>Webster University</h3>
+            <p class="education-degree">Bachelor of Science in Computer Science (Expected Graduation: [Your Expected Year])</p>
+            <p class="education-status">Currently in 2nd Semester - Saint Louis, Missouri</p>
+            <p class="education-focus">Focusing on core CS principles, software development, and exploring human-computer interaction electives.</p>
+          </div>
+          <div class="education-item">
+            <img src="../assets/icons/education-ccbc.png" alt="CCBC Icon" class="education-institution-icon" />
+            <h3>Community College of Baltimore County (CCBC), Essex</h3>
+            <p class="education-degree">Associate of Science in Computer Science (Transfer Program)</p>
+            <p class="education-status">Preparing for 3rd Semester - Essex, Maryland</p>
+            <p class="education-focus">Building a strong foundation in computer science fundamentals and preparing for advanced studies.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-philosophy-section scroll-reveal fade-in">
+        <h2>Skills & Design Philosophy</h2>
+        <div class="philosophy-content-grid">
+          <div class="skills-list-container">
+            <h3>Core Skills</h3>
+            <ul class="skills-list">
+              <li>UI/UX Design (Research, Wireframing, Prototyping, User Testing)</li>
+              <li>Front-End Development (HTML, CSS, JavaScript, [Mention specific frameworks if any])</li>
+              <li>Responsive & Accessible Web Design</li>
+              <li>Version Control (Git/GitHub)</li>
+              <li>Problem Solving & Algorithmic Thinking</li>
+              <li>Agile Methodologies & Collaboration</li>
+              <li>Visual Design & Branding Basics</li>
+            </ul>
+          </div>
+          <div class="design-philosophy-container">
+            <h3>My Design Philosophy</h3>
+            <p>
+              I strive to approach every project with **empathy**, **curiosity**, and a meticulous **attention to detail**. For me, good design is
+              about understanding user needs deeply and translating those insights into solutions that feel effortless and engaging. I value clean,
+              minimal aesthetics that don't sacrifice personality or vibrancy, and believe that the best products are born from a blend of creative
+              vision and technical excellence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="outside-work-section scroll-reveal slide-from-bottom">
+        <h2>Beyond the Screen</h2>
+        <p>
+          When I'm not immersed in design or code, you'll often find me strategizing over a game of chess—a hobby that sharpens my problem-solving
+          skills and teaches patience. For a glimpse into this side of me (and maybe a puzzle or two!), check out my
+          <a href="playzone.html" class="text-link-arrow">Play Zone &rarr;</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content-wrapper">
+        <div class="footer-top-row">
+          <div class="footer-logo">
+            <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
+          </div>
+          <div class="footer-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="playzone.html" class="nav-link">Play Zone</a>
+          </div>
+        </div>
+        <div class="footer-social-row">
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/anuppaudel25/"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on LinkedIn"
+              title="LinkedIn"
+              ><img src="../assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" /><span class="social-link-label"
+                >LinkedIn</span
+              ></a
+            >
+            <a href="https://github.com/Anup-Paudel" target="_blank" class="social-link-item" aria-label="Anup Paudel on GitHub" title="GitHub"
+              ><img src="../assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" /><span class="social-link-label">GitHub</span></a
+            >
+            <a
+              href="https://discordapp.com/users/anup_29731"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on Discord (anup_29731)"
+              title="Discord"
+              ><img src="../assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" /><span class="social-link-label">Discord</span></a
+            >
+          </div>
+        </div>
+        <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/about.js"></script>
+    <script src="../js/interactions.js"></script>
+  </body>
+</html>
