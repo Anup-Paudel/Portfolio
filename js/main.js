@@ -1,6 +1,6 @@
 // /js/main.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize hamburger menu
+    // --- Initialize hamburger menu ---
     const navToggle = document.querySelector('.nav-toggle');
     const navOverlay = document.querySelector('.nav-overlay');
     const body = document.body;
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navToggle && navOverlay) {
         navToggle.addEventListener('click', () => {
             const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            
             navToggle.classList.toggle('active');
             navOverlay.classList.toggle('active');
             navToggle.setAttribute('aria-expanded', (!isExpanded).toString());
@@ -36,43 +35,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Scroll Reveal Animations ---
+    const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+    if (scrollRevealElements.length > 0 && typeof IntersectionObserver === 'function') {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px 0px -30px 0px"
+        });
+        scrollRevealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+    }
+
+    // --- Project Card Hover Interaction ---
+    const interactiveProjectCards = document.querySelectorAll('.project-preview-card');
+    if (interactiveProjectCards.length > 0 && typeof gsap !== 'undefined') {
+        interactiveProjectCards.forEach(card => {
+            const cardImageContainer = card.querySelector('.card-image-container');
+            if (cardImageContainer) {
+                gsap.set(card, { perspective: 800 });
+                gsap.set(cardImageContainer, { transformStyle: "preserve-3d" });
+
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    const maxRotate = 4;
+                    const rotateX = (y / rect.height) * -maxRotate * 1.5;
+                    const rotateY = (x / rect.width) * maxRotate * 1.5;
+                    
+                    gsap.to(cardImageContainer, {
+                        rotationX: rotateX,
+                        rotationY: rotateY,
+                        z: 5,
+                        duration: 0.4,
+                        ease: "power1.out"
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(cardImageContainer, {
+                        rotationX: 0,
+                        rotationY: 0,
+                        z: 0,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    });
+                });
+            }
+        });
+    }
+
     // Update current year in footer
     const currentYearSpan = document.getElementById('currentYear');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
-    }
-
-    // Theme Toggle Functionality
-    const themeToggle = document.getElementById('themeToggle');
-    
-    if (themeToggle) {
-        // Get saved theme or use system preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-        
-        // Apply theme immediately on page load
-        document.documentElement.setAttribute('data-theme', initialTheme);
-        themeToggle.setAttribute('aria-label', `Toggle ${initialTheme === 'dark' ? 'light' : 'dark'} mode`);
-        
-        // Handle theme toggle click
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeToggle.setAttribute('aria-label', `Toggle ${newTheme === 'dark' ? 'light' : 'dark'} mode`);
-        });
-
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            // Only update if user hasn't explicitly set a theme
-            if (!localStorage.getItem('theme')) {
-                const newTheme = e.matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                themeToggle.setAttribute('aria-label', `Toggle ${newTheme === 'dark' ? 'light' : 'dark'} mode`);
-            }
-        });
     }
 });

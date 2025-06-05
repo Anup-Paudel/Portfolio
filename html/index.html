@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anup Paudel - CS Student & UI/UX Designer</title>
+    <title>Anup Paudel - Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -18,12 +18,6 @@
       </div>
       <nav class="main-nav" id="mainNav">
         <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
         <div class="nav-overlay">
           <ul class="nav-list" id="navList">
             <li class="nav-item">
@@ -57,28 +51,20 @@
               </a>
             </li>
           </ul>
-          <div class="theme-toggle-wrapper">
-            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
-              <div class="theme-icon">
-                <span class="sun-icon"></span>
-                <span class="moon-icon"></span>
-              </div>
-            </button>
-          </div>
         </div>
       </nav>
     </header>
 
     <main>
-      <div class="background-gradient-blur"></div>
+      <div class="page-gradient-overlay"></div>
       <section class="hero-section">
         <div class="hero-content">
-          <h1 class="hero-title">Anup Paudel</h1>
-          <div class="hero-tagline-wrapper">
+          <h1 class="hero-title" style="margin-bottom:0.05em;">Anup Paudel</h1>
+          <div class="hero-tagline-wrapper" style="margin-top:-0.5em; margin-bottom:2.2rem;">
             <p class="hero-tagline animated-tagline">
               <span>Computer Science Student</span>
               <span>Passionate UI/UX Designer</span>
-              <span>Crafting Unique Digital Experiences</span>
+              <span>Web Developer/ Designer</span>
             </p>
           </div>
           <a href="projects.html" class="cta-button">View My Work</a>
@@ -194,23 +180,10 @@
           <div class="footer-logo">
             <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
           </div>
-          <div class="footer-nav">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="projects.html" class="nav-link">Projects</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-            <a href="playzone.html" class="nav-link">Play Zone</a>
-          </div>
         </div>
         <div class="footer-social-row">
           <div class="social-links">
-            <a
-              href="https://www.linkedin.com/in/anuppaudel25/"
-              target="_blank"
-              class="social-link-item"
-              aria-label="Anup Paudel on LinkedIn"
-              title="LinkedIn"
-            >
+            <a href="https://www.linkedin.com/in/anuppaudel25/"  target="_blank"  class="social-link-item"  aria-label="Anup Paudel on LinkedIn"  title="LinkedIn" >
               <img src="../assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
               <span class="social-link-label">LinkedIn</span>
             </a>
@@ -218,13 +191,7 @@
               <img src="../assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" />
               <span class="social-link-label">GitHub</span>
             </a>
-            <a
-              href="https://discordapp.com/users/anup_29731"
-              target="_blank"
-              class="social-link-item"
-              aria-label="Anup Paudel on Discord (anup_29731)"
-              title="Discord"
-            >
+            <a href="https://discordapp.com/users/anup_29731" target="_blank" class="social-link-item" aria-label="Anup Paudel on Discord (anup_29731)" title="Discord">
               <img src="../assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" />
               <span class="social-link-label">Discord</span>
             </a>
@@ -233,9 +200,7 @@
         <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>
       </div>
     </footer>
-
     <script src="../js/main.js"></script>
     <script src="../js/home.js"></script>
-    <script src="../js/interactions.js"></script>
   </body>
 </html>
