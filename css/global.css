@@ -9,10 +9,10 @@
     --transition-speed-normal: 0.35s;
     --transition-easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     --spacing-unit-xs: 0.5rem;
-    --spacing-unit-sm: 1rem;
-    --spacing-unit-md: 1.5rem;
-    --spacing-unit-lg: 2.5rem;
-    --spacing-unit-xl: 4.5rem;
+    --spacing-unit-sm: 0.6rem;
+    --spacing-unit-md: 1.2em;
+    --spacing-unit-lg: 2rem;
+    --spacing-unit-xl: 4rem;
     --color-text-primary: #2c3e50;
     --color-text-secondary: #5a6872; 
     --color-background-light: #f7f9fc; 
@@ -101,18 +101,19 @@ p {
 
 /* Navigation Styles */
 .site-header {
-    padding: var(--spacing-unit-sm) var(--spacing-unit-md);
-    display: flex;
+ padding: var(--spacing-unit-sm) var(--spacing-unit-md);
+    display: flex
+;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(var(--color-background-content-rgb), 0.95);
+    background-color: rgb(255 255 255 / 3%);
     backdrop-filter: blur(15px);
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: var(--shadow-light);
+    box-shadow: inset 0px 0px 2px 1px rgb(44 62 80 / 1%);
 }
 
 .logo-container .logo-text {
@@ -132,8 +133,8 @@ p {
 }
 
 .logo-initials {
-    font-weight: 500;
-    font-size: 0.7em;
+    font-weight: 700;
+    font-size: 1em;
     color: var(--color-primary-accent);
     margin-left: 0.1em;
 }
@@ -332,6 +333,7 @@ main {
     border-radius: var(--border-radius-sm);
     text-decoration: none;
     font-weight: 600;
+    margin-top: 2em;
     letter-spacing: 0.04em;
     box-shadow: 0 3px 8px rgba(var(--color-primary-accent-rgb), 0.25);
     position: relative;

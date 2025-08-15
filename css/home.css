@@ -25,21 +25,21 @@
 
 .hero-title {
     font-size: clamp(3rem, 8vw, 5.5rem);
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.1em; 
     color: var(--color-text-primary);
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.05;
-    /* Slight shadow for pop */
+    margin-top: -1.2em;
     text-shadow: 0 2px 8px rgba(127,83,172,0.07);
 }
 
-/* Hero Tagline Section Enhancements */
 .hero-tagline-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 0 0 2.2rem 0;
+  /* UPDATED to reflect inline style: margin-top:-0.5em; margin-bottom:2.2rem; and keeping horizontal margins 0 */
+  margin: 2em 0em 2.2rem 0; 
   position: relative;
   min-height: 60px;
 }
@@ -76,27 +76,24 @@
   transition: background 0.2s, color 0.2s, border 0.2s;
 }
 
-/* First badge: blue accent */
 .hero-tagline span:first-child {
-  background: linear-gradient(90deg, #e0e7ff 0%, #f8fafc 100%);
-  color: #3b3b4f;
-  border: 1.5px solid #a5b4fc;
+    background: linear-gradient(90deg, #e9e6ff 0%, #f5f3ff 100%);
+    color: #5c50a0;
+    border: 1.5px solid #c9c2f5;
 }
 
-/* Second badge: purple accent */
 .hero-tagline span:nth-child(2) {
-  background: linear-gradient(90deg, #f8f6fd 0%, #ede9fe 100%);
-  color: var(--color-primary-accent, #7f53ac);
-  border: 1.5px solid var(--color-primary-accent, #7f53ac);
-  animation-delay: 0.2s;
+    background: linear-gradient(90deg, #e0f2ff 0%, #ebf8ff 100%);
+    color: #2577c2;
+    border: 1.5px solid #b3dfff;
+    animation-delay: 0.2s;
 }
 
-/* Third badge: orange accent */
 .hero-tagline span:nth-child(3) {
-  background: linear-gradient(90deg, #fff7ed 0%, #fdf6f0 100%);
-  color: #e07a3f;
-  border: 1.5px solid #fbbf24;
-  animation-delay: 0.4s;
+    background: linear-gradient(90deg, #fff0e6 0%, #fff7f0 100%);
+    color: #ff6f00;
+    border: 1.5px solid #ffd6b3;
+    animation-delay: 0.4s;
 }
 
 .hero-tagline::after {
