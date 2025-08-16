@@ -29,6 +29,7 @@
     --color-text-primary-rgb: 44, 62, 80;
     --color-background-light-rgb: 247, 249, 252;
     --color-background-content-rgb: 255, 255, 255;
+     --color-primary-accent2:rgb(58, 179, 253)b; 
 }
 
 /* Global Reset and Base Styles */
@@ -119,7 +120,7 @@ p {
 .logo-container .logo-text {
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 800;
-    color: var(--color-text-primary);
+    color: var(--color-primary-accent);
     text-decoration: none;
     letter-spacing: -0.05em;
     transition: color var(--transition-speed-fast) var(--transition-easing),
@@ -128,16 +129,10 @@ p {
 
 .logo-container .logo-text:hover,
 .logo-container .logo-text:focus-visible {
-    color: var(--color-primary-accent);
+    color: var(--color-primary-accent2);
     transform: scale(1.02);
 }
 
-.logo-initials {
-    font-weight: 700;
-    font-size: 1em;
-    color: var(--color-primary-accent);
-    margin-left: 0.1em;
-}
 
 .nav-overlay {
     display: flex;
