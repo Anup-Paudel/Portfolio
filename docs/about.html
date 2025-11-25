@@ -12,7 +12,8 @@
   </head>
   <body>
     <div class="page-gradient-overlay"></div>
-   <header class="site-header">
+    <!-- Refactor navigation bar into a reusable component -->
+    <header class="site-header">
       <div class="logo-container">
         <a href="index.html" class="logo-text">Anup</a>
       </div>
@@ -67,7 +68,7 @@
         <h2>My Journey</h2>
         <div class="story-content">
           <div class="story-image-wrapper">
-            <img src="assets/images/anup-profile.jpg" alt="Anup Paudel" class="story-image" />
+            <img src="assets/images/anup-profile.png" alt="Anup Paudel" class="story-image" />
           </div>
           <div class="story-text">
             <p>
@@ -93,16 +94,19 @@
         <h2>Education</h2>
         <div class="education-items-container">
           <div class="education-item">
-            <img src="assets/icons/education-webster.png" alt="Webster University Icon" class="education-institution-icon" />
+            <img src="assets/icons/education-webster.svg" alt="Webster University Icon" class="education-institution-icon" />
             <h3>Webster University</h3>
-            <p class="education-degree">Bachelor of Science in Computer Science (Expected Graduation: [Your Expected Year])</p>
-            <p class="education-status">Currently in 2nd Semester - Saint Louis, Missouri</p>
-            <p class="education-focus">Focusing on core CS principles, software development, and exploring human-computer interaction electives.</p>
+            <p class="education-degree">Bachelor of Science in Computer Science (Transferred)</p>
+            <p class="education-status">Transferred after 2nd Semester - Saint Louis, Missouri</p>
+            <p class="education-focus">
+              Focused on C++ programming, Operating Systems, and explored various programms including : BYTE_B@SH(Beginner Level Coading Competetion),
+              Volunteered for ICPC Webster's Team and other Volunteering opportunities.
+            </p>
           </div>
           <div class="education-item">
-            <img src="assets/icons/education-ccbc.png" alt="CCBC Icon" class="education-institution-icon" />
+            <img src="assets/icons/eudcation-ccbc.jpg" alt="CCBC Icon" class="education-institution-icon" />
             <h3>Community College of Baltimore County (CCBC), Essex</h3>
-            <p class="education-degree">Associate of Science in Computer Science (Transfer Program)</p>
+            <p class="education-degree">Associate of Science in Computer Science (Expected Graduation: Summer 2027)</p>
             <p class="education-status">Preparing for 3rd Semester - Essex, Maryland</p>
             <p class="education-focus">Building a strong foundation in computer science fundamentals and preparing for advanced studies.</p>
           </div>
@@ -141,8 +145,37 @@
         <p>
           When I'm not immersed in design or code, you'll often find me strategizing over a game of chess—a hobby that sharpens my problem-solving
           skills and teaches patience. For a glimpse into this side of me (and maybe a puzzle or two!), check out my
-          <a href="playzone.html" class="text-link-arrow">Play Zone &rarr;</a>
+          <a href="playzone.html" class="text-link-arrow">
+            Play Zone <img src="assets/icons/icon-arrow.svg" alt="Arrow Icon" class="arrow-icon" />
+          </a>
         </p>
+      </section>
+
+      <!-- Added cards for Interests and Hobbies section -->
+      <section class="interests-hobbies-section">
+        <h2>Interests and Hobbies</h2>
+        <div class="interests-grid">
+          <div class="interest-card">
+            <img src="assets/icons/icon-youtube.svg" alt="YouTube Icon" class="interest-icon" />
+            <h3>YouTube</h3>
+            <p>Exploring creative content and tutorials.</p>
+          </div>
+          <div class="interest-card">
+            <img src="assets/icons/icon-travel.svg" alt="Travel Icon" class="interest-icon" />
+            <h3>Travelling</h3>
+            <p>Discovering new places and cultures.</p>
+          </div>
+          <div class="interest-card">
+            <img src="assets/icons/icon-chess.svg" alt="Chess Icon" class="interest-icon" />
+            <h3>Chess</h3>
+            <p>Strategizing and solving puzzles.</p>
+          </div>
+          <div class="interest-card">
+            <img src="assets/icons/icon-camera.svg" alt="Photography Icon" class="interest-icon" />
+            <h3>Photography</h3>
+            <p>Capturing moments through the lens.</p>
+          </div>
+        </div>
       </section>
     </main>
 
