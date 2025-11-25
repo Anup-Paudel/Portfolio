@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Contact Page Specific Styles
+   ========================================================================== */
+
+.contact-section {
+    text-align: center;
+    padding-bottom: var(--spacing-unit-xl);
+}
+
+.contact-section h1 {
+    margin-bottom: var(--spacing-unit-sm);
+}
+
+.contact-section > p { 
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    max-width: 750px;
+    margin: 0 auto var(--spacing-unit-xl);
+    line-height: 1.7;
+}
+
+/* Contact Grid Layout */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-unit-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    background: var(--color-background-content);
+    padding: var(--spacing-unit-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+}
+
+.contact-form h2 {
+    margin-bottom: var(--spacing-unit-md);
+    color: var(--color-text-primary);
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-unit-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-unit-xs);
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary-accent);
+    box-shadow: 0 0 0 2px rgba(var(--color-primary-accent-rgb), 0.1);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 14px;
+    background: var(--color-primary-accent);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: var(--color-primary-accent-dark);
+    transform: translateY(-2px);
+}
+
+/* Contact Info Styles */
+.contact-info {
+    background: var(--color-background-content);
+    padding: var(--spacing-unit-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+}
+
+.contact-info h2 {
+    margin-bottom: var(--spacing-unit-md);
+    color: var(--color-text-primary);
+    font-size: 1.8rem;
+}
+
+.contact-info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-unit-md);
+}
+
+.contact-info-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: var(--spacing-unit-sm);
+    opacity: 0.9;
+}
+
+.contact-info-content {
+    flex: 1;
+}
+
+.contact-info-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-unit-xs);
+    color: var(--color-text-primary);
+}
+
+.contact-info-content p,
+.contact-info-content a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info-content a:hover {
+    color: var(--color-primary-accent);
+}
+
+/* Social Links in Contact */
+.social-links-contact {
+    margin-top: var(--spacing-unit-lg);
+}
+
+.social-links-contact h3 {
+    margin-bottom: var(--spacing-unit-md);
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+}
+
+.social-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-unit-sm);
+}
+
+.social-icon-link {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-unit-sm);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    background: var(--color-background-light);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+    transform: translateY(-2px);
+    background: rgba(var(--color-primary-accent-rgb), 0.1);
+    color: var(--color-primary-accent);
+}
+
+.social-icon-link img {
+    width: 24px;
+    height: 24px;
+    margin-right: var(--spacing-unit-xs);
+}
+
+.social-icon-link span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
