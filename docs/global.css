@@ -18,7 +18,8 @@
     --color-background-light: #f7f9fc; 
     --color-background-content: #ffffff;
     --color-background-muted: #f4f6f8;
-    --color-primary-accent: #3498db; 
+    --color-primary-accent: #39b0ff; 
+    --color-primary-dark: #288acc;
     --color-secondary-accent: #e67e22; 
     --color-border: #e1e8ed; 
     --shadow-light: 0 5px 15px rgba(44, 62, 80, 0.06);
@@ -29,7 +30,7 @@
     --color-text-primary-rgb: 44, 62, 80;
     --color-background-light-rgb: 247, 249, 252;
     --color-background-content-rgb: 255, 255, 255;
-     --color-primary-accent2:rgb(58, 179, 253)b; 
+     --color-primary-accent2:rgb(0, 23, 37)b; 
 }
 
 /* Global Reset and Base Styles */
@@ -120,7 +121,7 @@ p {
 .logo-container .logo-text {
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 800;
-    color: var(--color-primary-accent);
+    color: var(--color-primary-accent2);
     text-decoration: none;
     letter-spacing: -0.05em;
     transition: color var(--transition-speed-fast) var(--transition-easing),
@@ -129,8 +130,9 @@ p {
 
 .logo-container .logo-text:hover,
 .logo-container .logo-text:focus-visible {
-    color: var(--color-primary-accent2);
+    color: var(--color-primary-accent);
     transform: scale(1.02);
+    transition: 0.5s ease-in-out;
 }
 
 
