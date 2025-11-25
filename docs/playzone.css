@@ -53,10 +53,10 @@
     margin-bottom: var(--spacing-unit-lg);
 }
 
-/* Interest Cards Grid */
+/* Interest Cards Grid - Updated */
 .interest-cards-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-unit-md);
 }
 
