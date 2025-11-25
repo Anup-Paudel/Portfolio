@@ -102,6 +102,25 @@
     margin: 0 auto;
 }
 
+/* Adjusted styles for Travelling and Photography cards */
+.interest-card.type-travel .card-icon img,
+.interest-card.type-photography .card-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.interest-card.type-travel,
+.interest-card.type-photography {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-unit-md);
+}
+
 .interest-card .card-title,
 .interest-card h3 {
     font-size: 1.25rem;
