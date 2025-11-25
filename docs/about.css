@@ -2,15 +2,20 @@
    About Page Styles
    ========================================================================== */
 
-/* Introduction Section */
+/* ==========================================================================
+   Introduction Section
+   ========================================================================== */
+
 .about-intro-section {
     text-align: center;
-    padding-bottom: var(--spacing-unit-lg);
-    margin-bottom: var(--spacing-unit-xl);
+    padding: var(--spacing-12) var(--spacing-6) var(--spacing-8);
+    margin-bottom: var(--spacing-10);
 }
 
 .about-intro-section h1 {
-    margin-bottom: var(--spacing-unit-sm);
+    margin-bottom: var(--spacing-4);
+    font-size: var(--text-3xl);
+    color: var(--color-text-primary);
 }
 
 .about-intro-section .about-subtitle {
@@ -18,16 +23,19 @@
     color: var(--color-text-secondary);
     max-width: 750px;
     margin: 0 auto;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-/* Common Section Styles */
+/* ==========================================================================
+   Common Section Styles
+   ========================================================================== */
+
 .my-story-section,
 .education-details-section,
 .skills-philosophy-section,
 .outside-work-section {
-    margin-bottom: var(--spacing-unit-xl);
-    padding: var(--spacing-unit-lg) 0;
+    margin-bottom: var(--spacing-16);
+    padding: var(--spacing-12) var(--spacing-6);
 }
 
 .my-story-section:not(:first-of-type),
@@ -43,7 +51,9 @@
 .skills-philosophy-section h2,
 .outside-work-section h2 {
     text-align: center;
-    margin-bottom: var(--spacing-unit-lg);
+    margin-bottom: var(--spacing-10);
+    font-size: var(--text-2xl);
+    color: var(--color-text-primary);
     position: relative;
 }
 
@@ -55,17 +65,22 @@
     display: block;
     width: 70px;
     height: 3px;
-    background-color: var(--color-primary-accent);
+    background-color: var(--color-primary);
     border-radius: 2px;
-    margin: var(--spacing-unit-sm) auto 0;
+    margin: var(--spacing-4) auto 0;
 }
 
-/* Story Content Grid */
+/* ==========================================================================
+   Story Content Section
+   ========================================================================== */
+
 .story-content {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-unit-lg);
+    gap: var(--spacing-10);
     align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* Story Image */
@@ -73,9 +88,16 @@
     max-width: 380px;
     width: 100%;
     margin: 0 auto;
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-dark);
+    box-shadow: var(--shadow-xl);
+    transition: transform var(--duration-normal) var(--ease-smooth),
+                box-shadow var(--duration-normal) var(--ease-smooth);
+}
+
+.story-image-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2xl);
 }
 
 .story-image-wrapper .story-image {
@@ -87,180 +109,292 @@
 }
 
 /* Story Text */
+.story-text {
+    max-width: 100%;
+}
+
 .story-text p {
-    margin-bottom: var(--spacing-unit-md);
+    margin-bottom: var(--spacing-5);
     line-height: 1.8;
-    font-size: 1.05rem;
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
 }
 
 .story-text p:last-child {
     margin-bottom: 0;
 }
 
-/* Education Cards */
-.education-card {
-    background-color: var(--color-background-light);
-    padding: var(--spacing-unit-lg);
-    border-radius: var(--border-radius-sm);
-    border: 1px solid var(--color-border);
-    display: inline-block;
-    max-width: 550px;
-    text-align: center;
-    transition: transform 0.3s var(--transition-easing),
-                box-shadow 0.3s var(--transition-easing);
+/* Desktop: Side-by-side layout */
+@media (min-width: 768px) {
+    .story-content {
+        grid-template-columns: 380px 1fr;
+        gap: var(--spacing-12);
+    }
+    
+    .story-image-wrapper {
+        margin: 0;
+    }
 }
 
-.education-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
-}
+/* ==========================================================================
+   Education Section
+   ========================================================================== */
 
-.education-icon {
-    width: 36px;
-    height: 36px;
-    fill: var(--color-primary-accent);
-    margin: 0 auto var(--spacing-unit-md);
-}
-
-.education-card h3 {
-    font-size: 1.2rem;
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-unit-xs);
-}
-
-.education-card p {
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-    max-width: none;
-    line-height: 1.7;
-}
-
-/* Philosophy Grid */
-.philosophy-content-grid {
+.education-items-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-unit-lg);
-}
-
-/* Skills and Philosophy Containers */
-.skills-list-container,
-.design-philosophy-container {
-    padding: var(--spacing-unit-lg);
-    background-color: var(--color-background-content);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-medium);
-    border-left: 4px solid var(--color-primary-accent);
-}
-
-.skills-list-container h3,
-.design-philosophy-container h3 {
-    margin-bottom: var(--spacing-unit-md);
-    color: var(--color-primary-accent);
-    font-size: 1.5rem;
-    text-align: left;
-}
-
-/* Skills List */
-.skills-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.skills-list li {
-    padding: var(--spacing-unit-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-    font-size: 1rem;
-    position: relative;
-    padding-left: var(--spacing-unit-md);
-}
-
-.skills-list li::before {
-    content: '✓';
-    color: var(--color-secondary-accent);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.skills-list li:last-child {
-    border-bottom: none;
-}
-
-/* Philosophy Text */
-.design-philosophy-container p {
-    line-height: 1.8;
-    font-size: 1.05rem;
-}
-
-/* Outside Work Section */
-.outside-work-section {
-    text-align: center;
-    padding-top: var(--spacing-unit-lg);
-}
-
-.outside-work-section p {
-    max-width: 700px;
+    gap: var(--spacing-8);
+    max-width: 900px;
     margin: 0 auto;
-    font-size: 1.15rem;
-    line-height: 1.8;
 }
 
-/* Link Styles */
-.text-link-arrow {
-    font-weight: 600;
-    color: var(--color-primary-accent);
-    transition: letter-spacing var(--transition-speed-fast) var(--transition-easing),
-                color var(--transition-speed-fast) var(--transition-easing),
-                transform var(--transition-speed-fast) var(--transition-easing);
+.education-item {
+    background: var(--color-background-content);
+    padding: var(--spacing-8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--duration-normal) var(--ease-smooth),
+                box-shadow var(--duration-normal) var(--ease-smooth);
+    text-align: center;
+}
+
+.education-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.education-institution-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-5);
+    object-fit: contain;
+}
+
+.education-item h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--spacing-3);
+    color: var(--color-text-primary);
+}
+
+.education-degree {
+    font-size: var(--text-base);
+    color: var(--color-primary);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-2);
+}
+
+.education-status {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-4);
+}
+
+.education-focus {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .education-items-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Skills & Philosophy Section
+   ========================================================================== */
+
+.skills-philosophy-section {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-10);
+}
+
+.skill-category {
+    background: var(--color-background-content);
+    padding: var(--spacing-6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.skill-category h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-4);
+    color: var(--color-primary);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+}
+
+.skill-tag {
     display: inline-block;
-    position: relative;
-    padding-bottom: 3px;
+    padding: var(--spacing-2) var(--spacing-4);
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border: 1px solid var(--color-border);
+    transition: all var(--duration-fast) var(--ease-smooth);
 }
 
-.text-link-arrow::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-secondary-accent);
-    transition: width var(--transition-speed-normal) var(--transition-easing);
+.skill-tag:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
-.text-link-arrow:hover,
-.text-link-arrow:focus-visible {
-    color: var(--color-secondary-accent);
-    text-decoration: none;
-    transform: translateX(5px);
+.philosophy-text {
+    background: var(--color-background-content);
+    padding: var(--spacing-8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--color-primary);
 }
 
-.text-link-arrow:hover::after,
-.text-link-arrow:focus-visible::after {
-    width: 100%;
+.philosophy-text p {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-4);
 }
 
-/* Desktop Layout */
-@media (min-width: 769px) {
+.philosophy-text p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Outside Work Section
+   ========================================================================== */
+
+.outside-work-section {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+}
+
+.interest-item {
+    background: var(--color-background-content);
+    padding: var(--spacing-6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-5);
+    transition: transform var(--duration-normal) var(--ease-smooth),
+                box-shadow var(--duration-normal) var(--ease-smooth);
+}
+
+.interest-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.interest-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.interest-content h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-2);
+    color: var(--color-text-primary);
+}
+
+.interest-content p {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Mobile Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    .about-intro-section {
+        padding: var(--spacing-8) var(--spacing-4) var(--spacing-6);
+        margin-bottom: var(--spacing-8);
+    }
+    
+    .my-story-section,
+    .education-details-section,
+    .skills-philosophy-section,
+    .outside-work-section {
+        margin-bottom: var(--spacing-12);
+        padding: var(--spacing-8) var(--spacing-4);
+    }
+    
     .story-content {
-        grid-template-columns: 0.8fr 1.2fr;
+        gap: var(--spacing-6);
     }
-
-    .philosophy-content-grid {
-        grid-template-columns: 1fr 1fr;
+    
+    .story-image-wrapper {
+        max-width: 100%;
+    }
+    
+    .education-items-container,
+    .skills-grid,
+    .interests-grid {
+        gap: var(--spacing-5);
+    }
+    
+    .education-item,
+    .skill-category,
+    .philosophy-text,
+    .interest-item {
+        padding: var(--spacing-5);
     }
 }
 
-/* Mobile Layout */
-@media (max-width: 768px) {
-    .story-content,
-    .philosophy-content-grid {
-        grid-template-columns: 1fr;
+/* Very small screens */
+@media (max-width: 374px) {
+    .about-intro-section h1 {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
     }
-
-    .story-image-wrapper {
-        max-width: 300px;
+    
+    .skill-tag {
+        font-size: var(--text-xs);
+        padding: var(--spacing-1) var(--spacing-3);
     }
 }
