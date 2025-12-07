@@ -71,22 +71,7 @@
     --color-text-muted: #95a5a6;
     --color-background-light: #f7f9fc;
     --color-background-content: #ffffff;
-<<<<<<< HEAD
     --color-background-muted: #f4f6f8;
-    --color-primary-accent: #39b0ff; 
-    --color-primary-dark: #288acc;
-    --color-secondary-accent: #e67e22; 
-    --color-border: #e1e8ed; 
-    --shadow-light: 0 5px 15px rgba(44, 62, 80, 0.06);
-    --shadow-medium: 0 10px 25px rgba(44, 62, 80, 0.08);
-    --shadow-dark: 0 15px 35px rgba(44, 62, 80, 0.1);
-    --color-primary-accent-rgb: 52, 152, 219;
-    --color-secondary-accent-rgb: 230, 126, 34;
-    --color-text-primary-rgb: 44, 62, 80;
-    --color-background-light-rgb: 247, 249, 252;
-    --color-background-content-rgb: 255, 255, 255;
-     --color-primary-accent2:rgb(0, 23, 37)b; 
-=======
     --color-border: #e1e8ed;
     
     /* Colors - RGB versions for rgba() */
@@ -124,7 +109,6 @@
     --shadow-light: var(--shadow-md);
     --shadow-medium: var(--shadow-lg);
     --shadow-dark: var(--shadow-xl);
->>>>>>> a97e7928d308e513c43fc3fff5131ef6d6a7eead
 }
 
 /* ==========================================================================
@@ -227,15 +211,9 @@ p {
 }
 
 .logo-container .logo-text {
-<<<<<<< HEAD
     font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 800;
-    color: var(--color-primary-accent2);
-=======
-    font-size: var(--text-xl);
     font-weight: var(--font-extrabold);
     color: var(--color-primary);
->>>>>>> a97e7928d308e513c43fc3fff5131ef6d6a7eead
     text-decoration: none;
     letter-spacing: -0.05em;
     transition: color var(--duration-fast) var(--ease-smooth),
@@ -248,16 +226,12 @@ p {
     color: var(--color-primary-accent);
 =======
     color: var(--color-primary-light);
->>>>>>> a97e7928d308e513c43fc3fff5131ef6d6a7eead
+.logo-container .logo-text:hover,
+.logo-container .logo-text:focus-visible {
+    color: var(--color-primary-light);
     transform: scale(1.02);
     transition: 0.5s ease-in-out;
-}
-
-/* ==========================================================================
-   Mobile Navigation (Hamburger Menu)
-   ========================================================================== */
-
-/* Hamburger Button - Hidden on Desktop */
+}* Hamburger Button - Hidden on Desktop */
 .nav-toggle {
     display: none;
     flex-direction: column;
