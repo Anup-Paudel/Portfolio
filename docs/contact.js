@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {HTMLInputElement|HTMLTextAreaElement} inputElement - The input element with an error.
      */
     const showError = (inputElement) => {
-        const formGroup = inputElement.parentElement;
-        formGroup.classList.add('error');
+        const formGroup = inputElement.closest('.form-group') || inputElement.parentElement;
+        if (formGroup) {
+            formGroup.classList.add('error');
+        }
     };
 
     /**
@@ -27,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {HTMLInputElement|HTMLTextAreaElement} inputElement - The input element to clear.
      */
     const hideError = (inputElement) => {
-        const formGroup = inputElement.parentElement;
-        formGroup.classList.remove('error');
+        const formGroup = inputElement.closest('.form-group') || inputElement.parentElement;
+        if (formGroup) {
+            formGroup.classList.remove('error');
+        }
     };
 
     /**
@@ -55,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listener for Form Submission ---
     contactForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         // Reset previous states
         let isFormValid = true;
@@ -80,40 +84,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- Handle Submission ---
         if (isFormValid) {
-            // All fields are valid, construct and open mailto link
             const recipientEmail = 'anuppaudel0562@gmail.com';
             const subject = `Message from ${nameInput.value.trim()}`;
             const body = `Name: ${nameInput.value.trim()}\nFrom Email: ${emailInput.value.trim()}\n\nMessage:\n${messageInput.value.trim()}`;
 
-            // Create the mailto link with encoded components
             const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
             updateStatus('Opening your email client...', 'success');
 
-            // Open the user's default email client
             window.location.href = mailtoLink;
 
-            // Reset form after a short delay to allow the email client to open
             setTimeout(() => {
                 contactForm.reset();
-                // Manually trigger blur to reset floating labels correctly
-                document.activeElement.blur(); 
-                updateStatus('', 'info');
-            }, 2000);
+                if (document.activeElement) {
+                    document.activeElement.blur();
+                }
+                updateStatus('Message generated! Thank you for reaching out.', 'success');
+            }, 1500);
 
         } else {
-            // Form has errors
-            updateStatus('Please correct the errors above.', 'error');
+            updateStatus('Please correct the highlighted fields.', 'error');
         }
     });
 
     // --- Real-time Validation Feedback ---
-    // Add event listeners to clear errors as the user types
     [nameInput, emailInput, messageInput].forEach(input => {
         input.addEventListener('input', () => {
-            // A basic check to hide the error. More specific checks can be added.
             if (input.value.trim()) {
-                 hideError(input);
+                hideError(input);
             }
         });
     });

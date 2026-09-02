@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="page-gradient-overlay"></div>
-    <!-- Refactor navigation bar into a reusable component -->
+    
     <header class="site-header">
       <div class="logo-container">
         <a href="index.html" class="logo-text">Anup</a>
@@ -25,31 +25,31 @@
           <ul class="nav-list" id="navList">
             <li class="nav-item">
               <a href="index.html" class="nav-link">
-                <img src="assets/icons/home-icon.png" alt="home-icon" class="nav-icon" />
+                <img src="assets/icons/home-icon.png" alt="Home Icon" class="nav-icon" />
                 <span class="nav-text">Home</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="about.html" class="nav-link active-link">
-                <img src="assets/icons/about-icon.png" alt="About-Icon" class="nav-icon" />
+                <img src="assets/icons/about-icon.png" alt="About Icon" class="nav-icon" />
                 <span class="nav-text">About</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="projects.html" class="nav-link">
-                <img src="assets/icons/projects-icon.png" alt="Project-Icon" class="nav-icon" />
+                <img src="assets/icons/projects-icon.png" alt="Projects Icon" class="nav-icon" />
                 <span class="nav-text">Projects</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="contact.html" class="nav-link">
-                <img src="assets/icons/contact-icon.png" alt="Contact-Icon" class="nav-icon" />
+                <img src="assets/icons/contact-icon.png" alt="Contact Icon" class="nav-icon" />
                 <span class="nav-text">Contact</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="playzone.html" class="nav-link">
-                <img src="assets/icons/playzone-icon.png" alt="Play_Icon" class="nav-icon" />
+                <img src="assets/icons/playzone-icon.png" alt="Play Zone Icon" class="nav-icon" />
                 <span class="nav-text">Play Zone</span>
               </a>
             </li>
@@ -59,96 +59,324 @@
     </header>
 
     <main>
+      <!-- Hero / Introduction -->
       <section class="about-intro-section scroll-reveal fade-in">
-        <h1>About Me</h1>
-        <p class="about-subtitle">A passionate learner at the crossroads of technology and human-centered design.</p>
-      </section>
-
-      <section class="my-story-section scroll-reveal slide-from-bottom">
-        <h2>My Journey</h2>
-        <div class="story-content">
-          <div class="story-image-wrapper">
-            <img src="assets/images/anup-profile.png" alt="Anup Paudel" class="story-image" />
-          </div>
-          <div class="story-text">
-            <p>
-              Hello! I’m Anup Paudel, a Computer Science student deeply fascinated by the intersection of technology and human experience. Originally
-              from the beautiful landscapes of Nepal, I'm currently pursuing my studies in the U.S., constantly seeking opportunities to learn and
-              grow.
-            </p>
-            <p>
-              My path to UI/UX design wasn't a straight line but rather an evolution of my interest in problem-solving through code and a growing
-              appreciation for how thoughtful design can elevate technology. I believe in creating digital products that are not only functional but
-              also intuitive, accessible, and delightful to use.
-            </p>
-            <p>
-              This unique blend of technical understanding and design sensibility allows me to approach challenges holistically, ensuring that
-              creative visions are grounded in practical, efficient implementation. I'm passionate about lifelong learning and excited by the
-              ever-evolving landscape of digital design and development.
-            </p>
-          </div>
+        <div class="intro-badge">
+          <span class="badge-dot"></span> About Me
         </div>
-      </section>
-
-      <section class="education-details-section scroll-reveal fade-in">
-        <h2>Education</h2>
-        <div class="education-items-container">
-          <div class="education-item">
-            <img src="assets/icons/education-webster.svg" alt="Webster University Icon" class="education-institution-icon" />
-            <h3>Webster University</h3>
-            <p class="education-degree">Bachelor of Science in Computer Science (Transferred)</p>
-            <p class="education-status">Transferred after 2nd Semester - Saint Louis, Missouri</p>
-            <p class="education-focus">
-              Focused on C++ programming, Operating Systems, and explored various programms including : BYTE_B@SH(Beginner Level Coading Competetion),
-              Volunteered for ICPC Webster's Team and other Volunteering opportunities.
-            </p>
-          </div>
-          <div class="education-item">
-            <img src="assets/icons/eudcation-ccbc.jpg" alt="CCBC Icon" class="education-institution-icon" />
-            <h3>Community College of Baltimore County (CCBC), Essex</h3>
-            <p class="education-degree">Associate of Science in Computer Science (Expected Graduation: Summer 2027)</p>
-            <p class="education-status">Preparing for 3rd Semester - Essex, Maryland</p>
-            <p class="education-focus">Building a strong foundation in computer science fundamentals and preparing for advanced studies.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="skills-philosophy-section scroll-reveal fade-in">
-        <h2>Skills & Design Philosophy</h2>
-        <div class="philosophy-content-grid">
-          <div class="skills-list-container">
-            <h3>Core Skills</h3>
-            <ul class="skills-list">
-              <li>UI/UX Design (Research, Wireframing, Prototyping, User Testing)</li>
-              <li>Front-End Development (HTML, CSS, JavaScript, [Mention specific frameworks if any])</li>
-              <li>Responsive & Accessible Web Design</li>
-              <li>Version Control (Git/GitHub)</li>
-              <li>Problem Solving & Algorithmic Thinking</li>
-              <li>Agile Methodologies & Collaboration</li>
-              <li>Visual Design & Branding Basics</li>
-            </ul>
-          </div>
-          <div class="design-philosophy-container">
-            <h3>My Design Philosophy</h3>
-            <p>
-              I strive to approach every project with **empathy**, **curiosity**, and a meticulous **attention to detail**. For me, good design is
-              about understanding user needs deeply and translating those insights into solutions that feel effortless and engaging. I value clean,
-              minimal aesthetics that don't sacrifice personality or vibrancy, and believe that the best products are born from a blend of creative
-              vision and technical excellence.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="outside-work-section scroll-reveal slide-from-bottom">
-        <h2>Beyond the Screen</h2>
-        <p>
-          When I'm not immersed in design or code, you'll often find me strategizing over a game of chess—a hobby that sharpens my problem-solving
-          skills and teaches patience. For a glimpse into this side of me (and maybe a puzzle or two!), check out my
-          <a href="playzone.html" class="text-link-arrow">
-            Play Zone <img src="assets/icons/icon-arrow.svg" alt="Arrow Icon" class="arrow-icon" />
-          </a>
+        <h1 class="about-main-title">Crafting Experiences Through Code & Design</h1>
+        <p class="about-subtitle">
+          A passionate Computer Science student and UI/UX designer blending algorithmic thinking with intuitive, human-centered digital experiences.
         </p>
+      </section>
+
+      <!-- My Journey Section -->
+      <section class="my-story-section scroll-reveal slide-from-bottom">
+        <div class="section-header-wrap">
+          <h2 class="section-title">My Journey</h2>
+          <span class="section-subtitle">From Nepal to the U.S., exploring tech & design</span>
+        </div>
+
+        <div class="story-content">
+          <div class="story-profile-col">
+            <div class="story-image-wrapper">
+              <img src="assets/images/anup-profile.png" alt="Anup Paudel" class="story-image" />
+              <div class="image-floating-badge">
+                <span class="badge-icon">📍</span>
+                <div class="badge-info">
+                  <strong>Maryland, USA</strong>
+                  <small>Orig. Nepal 🇳🇵</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Stats / Highlights -->
+            <div class="quick-stats-grid">
+              <div class="stat-card">
+                <span class="stat-num">CS</span>
+                <span class="stat-label">Student</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">UI/UX</span>
+                <span class="stat-label">Specialist</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">GNEC '25</span>
+                <span class="stat-label">Hackathon</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-text-col">
+            <div class="story-lead-card">
+              <p class="lead-paragraph">
+                Hello! I’m <strong class="accent-text">Anup Paudel</strong>, a Computer Science student fascinated by the intersection of computational logic and human experience.
+              </p>
+            </div>
+            
+            <p>
+              Originally from the picturesque landscapes of Nepal, I am currently pursuing my higher education in the United States. My passion for digital creation began with coding fundamentals and quickly expanded into UI/UX design when I realized that <span class="highlight-text">the best technology is the one that feels effortless to use</span>.
+            </p>
+            
+            <p>
+              Rather than viewing engineering and aesthetics as separate disciplines, I treat them as complementary sides of problem-solving. My goal is to build digital products that are <span class="highlight-text">accessible, performant, visually engaging, and deeply meaningful</span> to their users.
+            </p>
+
+            <div class="journey-pillars">
+              <div class="pillar-pill">
+                <span class="pillar-icon">💡</span>
+                <span>Lifelong Curiosity</span>
+              </div>
+              <div class="pillar-pill">
+                <span class="pillar-icon">🎯</span>
+                <span>User-First Mindset</span>
+              </div>
+              <div class="pillar-pill">
+                <span class="pillar-icon">⚡</span>
+                <span>Rapid Execution</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="education-details-section scroll-reveal fade-in">
+        <div class="section-header-wrap">
+          <h2 class="section-title">Education & Academic Path</h2>
+          <span class="section-subtitle">Building strong computer science fundamentals</span>
+        </div>
+
+        <div class="education-items-container">
+          <!-- CCBC Essex -->
+          <div class="education-item current-edu">
+            <div class="edu-header">
+              <div class="edu-logo-wrapper">
+                <img src="assets/icons/eudcation-ccbc.jpg" alt="CCBC Essex Logo" class="education-institution-icon" />
+              </div>
+              <div class="edu-title-group">
+                <span class="edu-badge">Current Institution</span>
+                <h3>Community College of Baltimore County</h3>
+                <p class="edu-location">Essex, Maryland</p>
+              </div>
+            </div>
+            
+            <div class="edu-body">
+              <p class="education-degree">Associate of Science in Computer Science</p>
+              <p class="education-status">Expected Graduation: Summer 2027 &bull; Preparing for 3rd Semester</p>
+              <p class="education-focus">
+                Focused on core computational theory, algorithms, advanced mathematics, and web technologies. Preparing for transfer to complete a B.S. in Computer Science.
+              </p>
+              <div class="edu-tags">
+                <span class="edu-tag">Data Structures</span>
+                <span class="edu-tag">Web Dev</span>
+                <span class="edu-tag">Discrete Math</span>
+                <span class="edu-tag">Algorithms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Webster University -->
+          <div class="education-item">
+            <div class="edu-header">
+              <div class="edu-logo-wrapper">
+                <img src="assets/icons/education-webster.svg" alt="Webster University Logo" class="education-institution-icon" />
+              </div>
+              <div class="edu-title-group">
+                <span class="edu-badge completed-badge">Completed 2 Semesters</span>
+                <h3>Webster University</h3>
+                <p class="edu-location">Saint Louis, Missouri</p>
+              </div>
+            </div>
+            
+            <div class="edu-body">
+              <p class="education-degree">Bachelor of Science in Computer Science (Transferred)</p>
+              <p class="education-status">Completed 1st & 2nd Semesters (Transferred)</p>
+              <p class="education-focus">
+                Studied C++ programming, operating system principles, and algorithmic problem solving. Actively participated in BYTE_B@SH coding competition and volunteered for Webster’s ICPC programming team.
+              </p>
+              <div class="edu-tags">
+                <span class="edu-tag">C++ Programming</span>
+                <span class="edu-tag">Operating Systems</span>
+                <span class="edu-tag">BYTE_B@SH</span>
+                <span class="edu-tag">ICPC Volunteer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills & Design Philosophy -->
+      <section class="skills-philosophy-section scroll-reveal fade-in">
+        <div class="section-header-wrap">
+          <h2 class="section-title">Skills & Capabilities</h2>
+          <span class="section-subtitle">My toolkit for solving complex problems</span>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 1: UI/UX -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="cat-icon-box cat-design">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <h3>UI/UX & Product Design</h3>
+            </div>
+            <p class="cat-desc">Crafting accessible, intuitive interfaces and conducting thoughtful user research.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">Prototyping</span>
+              <span class="skill-tag">User Research</span>
+              <span class="skill-tag">Usability Testing</span>
+              <span class="skill-tag">Design Systems</span>
+              <span class="skill-tag">Information Architecture</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Front-End Development -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="cat-icon-box cat-code">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3>Front-End Development</h3>
+            </div>
+            <p class="cat-desc">Transforming design concepts into clean, responsive, and performant web code.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML5 & Semantic Web</span>
+              <span class="skill-tag">Modern CSS3 & Grid/Flexbox</span>
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag">DOM Manipulation</span>
+              <span class="skill-tag">Web Accessibility (a11y)</span>
+              <span class="skill-tag">Performance Tuning</span>
+            </div>
+          </div>
+
+          <!-- Category 3: CS & Workflow -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="cat-icon-box cat-tools">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Computer Science & Tools</h3>
+            </div>
+            <p class="cat-desc">Core programming foundations and version control workflows.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">C++ Programming</span>
+              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">Algorithmic Problem Solving</span>
+              <span class="skill-tag">Debugging & Testing</span>
+              <span class="skill-tag">Agile / Collaboration</span>
+              <span class="skill-tag">Command Line / Shell</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design Philosophy Card -->
+        <div class="philosophy-box scroll-reveal fade-in">
+          <div class="philosophy-header">
+            <span class="philosophy-label">My Design Philosophy</span>
+            <h3 class="philosophy-quote">"Design is not just what it looks like, but how seamlessly it works for people."</h3>
+          </div>
+          <div class="philosophy-pillars-grid">
+            <div class="phil-pillar">
+              <div class="pillar-num">01</div>
+              <h4>Empathy & Needs</h4>
+              <p>Deeply understanding user pain points before writing a single line of code or drawing a pixel.</p>
+            </div>
+            <div class="phil-pillar">
+              <div class="pillar-num">02</div>
+              <h4>Simplicity & Clarity</h4>
+              <p>Eliminating clutter and noise so that the core purpose and value of every product shine clearly.</p>
+            </div>
+            <div class="phil-pillar">
+              <div class="pillar-num">03</div>
+              <h4>Craft & Precision</h4>
+              <p>Paying meticulous attention to micro-interactions, responsive fluidity, and clean maintainable code.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Beyond the Screen -->
+      <section class="outside-work-section scroll-reveal slide-from-bottom">
+        <div class="section-header-wrap">
+          <h2 class="section-title">Beyond the Screen</h2>
+          <span class="section-subtitle">What drives my curiosity outside coding and design</span>
+        </div>
+
+        <div class="interests-grid">
+          <!-- Chess -->
+          <div class="interest-item">
+            <div class="interest-icon-wrapper">
+              <img src="assets/icons/icon-chess.svg" alt="Chess Icon" class="interest-icon" />
+            </div>
+            <div class="interest-content">
+              <h3>Chess & Strategy</h3>
+              <p>A lifelong passion that sharpens tactical thinking, foresight, patience, and decision-making under pressure.</p>
+            </div>
+          </div>
+
+          <!-- YouTube / Content -->
+          <div class="interest-item">
+            <div class="interest-icon-wrapper">
+              <img src="assets/icons/icon-youtube.svg" alt="YouTube Icon" class="interest-icon" />
+            </div>
+            <div class="interest-content">
+              <h3>Tech & Video Creation</h3>
+              <p>Creating engaging videos exploring tech trends, sharing coding discoveries, and explaining complex concepts.</p>
+            </div>
+          </div>
+
+          <!-- Travel -->
+          <div class="interest-item">
+            <div class="interest-icon-wrapper">
+              <img src="assets/icons/icon-travel.svg" alt="Travel Icon" class="interest-icon" />
+            </div>
+            <div class="interest-content">
+              <h3>Travel & Exploration</h3>
+              <p>Experiencing new cities, cultural perspectives, and diverse environments from the Himalayas to American cities.</p>
+            </div>
+          </div>
+
+          <!-- Photography -->
+          <div class="interest-item">
+            <div class="interest-icon-wrapper">
+              <img src="assets/icons/icon-camera.svg" alt="Camera Icon" class="interest-icon" />
+            </div>
+            <div class="interest-content">
+              <h3>Photography</h3>
+              <p>Observing the world through a lens—training an eye for composition, lighting, contrast, and visual rhythm.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Play Zone Banner Callout -->
+        <div class="playzone-callout-card">
+          <div class="callout-text">
+            <h3>Explore More in the Play Zone</h3>
+            <p>Check out my chess puzzles, travel stories, creative hobbies, and interactive mini-features.</p>
+          </div>
+          <a href="playzone.html" class="playzone-cta-btn">
+            <span>Enter Play Zone</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
       </section>
     </main>
 
@@ -167,19 +395,30 @@
               class="social-link-item"
               aria-label="Anup Paudel on LinkedIn"
               title="LinkedIn"
-              ><img src="assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" /><span class="social-link-label">LinkedIn</span></a
             >
-            <a href="https://github.com/Anup-Paudel" target="_blank" class="social-link-item" aria-label="Anup Paudel on GitHub" title="GitHub"
-              ><img src="assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" /><span class="social-link-label">GitHub</span></a
+              <img src="assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
+              <span class="social-link-label">LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/Anup-Paudel"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on GitHub"
+              title="GitHub"
             >
+              <img src="assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" />
+              <span class="social-link-label">GitHub</span>
+            </a>
             <a
               href="https://discordapp.com/users/anup_29731"
               target="_blank"
               class="social-link-item"
               aria-label="Anup Paudel on Discord (anup_29731)"
               title="Discord"
-              ><img src="assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" /><span class="social-link-label">Discord</span></a
             >
+              <img src="assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" />
+              <span class="social-link-label">Discord</span>
+            </a>
           </div>
         </div>
         <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>

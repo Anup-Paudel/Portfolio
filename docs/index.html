@@ -7,125 +7,739 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="global.css?v=12" />
+    <link rel="stylesheet" href="home.css?v=12" />
 </head>
 <body>
-    <div class="page-gradient-overlay"></div>
-    <header class="site-header">
-        <div class="logo-container">
-            <a href="index.html" class="logo-text">Anup</a>
-        </div>
-        <nav class="main-nav" id="mainNav">
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="nav-toggle-icon"></span>
-            </button>
-            <div class="nav-overlay" id="navOverlay">
-                <ul class="nav-list" id="navList">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link active-link">
-                <img src="assets/icons/home-icon.png" alt="Home Icon" class="nav-icon" />
-                <span class="nav-text">Home</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">
-                <img src="assets/icons/about-icon.png" alt="About Icon" class="nav-icon" />
-                <span class="nav-text">About</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="projects.html" class="nav-link">
-                <img src="assets/icons/projects-icon.png" alt="Projects Icon" class="nav-icon" />
-                <span class="nav-text">Projects</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">
-                <img src="assets/icons/contact-icon.png" alt="Contact Icon" class="nav-icon" />
-                <span class="nav-text">Contact</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="playzone.html" class="nav-link">
-                <img src="assets/icons/playzone-icon.png" alt="Play Zone Icon" class="nav-icon" />
-                <span class="nav-text">Play Zone</span>
-              </a>
-            </li>
-                </ul>
+
+    <!-- Interactive Scroll Progress Indicator (Carries Across Viewport) -->
+    <div class="scroll-progress-container" aria-hidden="true">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Interactive Floating Page Rail (Tracks Journey Across Sections) -->
+    <aside class="floating-page-rail" aria-label="Section tracker navigation">
+        <div class="rail-track-line" aria-hidden="true"></div>
+        <a href="#hero" class="rail-dot-btn active-rail" data-section="hero" aria-label="Home section">
+            <span class="rail-tooltip">01 // Home</span>
+        </a>
+        <a href="#about" class="rail-dot-btn" data-section="about" aria-label="About section">
+            <span class="rail-tooltip">02 // About</span>
+        </a>
+        <a href="#projects" class="rail-dot-btn" data-section="projects" aria-label="Projects section">
+            <span class="rail-tooltip">03 // Projects</span>
+        </a>
+        <a href="#playzone" class="rail-dot-btn" data-section="playzone" aria-label="Play Zone section">
+            <span class="rail-tooltip">04 // Play Zone</span>
+        </a>
+        <a href="#contact" class="rail-dot-btn" data-section="contact" aria-label="Contact section">
+            <span class="rail-tooltip">05 // Contact</span>
+        </a>
+    </aside>
+
+    <!-- Softly Blended Top Vignette -->
+    <div class="top-nav-fade" aria-hidden="true"></div>
+
+    <!-- Living Ambient Background Gradient Flow -->
+    <div class="page-gradient-overlay" aria-hidden="true">
+        <div class="gradient-orb orb-primary"></div>
+        <div class="gradient-orb orb-secondary"></div>
+        <div class="gradient-orb orb-tertiary"></div>
+        <div class="gradient-orb orb-quaternary"></div>
+    </div>
+
+    <!-- Cohesive Hybrid Header (Flat at Home & Centered Light Dynamic Island) -->
+    <header class="site-header-wrapper is-home" id="siteHeader">
+        <div class="header-inner">
+            <div class="logo-container">
+                <a href="#hero" class="logo-link" aria-label="Go to Home">
+                    <img src="assets/images/APLOGO.png" alt="AP Logo" class="logo-img-home" width="30" height="30" />
+                    <span class="logo-text-full">Anup</span>
+                    <img src="assets/images/APLOGO.png" alt="AP Logo" class="logo-img-island" width="25" height="25" />
+                </a>
             </div>
-        </nav>
+
+            <nav class="main-nav" id="mainNav">
+                <!-- Hamburger Button for Mobile -->
+                <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+
+                <!-- Desktop Nav List -->
+                <ul class="nav-list" id="navList">
+                    <li class="nav-item">
+                        <a href="#hero" class="nav-link active-link">
+                            <img src="assets/icons/home-icon.png" alt="Home" class="nav-icon" width="19" height="19" />
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <img src="assets/icons/about-icon.png" alt="About" class="nav-icon" width="19" height="19" />
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">
+                            <img src="assets/icons/projects-icon.png" alt="Projects" class="nav-icon" width="19" height="19" />
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#playzone" class="nav-link">
+                            <img src="assets/icons/playzone-icon.png" alt="Play Zone" class="nav-icon" width="19" height="19" />
+                            <span class="nav-text">Play Zone</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <img src="assets/icons/contact-icon.png" alt="Contact" class="nav-icon" width="19" height="19" />
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
+    <!-- Dedicated Full-Screen Mobile Navigation Overlay (Strictly Hidden on Desktop) -->
+    <div class="mobile-nav-fullscreen" id="mobileNavFullscreen" aria-hidden="true">
+        <button class="mobile-nav-close-btn" id="mobileNavClose" aria-label="Close navigation menu">&times;</button>
+        <ul class="mobile-nav-fullscreen-list">
+            <li>
+                <a href="#hero" class="mobile-nav-fullscreen-link">
+                    <img src="assets/icons/home-icon.png" alt="Home" width="22" height="22" />
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#about" class="mobile-nav-fullscreen-link">
+                    <img src="assets/icons/about-icon.png" alt="About" width="22" height="22" />
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="#projects" class="mobile-nav-fullscreen-link">
+                    <img src="assets/icons/projects-icon.png" alt="Projects" width="22" height="22" />
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="#playzone" class="mobile-nav-fullscreen-link">
+                    <img src="assets/icons/playzone-icon.png" alt="Play Zone" width="22" height="22" />
+                    <span>Play Zone</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="mobile-nav-fullscreen-link">
+                    <img src="assets/icons/contact-icon.png" alt="Contact" width="22" height="22" />
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
     <main>
-        <section class="hero-section">
+        <!-- ==========================================================================
+             1. Hero Section (#hero)
+             ========================================================================== -->
+        <section id="hero" class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Anup Paudel</h1>
                 <div class="hero-tagline-wrapper">
-                    <p class="hero-tagline animated-tagline">
+                    <div class="hero-tagline">
                         <span>Computer Science Student</span>
                         <span>UI/UX Designer</span>
                         <span>Web Developer</span>
-                    </p>
+                    </div>
                 </div>
-                <a href="projects.html" class="cta-button">View My Work</a>
+                <a href="#projects" class="cta-button">View My Work</a>
             </div>
         </section>
 
-        <section class="featured-projects-preview scroll-reveal">
-            <h2>Featured Projects</h2>
-            <div class="project-preview-grid">
-                <div class="project-preview-card hover-lift">
-                    <div class="card-image-container hover-zoom">
-                        <img src="assets/images/fairalyze-thumbnail.png" alt="Fairalyze AI" loading="lazy" />
+        <!-- ==========================================================================
+             2. About Me Section (#about)
+             ========================================================================== -->
+        <section id="about" class="section-wrapper section-about">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">CS student and designer bridging software architecture with human-centered UX.</p>
+            </div>
+
+            <!-- Compact Story / Bio Grid with Integrated View CV/Resume Button -->
+            <div class="story-grid">
+                <div class="story-image-card hover-lift">
+                    <div class="story-image-inner">
+                        <img src="assets/images/anup-profile.png" alt="Anup Paudel" class="story-profile-photo" width="240" height="300" />
                     </div>
-                    <div class="card-content-container">
-                        <p class="project-category">AI Ethics</p>
-                        <h3>Fairalyze AI</h3>
-                        <p>A tool to detect biases in AI models, focusing on SDGs 5 and 10.</p>
-                        <div class="card-links">
-                            <a href="projects.html#project1" class="card-link">Details <span class="arrow">&rarr;</span></a>
+                </div>
+
+                <div class="story-text-col">
+                    <p class="story-lead">
+                        Hello! I’m Anup Paudel, a Computer Science student passionate about crafting clean, accessible, and performant user interfaces.
+                    </p>
+                    <p>
+                        Based in Texas and originally from Nepal, my work unites computational logic, front-end architecture, and intuitive design to turn complex ideas into seamless digital experiences.
+                    </p>
+                    <div class="story-actions-row">
+                        <a href="assets/images/Anup_Resume.pdf" target="_blank" rel="noopener noreferrer" class="story-resume-btn hover-lift" aria-label="Preview Anup Paudel CV Resume">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>View CV / Resume &nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Themed Approach Pillars -->
+            <div class="approach-items-container">
+                <div class="approach-item pillar-ux hover-lift">
+                    <div class="approach-icon-wrap">
+                        <img src="assets/icons/approach-empathy.svg" alt="Human-Centered UX" width="46" height="46" />
+                    </div>
+                    <h3>User-Centered UX</h3>
+                    <p>Designing intuitive, accessible layouts informed by usability heuristics and user research.</p>
+                </div>
+
+                <div class="approach-item pillar-code hover-lift">
+                    <div class="approach-icon-wrap">
+                        <img src="assets/icons/approach-code.svg" alt="Design to Code Synergy" width="46" height="46" />
+                    </div>
+                    <h3>Design & Code Synergy</h3>
+                    <p>Turning Figma prototypes into clean, responsive HTML5/CSS3 and modern JavaScript.</p>
+                </div>
+
+                <div class="approach-item pillar-logic hover-lift">
+                    <div class="approach-icon-wrap">
+                        <img src="assets/icons/approach-innovation.svg" alt="Systems & Logic" width="46" height="46" />
+                    </div>
+                    <h3>Systems & Logic</h3>
+                    <p>Building reliable state architecture, structured data flows, and performant algorithms.</p>
+                </div>
+            </div>
+
+            <!-- Clean Education Section (3 across Desktop, 1 on Mobile) -->
+            <h3 class="sub-heading">Academic Journey</h3>
+            <div class="education-items-grid">
+                <!-- 1. Collin College (Plano, Texas) -->
+                <div class="education-card-item is-current hover-lift">
+                    <div>
+                        <span class="edu-status-pill is-active">Currently Attending</span>
+                        <div class="edu-header-row">
+                            <div class="edu-icon-badge">
+                                <img src="assets/icons/education-collin.svg" alt="Collin College" width="40" height="40" />
+                            </div>
+                            <div class="edu-title-text">
+                                <h4>Collin College</h4>
+                                <small>Plano, Texas</small>
+                            </div>
+                        </div>
+                        <div class="edu-degree-text">Computer Science</div>
+                        <p>
+                            Studying computer organization, architecture, and low-level software fundamentals.
+                        </p>
+                    </div>
+                    <div class="edu-chips-row">
+                        <span class="edu-chip">Computer Organization</span>
+                        <span class="edu-chip">Architecture</span>
+                    </div>
+                </div>
+
+                <!-- 2. CCBC Essex (Essex, Maryland) -->
+                <div class="education-card-item hover-lift">
+                    <div>
+                        <span class="edu-status-pill is-transfer">Transferred Coursework</span>
+                        <div class="edu-header-row">
+                            <div class="edu-icon-badge">
+                                <img src="assets/icons/eudcation-ccbc.jpg" alt="CCBC Logo" width="40" height="40" />
+                            </div>
+                            <div class="edu-title-text">
+                                <h4>CCBC Essex</h4>
+                                <small>Essex, Maryland</small>
+                            </div>
+                        </div>
+                        <div class="edu-degree-text">Computer Science</div>
+                        <p>
+                            Coursework in algorithmic data structures, discrete mathematics, and web technologies.
+                        </p>
+                    </div>
+                    <div class="edu-chips-row">
+                        <span class="edu-chip">Data Structures</span>
+                        <span class="edu-chip">Algorithms</span>
+                    </div>
+                </div>
+
+                <!-- 3. Webster University (St. Louis, Missouri) -->
+                <div class="education-card-item hover-lift">
+                    <div>
+                        <span class="edu-status-pill is-transfer">Transferred Coursework</span>
+                        <div class="edu-header-row">
+                            <div class="edu-icon-badge" style="padding: 2px;">
+                                <img src="assets/icons/education-webster.svg" alt="Webster University" style="object-fit: contain; width: 100%; height: 100%;" width="40" height="40" />
+                            </div>
+                            <div class="edu-title-text">
+                                <h4>Webster University</h4>
+                                <small>St. Louis, Missouri</small>
+                            </div>
+                        </div>
+                        <div class="edu-degree-text">Computer Science</div>
+                        <p>
+                            Studies in C++ software development and operating systems concepts.
+                        </p>
+                    </div>
+                    <div class="edu-chips-row">
+                        <span class="edu-chip">C++ Programming</span>
+                        <span class="edu-chip">Operating Systems</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Skills Grid -->
+            <h3 class="sub-heading">Technical Skillset</h3>
+            <div class="skills-philosophy-grid">
+                <div class="skills-card">
+                    <h4>Core Technologies</h4>
+                    <div class="skills-list-tags">
+                        <span class="skill-tag-item">UI/UX Design</span>
+                        <span class="skill-tag-item">Figma</span>
+                        <span class="skill-tag-item">HTML5 & CSS3</span>
+                        <span class="skill-tag-item">JavaScript (ES6+)</span>
+                        <span class="skill-tag-item">Responsive Design</span>
+                        <span class="skill-tag-item">Git & GitHub</span>
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <h4>Systems & Theory</h4>
+                    <div class="skills-list-tags">
+                        <span class="skill-tag-item">Computer Organization</span>
+                        <span class="skill-tag-item">Architecture</span>
+                        <span class="skill-tag-item">Data Structures</span>
+                        <span class="skill-tag-item">Algorithms</span>
+                        <span class="skill-tag-item">C++</span>
+                        <span class="skill-tag-item">Agile Workflow</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             3. Featured Projects & Case Studies (#projects)
+             ========================================================================== -->
+        <section id="projects" class="section-wrapper section-projects">
+            <div class="section-header">
+                <h2 class="section-title">Projects & Case Studies</h2>
+                <p class="section-subtitle">Hands-on applications showcasing UI/UX design, state architecture, and front-end development.</p>
+            </div>
+
+            <div class="projects-stack-container">
+                <!-- Project 1: Fairalyze AI (With Interactive Live Bias Simulator) -->
+                <div class="project-wrapper" id="project1">
+                    <article class="project-preview-card-pro">
+                        <div class="project-card-image-box">
+                            <div class="fairalyze-sim-box">
+                                <div class="sim-header-row">
+                                    <span class="sim-title">Fairalyze Risk Engine</span>
+                                    <span id="fairnessStatusPill" class="sim-status-pill sim-status-safe">SDG 10 Compliant</span>
+                                </div>
+                                <div class="sim-bar-container">
+                                    <div class="sim-bar-label">
+                                        <span>Disparate Impact Ratio</span>
+                                        <strong id="fairnessRatioVal" style="color: #38bdf8;">0.84</strong>
+                                    </div>
+                                    <div class="sim-progress-track">
+                                        <div id="fairnessProgressFill" class="sim-progress-fill"></div>
+                                    </div>
+                                </div>
+                                <div class="sim-slider-row">
+                                    <div class="sim-slider-label">
+                                        <span>Demographic Representation</span>
+                                        <span id="fairnessSliderVal">84%</span>
+                                    </div>
+                                    <input type="range" id="fairnessSlider" min="20" max="100" value="84" class="sim-range-input" aria-label="Demographic representation slider" />
+                                </div>
+                                <div class="sim-interactive-badge">Drag slider to test live parity metrics</div>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div>
+                                <div class="project-tags-list">
+                                    <span class="project-tag-pill">GNEC Hackathon '25</span>
+                                    <span class="project-tag-pill">AI Ethics</span>
+                                    <span class="project-tag-pill">UX/UI Design</span>
+                                </div>
+                                <h3>Fairalyze AI: Bias Detection Tool</h3>
+                                <p>
+                                    Developed during the GNEC Hackathon to detect and analyze biases in AI models, addressing UN Sustainable Development Goals 5 & 10.
+                                </p>
+                                <div class="project-tech-pills">
+                                    <span class="tech-pill">Figma</span>
+                                    <span class="tech-pill">JavaScript ES6+</span>
+                                    <span class="tech-pill">HTML5 / CSS3</span>
+                                    <span class="tech-pill">Python Logic</span>
+                                </div>
+                            </div>
+                            <div class="project-card-footer">
+                                <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="repo-link-item">
+                                    <img src="assets/icons/github.svg" alt="GitHub" width="16" height="16" />
+                                    <span>GitHub Repo &rarr;</span>
+                                </a>
+                                <button type="button" class="case-study-toggle-btn case-study-toggle" data-target="cs-fairalyze">
+                                    <span class="case-study-label">View Case Study</span> &darr;
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Symmetrical 2x2 Case Study Breakdown -->
+                    <div class="case-study-panel" id="cs-fairalyze">
+                        <div class="cs-header-col">
+                            <h4>Case Study: Fairalyze AI (GNEC Hackathon 2025)</h4>
+                            <p>Auditing dashboard uncovering demographic bias in predictive models.</p>
+                        </div>
+                        <div class="cs-sections-grid">
+                            <div class="cs-section-box">
+                                <h5>The Challenge</h5>
+                                <p>AI models can perpetuate societal bias. We built a tool to help engineers evaluate disparate impact prior to deployment.</p>
+                            </div>
+                            <div class="cs-section-box">
+                                <h5>My Role & Approach</h5>
+                                <p>Led UI/UX design and front-end development during the 48-hour sprint, turning parity equations into visual risk charts.</p>
+                            </div>
+                            <div class="cs-section-box">
+                                <h5>Key Solution</h5>
+                                <p>Disparate impact risk gauges, demographic acceptance charts, and clear data balancing recommendations.</p>
+                            </div>
+                            <div class="cs-section-box">
+                                <h5>Outcome</h5>
+                                <p>Presented to the GNEC jury with strong positive feedback, demonstrating high-pressure rapid prototyping.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Project 2: Calculator App (With Fully Operational Live Interactive Engine) -->
+                <div class="project-wrapper" id="project2">
+                    <article class="project-preview-card-pro">
+                        <div class="project-card-image-box">
+                            <div class="calc-mockup-wrapper" id="liveCalcWidget">
+                                <div class="calc-mock-screen">
+                                    <div class="calc-mock-formula" id="calcFormula">128 &times; 4 + 16</div>
+                                    <div class="calc-mock-result" id="calcDisplay">528</div>
+                                </div>
+                                <div class="calc-mock-buttons">
+                                    <button type="button" class="calc-btn action-key" data-action="clear">AC</button>
+                                    <button type="button" class="calc-btn action-key" data-action="sign">&plusmn;</button>
+                                    <button type="button" class="calc-btn action-key" data-action="percent">%</button>
+                                    <button type="button" class="calc-btn op-key" data-op="/">&divide;</button>
+                                    
+                                    <button type="button" class="calc-btn" data-num="7">7</button>
+                                    <button type="button" class="calc-btn" data-num="8">8</button>
+                                    <button type="button" class="calc-btn" data-num="9">9</button>
+                                    <button type="button" class="calc-btn op-key" data-op="*">&times;</button>
+                                    
+                                    <button type="button" class="calc-btn" data-num="4">4</button>
+                                    <button type="button" class="calc-btn" data-num="5">5</button>
+                                    <button type="button" class="calc-btn" data-num="6">6</button>
+                                    <button type="button" class="calc-btn op-key" data-op="-">&minus;</button>
+                                    
+                                    <button type="button" class="calc-btn" data-num="1">1</button>
+                                    <button type="button" class="calc-btn" data-num="2">2</button>
+                                    <button type="button" class="calc-btn" data-num="3">3</button>
+                                    <button type="button" class="calc-btn op-key" data-op="+">+</button>
+                                    
+                                    <button type="button" class="calc-btn wide-key" data-num="0">0</button>
+                                    <button type="button" class="calc-btn" data-action="decimal">.</button>
+                                    <button type="button" class="calc-btn eq-key" data-action="equals">=</button>
+                                </div>
+                                <div class="calc-demo-hint">Live Interactive Demo</div>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div>
+                                <div class="project-tags-list">
+                                    <span class="project-tag-pill">Web App</span>
+                                    <span class="project-tag-pill">UI Design</span>
+                                    <span class="project-tag-pill">Vanilla JS</span>
+                                </div>
+                                <h3>Responsive Calculator Application</h3>
+                                <p>
+                                    A clean, responsive calculator built with vanilla JavaScript. Features robust state management, chained operation math, and tactile key animations.
+                                </p>
+                                <div class="project-tech-pills">
+                                    <span class="tech-pill">HTML5</span>
+                                    <span class="tech-pill">CSS3 Grid</span>
+                                    <span class="tech-pill">JavaScript ES6+</span>
+                                    <span class="tech-pill">State Logic</span>
+                                </div>
+                            </div>
+                            <div class="project-card-footer">
+                                <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="repo-link-item">
+                                    <img src="assets/icons/github.svg" alt="GitHub" width="16" height="16" />
+                                    <span>GitHub Repo &rarr;</span>
+                                </a>
+                                <button type="button" class="case-study-toggle-btn case-study-toggle" data-target="cs-calculator">
+                                    <span class="case-study-label">View Case Study</span> &darr;
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Symmetrical 2x2 Case Study Breakdown -->
+                    <div class="case-study-panel" id="cs-calculator">
+                        <div class="cs-header-col">
+                            <h4>Case Study: Responsive Calculator</h4>
+                            <p>Architecting an error-tolerant mathematical parser and tactile responsive interface.</p>
+                        </div>
+                        <div class="cs-sections-grid">
+                            <div class="cs-section-box">
+                                <h5>The Objective</h5>
+                                <p>Build a reliable calculator without external libraries or `eval()`, ensuring error tolerance for complex chained operations.</p>
+                            </div>
+                            <div class="cs-section-box">
+                                <h5>Design & UI</h5>
+                                <p>High-contrast button clusters, push animations, and flexible CSS Grid adapting across all screen sizes.</p>
+                            </div>
+                            <div class="cs-section-box">
+                                <h5>State Architecture</h5>
+                                <p>Decoupled state parser storing operands and dynamically formatting localized outputs with comma separators.</p>
+                            </div>
+                            <div class="cs-section-box">
+                                <h5>Outcome</h5>
+                                <p>Mastered DOM manipulation, event handling, edge-case math debugging, and state management in vanilla JS.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             4. Play Zone & Interests (#playzone) - 4 Themed Cards In a Single Row
+             ========================================================================== -->
+        <section id="playzone" class="section-wrapper section-playzone">
+            <div class="section-header">
+                <h2 class="section-title">Beyond the Screen</h2>
+                <p class="section-subtitle">Creative pursuits, tactical strategy, content creation, and moments outside code.</p>
+            </div>
+
+            <!-- 4 THEMED CARDS IN A SINGLE HORIZONTAL ROW ON DESKTOP, 2x2 ON TABLET, 1 PER ROW ON MOBILE -->
+            <div class="playzone-cards-row">
+                <!-- 1. YouTube -->
+                <div class="playzone-card-item pz-youtube hover-lift">
+                    <div class="pz-icon-wrapper">
+                        <img src="assets/icons/icon-youtube.svg" alt="YouTube" width="24" height="24" />
+                    </div>
+                    <h4>YouTube Channel</h4>
+                    <p>Sharing software insights, tutorials, and developer journeys.</p>
+                    <a href="https://www.youtube.com/@anup-paudel" target="_blank" rel="noopener noreferrer" class="pz-card-action-link">Visit Channel &rarr;</a>
+                </div>
+
+                <!-- 2. Travel -->
+                <div class="playzone-card-item pz-travel hover-lift">
+                    <div class="pz-icon-wrapper">
+                        <img src="assets/icons/icon-travel.svg" alt="Travel" width="24" height="24" />
+                    </div>
+                    <h4>Travel & Culture</h4>
+                    <p>Exploring diverse cities, architecture, and landscapes.</p>
+                    <div class="pz-location-pills">
+                        <span class="pz-location-pill">Texas</span>
+                        <span class="pz-location-pill">Maryland</span>
+                        <span class="pz-location-pill">Missouri</span>
+                        <span class="pz-location-pill">Nepal</span>
+                    </div>
+                </div>
+
+                <!-- 3. Chess (With Interactive Tactical Puzzle) -->
+                <div class="playzone-card-item pz-chess hover-lift">
+                    <div class="pz-icon-wrapper">
+                        <img src="assets/icons/icon-chess.svg" alt="Chess" width="24" height="24" />
+                    </div>
+                    <h4>Chess & Strategy</h4>
+                    <p>Sharpening tactical foresight, patience, and calculation under pressure.</p>
+                    <button type="button" class="chess-puzzle-btn" id="chessPuzzleBtn">
+                        <span>Solve Tactic: Qxf7#</span>
+                    </button>
+                </div>
+
+                <!-- 4. Photography -->
+                <div class="playzone-card-item pz-photo hover-lift">
+                    <div class="pz-icon-wrapper">
+                        <img src="assets/icons/icon-camera.svg" alt="Photography" width="24" height="24" />
+                    </div>
+                    <h4>Photography</h4>
+                    <p>Observing light, contrast, and visual framing in natural settings.</p>
+                    <span class="pz-card-action-link">Visual Framing &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Travel Destinations Showcase -->
+            <div>
+                <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.85rem;">Recent Travel Highlights</h4>
+                <div class="travel-showcase-grid">
+                    <div class="travel-card-box">
+                        <img src="https://images.unsplash.com/photo-1581020448151-698f24bba38a?q=80&w=350&auto=format&fit=crop" alt="Saint Louis" loading="lazy" width="350" height="140" />
+                        <div class="travel-card-title">Saint Louis, Missouri</div>
+                    </div>
+                    <div class="travel-card-box">
+                        <img src="https://images.unsplash.com/photo-1580142502693-8fba4660ebbc?q=80&w=350&auto=format&fit=crop" alt="Baltimore" loading="lazy" width="350" height="140" />
+                        <div class="travel-card-title">Baltimore, Maryland</div>
+                    </div>
+                    <div class="travel-card-box">
+                        <img src="https://images.unsplash.com/photo-1600109927694-067dfcd6df58?q=80&w=350&auto=format&fit=crop" alt="Ocean City" loading="lazy" width="350" height="140" />
+                        <div class="travel-card-title">Ocean City, Maryland</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             5. Contact Section (#contact)
+             ========================================================================== -->
+        <section id="contact" class="section-wrapper section-contact">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Open for internship opportunities, technical collaborations, or a friendly discussion.</p>
+            </div>
+
+            <div class="contact-split-wrapper">
+                <!-- Left: Direct Channels with Rich Icons -->
+                <div class="contact-info-side">
+                    <div>
+                        <h3>Direct Channels</h3>
+                        <p>Reach out through any of the channels below, or send a direct message.</p>
+                        
+                        <div class="direct-channels-list">
+                            <!-- Email (With Clean Copy Button) -->
+                            <div class="channel-item-card" title="Email Anup">
+                                <a href="mailto:anuppaudel0562@gmail.com" class="channel-card-left">
+                                    <div class="channel-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="channel-text-info">
+                                        <span class="channel-label-text">Email</span>
+                                        <span class="channel-value-text">anuppaudel0562@gmail.com</span>
+                                    </div>
+                                </a>
+                                <button type="button" id="copyEmailBtn" class="copy-badge-btn" aria-label="Copy Email to clipboard">Copy</button>
+                            </div>
+
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/anuppaudel25/" target="_blank" rel="noopener noreferrer" class="channel-item-card" title="LinkedIn">
+                                <div class="channel-card-left">
+                                    <div class="channel-icon-wrapper">
+                                        <img src="assets/icons/linkedin-icon.png" alt="LinkedIn" width="20" height="20" />
+                                    </div>
+                                    <div class="channel-text-info">
+                                        <span class="channel-label-text">LinkedIn</span>
+                                        <span class="channel-value-text">linkedin.com/in/anuppaudel25</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="channel-item-card" title="GitHub">
+                                <div class="channel-card-left">
+                                    <div class="channel-icon-wrapper">
+                                        <img src="assets/icons/github-icon.png" alt="GitHub" width="20" height="20" />
+                                    </div>
+                                    <div class="channel-text-info">
+                                        <span class="channel-label-text">GitHub</span>
+                                        <span class="channel-value-text">github.com/Anup-Paudel</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Discord -->
+                            <a href="https://discordapp.com/users/anup_29731" target="_blank" rel="noopener noreferrer" class="channel-item-card" title="Discord">
+                                <div class="channel-card-left">
+                                    <div class="channel-icon-wrapper">
+                                        <img src="assets/icons/discord-icon.png" alt="Discord" width="20" height="20" />
+                                    </div>
+                                    <div class="channel-text-info">
+                                        <span class="channel-label-text">Discord</span>
+                                        <span class="channel-value-text">anup_29731</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.85rem; color: var(--color-text-secondary); border-top: 1px solid var(--color-border); padding-top: 1rem;">
+                        Dallas / Plano, Texas.
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="contact-form-side">
+                    <h3>Send a Message</h3>
+                    <p>Fill in the form to generate an email directly to my inbox.</p>
+                    
+                    <form id="contactForm" novalidate>
+                        <div class="form-field-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
+                            <span class="field-error">Please enter your name</span>
+                        </div>
+
+                        <div class="form-field-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
+                            <span class="field-error">Please enter a valid email address</span>
+                        </div>
+
+                        <div class="form-field-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Hello Anup, I would like to discuss..." required></textarea>
+                            <span class="field-error">Message cannot be empty</span>
+                        </div>
+
+                        <button type="submit" class="btn-submit-message">Send Message &rarr;</button>
+                        <p id="formStatus" class="form-status-message" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- Toast Notification Container -->
+    <div id="toastNotice" class="toast-notice" aria-live="polite"></div>
+
+    <!-- Footer with AP Logo -->
     <footer class="site-footer">
-      <div class="footer-content-wrapper">
-        <div class="footer-top-row">
-          <div class="footer-logo">
-            <a href="index.html" class="logo-text">Anup <span class="logo-initials">(A.P)</span></a>
-          </div>
+        <div class="footer-content-wrapper">
+            <a href="#hero" class="footer-logo">
+                <img src="assets/images/APLOGO.png" alt="AP Logo" width="30" height="30" />
+                <span class="logo-text">Anup</span>
+            </a>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/anuppaudel25/" target="_blank" rel="noopener noreferrer" class="social-link-item" title="LinkedIn">
+                    <img src="assets/icons/linkedin-icon.png" alt="LinkedIn" class="social-icon" width="22" height="22" />
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="social-link-item" title="GitHub">
+                    <img src="assets/icons/github-icon.png" alt="GitHub" class="social-icon" width="22" height="22" />
+                    <span>GitHub</span>
+                </a>
+                <a href="https://discordapp.com/users/anup_29731" target="_blank" rel="noopener noreferrer" class="social-link-item" title="Discord">
+                    <img src="assets/icons/discord-icon.png" alt="Discord" class="social-icon" width="22" height="22" />
+                    <span>Discord</span>
+                </a>
+            </div>
+            <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>
         </div>
-        <div class="footer-social-row">
-          <div class="social-links">
-            <a
-              href="https://www.linkedin.com/in/anuppaudel25/"
-              target="_blank"
-              class="social-link-item"
-              aria-label="Anup Paudel on LinkedIn"
-              title="LinkedIn"
-              ><img src="assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" /><span class="social-link-label">LinkedIn</span></a
-            >
-            <a href="https://github.com/Anup-Paudel" target="_blank" class="social-link-item" aria-label="Anup Paudel on GitHub" title="GitHub"
-              ><img src="assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" /><span class="social-link-label">GitHub</span></a
-            >
-            <a
-              href="https://discordapp.com/users/anup_29731"
-              target="_blank"
-              class="social-link-item"
-              aria-label="Anup Paudel on Discord (anup_29731)"
-              title="Discord"
-              ><img src="assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" /><span class="social-link-label">Discord</span></a
-            >
-          </div>
-        </div>
-        <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>
-      </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js?v=12"></script>
 </body>
 </html>

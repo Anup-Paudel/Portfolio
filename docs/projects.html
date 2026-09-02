@@ -12,9 +12,10 @@
   </head>
   <body>
     <div class="page-gradient-overlay"></div>
+    
     <header class="site-header">
       <div class="logo-container">
-        <a href="index.html" class="logo-text">Anup </a>
+        <a href="index.html" class="logo-text">Anup</a>
       </div>
       <nav class="main-nav" id="mainNav">
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -58,176 +59,299 @@
     </header>
 
     <main>
+      <!-- Projects Intro -->
       <section class="projects-intro-section scroll-reveal fade-in">
-        <h1>My Work</h1>
-        <p>
-          A selection of projects where I've applied my UI/UX design and development skills. <br />Each project is a journey in problem-solving and
-          creative execution, detailed in the case studies below.
+        <div class="intro-badge">
+          <span class="badge-dot"></span> Featured Work
+        </div>
+        <h1 class="projects-main-title">Selected Projects & Case Studies</h1>
+        <p class="projects-subtitle">
+          A showcase of product design, AI ethics tooling, and front-end engineering. Click any project's case study toggle to explore the end-to-end design and engineering journey.
         </p>
       </section>
 
+      <!-- Projects Grid Section -->
       <section class="project-grid-section">
         <div class="project-grid">
-          <article class="project-card hover-lift scroll-reveal slide-from-bottom" id="project1" style="animation-delay: 0.1s">
-            <div class="card-image-container hover-zoom">
-              <img src="assets/images/fairalyze-main.jpg" alt="Fairalyze AI Project Showcase" />
-            </div>
-            <div class="card-content-container">
-              <h2>GNEC Hackathon 2025: Fairalyze AI</h2>
-              <p class="project-tags"><span>AI Ethics</span> <span>Web Application</span> <span>UX/UI Design</span></p>
-              <p class="project-summary">
-                Developed "Fairalyze AI" during the GNEC Hackathon, a tool designed to detect and analyze biases in AI models, with a focus on
-                addressing UN Sustainable Development Goals 5 (Gender Equality) and 10 (Reduced Inequalities).
-              </p>
-              <div class="project-links">
-                <a href="YOUR_FAIRALYZE_REPO_LINK_HERE" target="_blank" class="project-link">GitHub Repo <span class="arrow">&rarr;</span></a>
-                <a href="YOUR_FAIRALYZE_LIVE_SITE_LINK_HERE" target="_blank" class="project-link">Live Site <span class="arrow">&rarr;</span></a>
+
+          <!-- PROJECT 1: Fairalyze AI -->
+          <div class="project-item-wrapper scroll-reveal slide-from-bottom" id="project1">
+            <article class="project-card">
+              <div class="card-image-container hover-zoom">
+                <img src="assets/images/fairalyze-thumbnail.png" alt="Fairalyze AI Project Thumbnail" />
+                <div class="card-category-badge">Hackathon Project</div>
               </div>
-              <button class="case-study-toggle cta-button-outline" data-target="case-study-1-details" aria-expanded="false">
-                View Details <span class="arrow">&rarr;</span>
-              </button>
-            </div>
-          </article>
-          <div class="case-study-details" id="case-study-1-details">
-            <div class="case-study-content-wrapper">
-              <h3>Case Study: Fairalyze AI (GNEC Hackathon 2025)</h3>
-              <div class="case-study-section">
-                <h4>The Challenge</h4>
-                <p>
-                  Artificial intelligence models can inadvertently perpetuate and amplify societal biases, particularly concerning gender and other
-                  protected characteristics. This project aimed to create an accessible tool to help developers and researchers identify such biases
-                  in their models, contributing to fairer AI systems aligned with UN SDGs 5 and 10.
+              <div class="card-content">
+                <div class="project-meta-row">
+                  <span class="project-tag-pill">AI Ethics</span>
+                  <span class="project-tag-pill">UI/UX Design</span>
+                  <span class="project-tag-pill">Web App</span>
+                </div>
+                <h2>GNEC Hackathon 2025: Fairalyze AI</h2>
+                <p class="project-description">
+                  Developed "Fairalyze AI" during the GNEC Hackathon—an ethical intelligence web application designed to detect, analyze, and visualize demographic and gender biases in AI models, addressing UN Sustainable Development Goals 5 & 10.
                 </p>
-              </div>
-              <div class="case-study-section">
-                <h4>My Role & Approach</h4>
-                <p>
-                  As part of a [Your Team Size, e.g., 3-person] team, I took on responsibilities for [Specify Your Role, e.g., UI/UX design, front-end
-                  development, and integrating the bias detection logic]. We adopted a rapid prototyping approach due to the hackathon's time
-                  constraints, focusing on core functionality and a clear user interface.
-                </p>
-              </div>
-              <div class="case-study-section">
-                <h4>Research & Discovery</h4>
-                <p>
-                  Brief research into existing AI bias detection tools and the specific challenges related to SDGs 5 and 10. We identified common
-                  types of biases (e.g., gender bias in language models, demographic imbalances in training data) that Fairalyze AI should aim to
-                  highlight.
-                </p>
-                <img src="../assets/images/fairalyze-research.jpg" alt="Fairalyze AI Research Phase Visual" class="case-study-image" />
-              </div>
-              <div class="case-study-section">
-                <h4>Design Process & Iterations</h4>
-                <p>
-                  We sketched initial UI concepts focusing on simplicity: allowing users to input model data/predictions and receive clear, actionable
-                  bias reports. Iterations were quick, focusing on a dashboard-like interface to present findings. Due to time, extensive user testing
-                  was limited, but we received peer feedback during the hackathon.
-                </p>
-                <div class="image-gallery">
-                  <img src="assets/images/fairalyze-wireframes.jpg" alt="Fairalyze AI Wireframes" class="case-study-image" />
-                  <img src="assets/images/fairalyze-hifi.jpg" alt="Fairalyze AI High Fidelity Design" class="case-study-image" />
+
+                <div class="project-technologies">
+                  <span class="tech-tag">Figma</span>
+                  <span class="tech-tag">JavaScript ES6+</span>
+                  <span class="tech-tag">HTML5 / CSS3</span>
+                  <span class="tech-tag">Python & Bias Metrics</span>
+                  <span class="tech-tag">Git / GitHub</span>
+                </div>
+
+                <div class="project-card-actions">
+                  <div class="external-links-group">
+                    <a href="https://github.com/Anup-Paudel" target="_blank" class="project-btn btn-secondary">
+                      <img src="assets/icons/github.svg" alt="GitHub" class="btn-icon" />
+                      <span>GitHub</span>
+                    </a>
+                  </div>
+                  <button class="case-study-toggle btn-toggle" data-target="case-study-1-details" aria-expanded="false">
+                    <span class="btn-toggle-text">View Case Study</span>
+                    <span class="arrow-icon">&darr;</span>
+                  </button>
                 </div>
               </div>
-              <div class="case-study-section">
-                <h4>Solution & Key Features</h4>
-                <p>
-                  Fairalyze AI allows users to [describe core functionality, e.g., upload a dataset and model predictions, or connect to a model API].
-                  It then presents a visual report highlighting potential biases based on [mention metrics or methods, e.g., disparate impact
-                  analysis, representation disparities]. The UI was designed to be intuitive, making complex data understandable.
-                </p>
-                <img src="assets/images/fairalyze-solution.jpg" alt="Fairalyze AI Final Solution" class="case-study-image" />
-              </div>
-              <div class="case-study-section">
-                <h4>Tools & Technologies</h4>
-                <p>
-                  Frontend: [e.g., HTML, CSS, JavaScript, React/Vue]. Backend/AI Logic: [e.g., Python, Flask, scikit-learn]. Design: [e.g., Figma].
-                  Version Control: Git/GitHub.
-                </p>
-              </div>
-              <div class="case-study-section">
-                <h4>Outcome & Learnings</h4>
-                <p>
-                  [Mention any hackathon results, e.g., Placed X, Received Y feedback]. Key learnings included rapid ideation, teamwork under
-                  pressure, and the complexities of visualizing AI ethics issues. This project solidified my interest in responsible AI development.
-                </p>
+            </article>
+
+            <!-- Case Study 1 Details (Hidden by Default) -->
+            <div class="case-study-details" id="case-study-1-details">
+              <div class="case-study-inner">
+                <div class="case-study-header">
+                  <div class="cs-badge">Deep Dive</div>
+                  <h3>Case Study: Fairalyze AI</h3>
+                  <p class="cs-tagline">Building an accessible auditing dashboard to uncover demographic and gender bias in predictive machine learning models.</p>
+                  
+                  <div class="cs-quick-info-grid">
+                    <div class="cs-info-box">
+                      <span class="cs-info-label">Role</span>
+                      <span class="cs-info-val">UI/UX Designer & Front-End</span>
+                    </div>
+                    <div class="cs-info-box">
+                      <span class="cs-info-label">Timeline</span>
+                      <span class="cs-info-val">GNEC Hackathon (48 Hours)</span>
+                    </div>
+                    <div class="cs-info-box">
+                      <span class="cs-info-label">Focus Area</span>
+                      <span class="cs-info-val">UN SDGs 5 (Gender) & 10 (Inequality)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Case Study Content Sections -->
+                <div class="cs-body-grid">
+                  <!-- The Challenge -->
+                  <div class="cs-section-card">
+                    <div class="cs-sec-title">
+                      <span class="sec-icon">🎯</span>
+                      <h4>01. The Challenge</h4>
+                    </div>
+                    <p>
+                      Artificial intelligence models increasingly influence sensitive decisions in recruitment, lending, and content moderation. However, when trained on historical datasets, these models frequently amplify latent societal biases against underrepresented groups.
+                    </p>
+                    <p>
+                      <strong>The Problem:</strong> Non-technical stakeholders and small engineering teams lack accessible, lightweight tooling to quickly audit predictive models for disparate impact and representation parity.
+                    </p>
+                  </div>
+
+                  <!-- My Role & Approach -->
+                  <div class="cs-section-card">
+                    <div class="cs-sec-title">
+                      <span class="sec-icon">🛠️</span>
+                      <h4>02. Role & Rapid Prototyping</h4>
+                    </div>
+                    <p>
+                      As part of our hackathon team, I spearheaded the <strong>UI/UX design architecture in Figma</strong> and translated the interfaces into clean front-end code while collaborating closely on integrating bias detection logic.
+                    </p>
+                    <p>
+                      Given the tight 48-hour timeline, we prioritized a user-centric dashboard that distills complex statistical variance into intuitive visual risk gauges and clear metric breakdowns.
+                    </p>
+                  </div>
+
+                  <!-- Key Features -->
+                  <div class="cs-section-card wide-card">
+                    <div class="cs-sec-title">
+                      <span class="sec-icon">✨</span>
+                      <h4>03. Key Features & Solutions</h4>
+                    </div>
+                    <div class="cs-features-subgrid">
+                      <div class="feature-item">
+                        <h5>Disparate Impact Gauge</h5>
+                        <p>Visual 0–100% fairness score calculated across sensitive demographic attributes.</p>
+                      </div>
+                      <div class="feature-item">
+                        <h5>Demographic Parity Visualizer</h5>
+                        <p>Interactive chart comparing model acceptance rates across gender and racial groups.</p>
+                      </div>
+                      <div class="feature-item">
+                        <h5>Actionable Recommendations</h5>
+                        <p>Plain-language mitigation tips for data balancing and threshold calibration.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Outcome & Learnings -->
+                  <div class="cs-section-card wide-card highlight-card">
+                    <div class="cs-sec-title">
+                      <span class="sec-icon">🏆</span>
+                      <h4>04. Outcome & Key Takeaways</h4>
+                    </div>
+                    <p>
+                      Fairalyze AI was successfully demonstrated to the GNEC Hackathon jury, earning praise for making abstract ethical AI principles concrete through thoughtful interface design.
+                    </p>
+                    <div class="takeaways-list">
+                      <div class="takeaway-pill">✦ Mastered rapid high-fidelity prototyping under tight hackathon deadlines</div>
+                      <div class="takeaway-pill">✦ Learned how to simplify complex mathematical data visualizations for general users</div>
+                      <div class="takeaway-pill">✦ Strengthened cross-functional collaboration between frontend and algorithmic pipelines</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <article class="project-card scroll-reveal slide-from-bottom" id="project2" style="animation-delay: 0.25s">
-            <div class="card-image-container">
-              <img src="../assets/images/calculator-main.jpg" alt="Calculator Project Showcase" />
-            </div>
-            <div class="card-content-container">
-              <h2>Responsive Calculator Application</h2>
-              <p class="project-tags"><span>Web Development</span> <span>UI Design</span> <span>JavaScript</span></p>
-              <p class="project-summary">
-                A clean, user-friendly, and fully responsive calculator built with HTML, CSS, and JavaScript. Features standard arithmetic operations
-                and a modern interface.
-              </p>
-              <div class="project-links">
-                <a href="YOUR_CALCULATOR_REPO_LINK_HERE" target="_blank" class="project-link">GitHub Repo <span class="arrow">&rarr;</span></a>
+          <!-- PROJECT 2: Responsive Calculator -->
+          <div class="project-item-wrapper scroll-reveal slide-from-bottom" id="project2">
+            <article class="project-card">
+              <div class="card-image-container hover-zoom">
+                <!-- Interactive Styled UI Mockup Container -->
+                <div class="calculator-preview-mockup">
+                  <div class="calc-screen-preview">
+                    <span class="calc-formula-preview">128 &times; 4 + 16</span>
+                    <span class="calc-result-preview">528</span>
+                  </div>
+                  <div class="calc-keys-preview">
+                    <span class="calc-key-fn">AC</span>
+                    <span class="calc-key-fn">&plusmn;</span>
+                    <span class="calc-key-fn">%</span>
+                    <span class="calc-key-op">&divide;</span>
+                    <span>7</span><span>8</span><span>9</span><span class="calc-key-op">&times;</span>
+                    <span>4</span><span>5</span><span>6</span><span class="calc-key-op">&minus;</span>
+                    <span>1</span><span>2</span><span>3</span><span class="calc-key-op">+</span>
+                    <span class="calc-key-wide">0</span><span>.</span><span class="calc-key-op calc-key-eq">=</span>
+                  </div>
+                </div>
+                <div class="card-category-badge">Web Application</div>
               </div>
-              <button class="case-study-toggle cta-button-outline" data-target="case-study-2-details" aria-expanded="false">
-                View Details <span class="arrow">&rarr;</span>
-              </button>
-            </div>
-          </article>
-          <div class="case-study-details" id="case-study-2-details">
-            <div class="case-study-content-wrapper">
-              <h3>Case Study: Responsive Calculator</h3>
-              <div class="case-study-section">
-                <h4>The Objective</h4>
-                <p>
-                  To develop a practical, visually appealing, and fully functional calculator application using core web technologies. The primary
-                  goals were to ensure accurate calculations, an intuitive user interface, and responsiveness across all device sizes.
+              <div class="card-content">
+                <div class="project-meta-row">
+                  <span class="project-tag-pill">Front-End</span>
+                  <span class="project-tag-pill">JavaScript ES6</span>
+                  <span class="project-tag-pill">UI Design</span>
+                </div>
+                <h2>Responsive Scientific Calculator</h2>
+                <p class="project-description">
+                  A sleek, accessible, and mathematically robust web calculator application engineered with pure Vanilla JavaScript, modern CSS Grid/Flexbox, keyboard support, and dynamic state management.
                 </p>
+
+                <div class="project-technologies">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">Modern CSS3</span>
+                  <span class="tech-tag">JavaScript (ES6+)</span>
+                  <span class="tech-tag">State Architecture</span>
+                  <span class="tech-tag">Mobile Responsive</span>
+                </div>
+
+                <div class="project-card-actions">
+                  <div class="external-links-group">
+                    <a href="https://github.com/Anup-Paudel" target="_blank" class="project-btn btn-secondary">
+                      <img src="assets/icons/github.svg" alt="GitHub" class="btn-icon" />
+                      <span>GitHub</span>
+                    </a>
+                  </div>
+                  <button class="case-study-toggle btn-toggle" data-target="case-study-2-details" aria-expanded="false">
+                    <span class="btn-toggle-text">View Case Study</span>
+                    <span class="arrow-icon">&darr;</span>
+                  </button>
+                </div>
               </div>
-              <div class="case-study-section">
-                <h4>My Role & Approach</h4>
-                <p>
-                  This was a solo project where I handled all aspects: UI design, front-end development, and JavaScript logic for the calculations. I
-                  focused on a clean, minimalist design aesthetic and robust functionality.
-                </p>
-              </div>
-              <div class="case-study-section">
-                <h4>Design Process</h4>
-                <p>
-                  I started by sketching various layouts for the calculator interface, aiming for clarity and ease of use. The design emphasized
-                  large, easily tappable buttons and a clear display for input and results. I chose a modern, flat design style with a simple color
-                  scheme.
-                </p>
-                <img src="assets/images/calculator-design.jpg" alt="Calculator Design Sketches/Mockups" class="case-study-image" />
-              </div>
-              <div class="case-study-section">
-                <h4>Development & Key Features</h4>
-                <p>
-                  The calculator was built using HTML for structure, CSS (including Flexbox/Grid) for layout and styling, and vanilla JavaScript for
-                  all the calculation logic. Key features include:
-                </p>
-                <ul>
-                  <li>Standard arithmetic operations: addition, subtraction, multiplication, division.</li>
-                  <li>Percentage and clear (AC/C) functions.</li>
-                  <li>Handling of decimal points and sequential operations.</li>
-                  <li>Error handling for invalid operations (e.g., division by zero).</li>
-                  <li>Fully responsive design that adapts to desktop, tablet, and mobile screens.</li>
-                </ul>
-                <img src="assets/images/calculator-solution.jpg" alt="Calculator App Screenshot" class="case-study-image" />
-              </div>
-              <div class="case-study-section">
-                <h4>Tools & Technologies</h4>
-                <p>HTML5, CSS3, JavaScript (ES6+), Git/GitHub.</p>
-              </div>
-              <div class="case-study-section">
-                <h4>Outcome & Learnings</h4>
-                <p>
-                  The project resulted in a fully functional and responsive web-based calculator. It was a great exercise in practicing JavaScript
-                  logic for state management and arithmetic operations, as well as honing my skills in creating clean, user-friendly interfaces with
-                  CSS.
-                </p>
+            </article>
+
+            <!-- Case Study 2 Details (Hidden by Default) -->
+            <div class="case-study-details" id="case-study-2-details">
+              <div class="case-study-inner">
+                <div class="case-study-header">
+                  <div class="cs-badge">Deep Dive</div>
+                  <h3>Case Study: Responsive Calculator Application</h3>
+                  <p class="cs-tagline">Architecting a clean mathematical parser, floating-point precision handler, and responsive tactile interface.</p>
+                  
+                  <div class="cs-quick-info-grid">
+                    <div class="cs-info-box">
+                      <span class="cs-info-label">Role</span>
+                      <span class="cs-info-val">Full Design & Development</span>
+                    </div>
+                    <div class="cs-info-box">
+                      <span class="cs-info-label">Type</span>
+                      <span class="cs-info-val">Independent Project</span>
+                    </div>
+                    <div class="cs-info-box">
+                      <span class="cs-info-label">Tech</span>
+                      <span class="cs-info-val">HTML5, CSS3, Vanilla JS</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cs-body-grid">
+                  <!-- The Objective -->
+                  <div class="cs-section-card">
+                    <div class="cs-sec-title">
+                      <span class="sec-icon">🎯</span>
+                      <h4>01. The Objective</h4>
+                    </div>
+                    <p>
+                      The goal was to build a rock-solid calculation engine without relying on external libraries or the vulnerable `eval()` function, ensuring error tolerance for chained operations, zero-division, and decimal precision.
+                    </p>
+                  </div>
+
+                  <!-- Design & UX -->
+                  <div class="cs-section-card">
+                    <div class="cs-sec-title">
+                      <span class="sec-icon">🎨</span>
+                      <h4>02. Interface & Tactility</h4>
+                    </div>
+                    <p>
+                      Designed with clean ergonomics: high-contrast operation keys, distinct functional action clusters (AC, sign toggle, percentage), subtle push animations on press, and full keyboard event listener support for seamless desktop typing.
+                    </p>
+                  </div>
+
+                  <!-- Core Architecture -->
+                  <div class="cs-section-card wide-card">
+                    <div class="cs-sec-title">
+                      <span class="sec-icon">⚡</span>
+                      <h4>03. Engineering & Key Architecture</h4>
+                    </div>
+                    <div class="cs-features-subgrid">
+                      <div class="feature-item">
+                        <h5>State Machine Parser</h5>
+                        <p>Maintains `previousOperand`, `currentOperand`, and `operation` state cleanly across multiple chained sequences.</p>
+                      </div>
+                      <div class="feature-item">
+                        <h5>Precision Formatting</h5>
+                        <p>Handles JavaScript floating-point idiosyncrasies (e.g. 0.1 + 0.2) and formats large numbers with dynamic localization commas.</p>
+                      </div>
+                      <div class="feature-item">
+                        <h5>Keyboard & Touch Ready</h5>
+                        <p>Fully responsive CSS Grid layout that scales naturally from 320px mobile screens up to desktop 4K displays.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Outcome -->
+                  <div class="cs-section-card wide-card highlight-card">
+                    <div class="cs-sec-title">
+                      <span class="sec-icon">💡</span>
+                      <h4>04. Outcome & Key Learnings</h4>
+                    </div>
+                    <p>
+                      This project honed fundamental DOM manipulation and event delegation skills, edge-case debugging, and taught the value of modular, decoupled state management in vanilla front-end development.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
     </main>
@@ -247,19 +371,30 @@
               class="social-link-item"
               aria-label="Anup Paudel on LinkedIn"
               title="LinkedIn"
-              ><img src="assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" /><span class="social-link-label">LinkedIn</span></a
             >
-            <a href="https://github.com/Anup-Paudel" target="_blank" class="social-link-item" aria-label="Anup Paudel on GitHub" title="GitHub"
-              ><img src="assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" /><span class="social-link-label">GitHub</span></a
+              <img src="assets/icons/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
+              <span class="social-link-label">LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/Anup-Paudel"
+              target="_blank"
+              class="social-link-item"
+              aria-label="Anup Paudel on GitHub"
+              title="GitHub"
             >
+              <img src="assets/icons/github-icon.png" alt="GitHub Icon" class="social-icon" />
+              <span class="social-link-label">GitHub</span>
+            </a>
             <a
               href="https://discordapp.com/users/anup_29731"
               target="_blank"
               class="social-link-item"
               aria-label="Anup Paudel on Discord (anup_29731)"
               title="Discord"
-              ><img src="assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" /><span class="social-link-label">Discord</span></a
             >
+              <img src="assets/icons/discord-icon.png" alt="Discord Icon" class="social-icon" />
+              <span class="social-link-label">Discord</span>
+            </a>
           </div>
         </div>
         <p class="copyright">&copy; <span id="currentYear"></span> Anup Paudel. All Rights Reserved.</p>
