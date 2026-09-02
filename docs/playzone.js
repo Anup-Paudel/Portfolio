@@ -129,4 +129,41 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof Chessboard !== 'function') console.log("Chessboard.js library not loaded.");
         if (!chessProblemStatusElement) console.log("Chess problem status element not found.");
     }
+
+    // Image Modal Logic
+    const photoItems = document.querySelectorAll('.photo-item');
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDownload = document.getElementById('modalDownload');
+    const modalClose = document.getElementById('modalClose');
+
+    if (imageModal) {
+        photoItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const src = item.getAttribute('data-src');
+                const title = item.getAttribute('data-title');
+                
+                modalImage.src = src;
+                modalTitle.textContent = title;
+                modalDownload.href = src; // Set download link
+                
+                imageModal.classList.add('active');
+            });
+        });
+
+        const closeModal = () => {
+            imageModal.classList.remove('active');
+            setTimeout(() => {
+                modalImage.src = '';
+            }, 300); // clear after transition
+        };
+
+        modalClose.addEventListener('click', closeModal);
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                closeModal();
+            }
+        });
+    }
 });

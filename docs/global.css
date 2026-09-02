@@ -71,22 +71,7 @@
     --color-text-muted: #95a5a6;
     --color-background-light: #f7f9fc;
     --color-background-content: #ffffff;
-<<<<<<< HEAD
     --color-background-muted: #f4f6f8;
-    --color-primary-accent: #39b0ff; 
-    --color-primary-dark: #288acc;
-    --color-secondary-accent: #e67e22; 
-    --color-border: #e1e8ed; 
-    --shadow-light: 0 5px 15px rgba(44, 62, 80, 0.06);
-    --shadow-medium: 0 10px 25px rgba(44, 62, 80, 0.08);
-    --shadow-dark: 0 15px 35px rgba(44, 62, 80, 0.1);
-    --color-primary-accent-rgb: 52, 152, 219;
-    --color-secondary-accent-rgb: 230, 126, 34;
-    --color-text-primary-rgb: 44, 62, 80;
-    --color-background-light-rgb: 247, 249, 252;
-    --color-background-content-rgb: 255, 255, 255;
-     --color-primary-accent2:rgb(0, 23, 37)b; 
-=======
     --color-border: #e1e8ed;
     
     /* Colors - RGB versions for rgba() */
@@ -110,6 +95,9 @@
     
     /* Legacy variable names for backward compatibility */
     --color-primary-accent: var(--color-primary);
+    --color-primary-accent-rgb: var(--color-primary-rgb);
+    --color-secondary-accent: var(--color-secondary);
+    --color-secondary-accent-rgb: var(--color-secondary-rgb);
     --border-radius-sm: var(--radius-sm);
     --border-radius-md: var(--radius-md);
     --border-radius-lg: var(--radius-lg);
@@ -124,7 +112,6 @@
     --shadow-light: var(--shadow-md);
     --shadow-medium: var(--shadow-lg);
     --shadow-dark: var(--shadow-xl);
->>>>>>> a97e7928d308e513c43fc3fff5131ef6d6a7eead
 }
 
 /* ==========================================================================
@@ -227,15 +214,9 @@ p {
 }
 
 .logo-container .logo-text {
-<<<<<<< HEAD
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 800;
-    color: var(--color-primary-accent2);
-=======
     font-size: var(--text-xl);
     font-weight: var(--font-extrabold);
     color: var(--color-primary);
->>>>>>> a97e7928d308e513c43fc3fff5131ef6d6a7eead
     text-decoration: none;
     letter-spacing: -0.05em;
     transition: color var(--duration-fast) var(--ease-smooth),
@@ -244,11 +225,7 @@ p {
 
 .logo-container .logo-text:hover,
 .logo-container .logo-text:focus-visible {
-<<<<<<< HEAD
-    color: var(--color-primary-accent);
-=======
     color: var(--color-primary-light);
->>>>>>> a97e7928d308e513c43fc3fff5131ef6d6a7eead
     transform: scale(1.02);
     transition: 0.5s ease-in-out;
 }
@@ -473,6 +450,68 @@ main {
     max-width: 1100px;
     margin: 0 auto;
     padding: var(--spacing-8) var(--spacing-6);
+}
+:root {
+    --color-primary: #3498db;
+    --color-primary-dark: #2874a6;
+    --color-background-light: #f7f9fc;
+    --color-text-primary: #2c3e50;
+    --radius-md: 12px;
+    --spacing-4: 1rem;
+    --duration-normal: 250ms;
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fix for merge conflicts found in original code */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-background-light);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+}
+
+/* Improved Navigation Tap Targets */
+.nav-link {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: var(--radius-md);
+}
+
+/* Button Refinement */
+.cta-button {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+}
+
+/* Scroll Reveal base */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 767px) {
