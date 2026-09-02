@@ -200,7 +200,7 @@
     }
 }
 
-/* 3 Themed Approach Pillars with Visible Colors */
+/* 3 Themed Approach Pillars */
 .approach-items-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -576,9 +576,9 @@
 }
 
 .sim-status-danger {
-    background: rgba(239, 68, 68, 0.2);
-    color: #f87171;
-    border: 1px solid rgba(239, 68, 68, 0.4);
+    background: rgba(234, 88, 12, 0.2);
+    color: #fb923c;
+    border: 1px solid rgba(234, 88, 12, 0.4);
 }
 
 .sim-bar-container {
@@ -636,7 +636,6 @@
     font-size: 0.65rem;
     color: #64748b;
     text-align: center;
-    font-style: italic;
 }
 
 /* --- Fully Operational Interactive Calculator Widget --- */
@@ -945,12 +944,12 @@
 }
 
 .playzone-card-item.pz-youtube {
-    border-color: rgba(239, 68, 68, 0.35);
-    background: linear-gradient(160deg, rgba(239, 68, 68, 0.06) 0%, #ffffff 100%);
+    border-color: rgba(99, 102, 241, 0.35);
+    background: linear-gradient(160deg, rgba(99, 102, 241, 0.06) 0%, #ffffff 100%);
 }
 .playzone-card-item.pz-youtube:hover {
-    border-color: rgba(239, 68, 68, 0.65);
-    box-shadow: 0 14px 32px -6px rgba(239, 68, 68, 0.2);
+    border-color: rgba(99, 102, 241, 0.65);
+    box-shadow: 0 14px 32px -6px rgba(99, 102, 241, 0.2);
 }
 
 .playzone-card-item.pz-travel {
@@ -991,7 +990,7 @@
 }
 
 .playzone-card-item.pz-youtube .pz-icon-wrapper {
-    background: rgba(239, 68, 68, 0.15);
+    background: rgba(99, 102, 241, 0.15);
 }
 .playzone-card-item.pz-travel .pz-icon-wrapper {
     background: rgba(16, 185, 129, 0.15);
