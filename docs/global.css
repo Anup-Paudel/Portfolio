@@ -151,7 +151,7 @@ a {
     border-radius: 50%;
     background: #cbd5e1;
     border: 2px solid #ffffff;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
@@ -161,9 +161,9 @@ a {
 }
 
 .rail-dot-btn.active-rail {
-    background: var(--color-primary-accent);
-    box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
-    transform: scale(1.4);
+    background: #38bdf8;
+    box-shadow: 0 0 14px 2px rgba(56, 189, 248, 0.8);
+    transform: scale(1.6);
 }
 
 .rail-tooltip {
@@ -377,8 +377,12 @@ p {
 .section-title {
     font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     font-weight: 800;
-    color: var(--color-text-primary);
+    color: #333333;
     margin-bottom: 0.35rem;
+    text-shadow: none;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
 }
 
 .section-subtitle {
