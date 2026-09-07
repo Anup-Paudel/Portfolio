@@ -1197,55 +1197,41 @@ function initPortfolio() {
     }
 
     // ==========================================================================
-    // 12. Interactive 3D Perspective Tilt & Optical Light Glare (Designer Portrait)
+    // ==========================================================================
+    // 12. Interactive Background Pop-Out Fact Cards (Clean, Stable & Tactile)
     // ==========================================================================
     const portraitCapsule = document.getElementById('designerPortraitCapsule');
-    const portraitGlare = document.getElementById('portraitLightGlare');
     if (portraitCapsule) {
-        portraitCapsule.addEventListener('mousemove', (e) => {
-            const rect = portraitCapsule.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -8;
-            const rotateY = ((x - centerX) / centerX) * 8;
+        let popoutTimeout = null;
+
+        const activatePopout = () => {
+            const isCurrentlyActive = portraitCapsule.classList.contains('is-active');
+            portraitCapsule.classList.toggle('is-active');
+            playTactileAudio(isCurrentlyActive ? 420 : 640);
             
-            portraitCapsule.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
-            
-            if (portraitGlare) {
-                portraitGlare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.22) 0%, rgba(99, 102, 241, 0.12) 45%, transparent 75%)`;
-                portraitGlare.style.opacity = '1';
+            clearTimeout(popoutTimeout);
+            if (portraitCapsule.classList.contains('is-active')) {
+                popoutTimeout = setTimeout(() => {
+                    portraitCapsule.classList.remove('is-active');
+                }, 4000);
             }
-        });
-        
-        let branchPulseTimeout = null;
-        const triggerGlyphBranches = () => {
-            portraitCapsule.classList.add('is-active');
-            playTactileAudio(580);
-            clearTimeout(branchPulseTimeout);
-            branchPulseTimeout = setTimeout(() => {
-                portraitCapsule.classList.remove('is-active');
-            }, 2500);
         };
 
         portraitCapsule.addEventListener('mouseenter', () => {
-            portraitCapsule.classList.add('is-active');
-            playTactileAudio(540);
+            playTactileAudio(560);
         });
 
         portraitCapsule.addEventListener('mouseleave', () => {
             portraitCapsule.classList.remove('is-active');
-            portraitCapsule.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-            if (portraitGlare) portraitGlare.style.opacity = '0';
+            clearTimeout(popoutTimeout);
         });
 
         portraitCapsule.addEventListener('click', () => {
-            triggerGlyphBranches();
+            activatePopout();
         });
 
         portraitCapsule.addEventListener('touchstart', () => {
-            triggerGlyphBranches();
+            activatePopout();
         }, { passive: true });
     }
 }

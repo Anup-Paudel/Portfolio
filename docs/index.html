@@ -215,50 +215,80 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Designer Portrait with Nothing Glyph Schematic Branch Interface -->
+                <!-- Right Column: Interactive Portrait with Background Pop-Out Fact Cards -->
                 <div class="hero-portrait-stage">
-                    <div class="designer-portrait-capsule" id="designerPortraitCapsule">
+                    <div class="designer-portrait-capsule" id="designerPortraitCapsule" role="region" aria-label="Anup Paudel Interactive Portrait - Hover to reveal background facts">
                         <div class="portrait-ambient-backlight" aria-hidden="true"></div>
 
-                        <!-- Nothing-Inspired Interactive Glyph Branch Schematic Lines -->
-                        <svg class="portrait-glyph-branches" viewBox="0 0 380 440" fill="none" aria-hidden="true">
-                            <!-- Top-Right Branch to Token Cadence Chip -->
-                            <path class="glyph-branch-path branch-tr" d="M 280 80 L 325 80 L 345 55 L 370 55" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="4 2"/>
-                            <circle class="glyph-branch-node" cx="370" cy="55" r="3" fill="#a855f7" />
-                            
-                            <!-- Right Branch to Stack Spec -->
-                            <path class="glyph-branch-path branch-mr" d="M 285 210 L 335 210 L 350 230" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" />
-                            <circle class="glyph-branch-node" cx="350" cy="230" r="3" fill="#38bdf8" />
-                            
-                            <!-- Bottom-Left Branch to Geo Coordinates -->
-                            <path class="glyph-branch-path branch-bl" d="M 95 345 L 60 345 L 40 375 L 15 375" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="4 2"/>
-                            <circle class="glyph-branch-node" cx="15" cy="375" r="3" fill="#f43f5e" />
-
-                            <!-- Top-Left Corner Bracket -->
-                            <path class="glyph-corner-bracket" d="M 60 40 L 60 20 L 80 20" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/>
-                            <!-- Bottom-Right Corner Bracket -->
-                            <path class="glyph-corner-bracket" d="M 270 340 L 290 340 L 290 320" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/>
-                        </svg>
-
-                        <!-- Technical Schematic Data Chips connected to branches -->
-                        <div class="glyph-chip glyph-chip-top-right">
-                            <span class="chip-dot"></span>
-                            <span>CADENCE // 8PT</span>
-                        </div>
-                        <div class="glyph-chip glyph-chip-mid-right">
-                            <span>SYS // FIGMA &rarr; CODE</span>
-                        </div>
-                        <div class="glyph-chip glyph-chip-bottom-left">
-                            <span class="chip-geo">32°46&prime;N 96°48&prime;W</span>
-                        </div>
-                        <div class="glyph-status-pill glyph-status-top-left">
-                            <span class="glyph-rec-pip"></span>
-                            <span>LIVE [AP]</span>
+                        <!-- Pop-Out Fact Card 1: Top-Right (Design & Systems) -->
+                        <div class="popout-fact-card popout-card-tr">
+                            <div class="fact-card-badge badge-purple" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                    <path d="M2 2l7.586 7.586"></path>
+                                    <circle cx="11" cy="11" r="2"></circle>
+                                </svg>
+                            </div>
+                            <div class="fact-card-content">
+                                <span class="fact-card-tag">DESIGN &amp; CODE</span>
+                                <span class="fact-card-title">Product Designer</span>
+                                <span class="fact-card-desc">Figma systems &rarr; clean frontend</span>
+                            </div>
                         </div>
 
+                        <!-- Pop-Out Fact Card 2: Top-Left (Location & Availability) -->
+                        <div class="popout-fact-card popout-card-tl">
+                            <div class="fact-card-badge badge-cyan" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="fact-card-content">
+                                <span class="fact-card-tag">LOCATION</span>
+                                <span class="fact-card-title">Dallas, Texas</span>
+                                <span class="fact-card-desc">Open for design &amp; dev roles</span>
+                            </div>
+                        </div>
+
+                        <!-- Pop-Out Fact Card 3: Bottom-Left (CS & Architecture) -->
+                        <div class="popout-fact-card popout-card-bl">
+                            <div class="fact-card-badge badge-emerald" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                            </div>
+                            <div class="fact-card-content">
+                                <span class="fact-card-tag">FOUNDATION</span>
+                                <span class="fact-card-title">Computer Science</span>
+                                <span class="fact-card-desc">UI architecture &amp; interaction</span>
+                            </div>
+                        </div>
+
+                        <!-- Pop-Out Fact Card 4: Bottom-Right (Creative Pursuits) -->
+                        <div class="popout-fact-card popout-card-br">
+                            <div class="fact-card-badge badge-rose" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                </svg>
+                            </div>
+                            <div class="fact-card-content">
+                                <span class="fact-card-tag">CREATIVE PURSUITS</span>
+                                <span class="fact-card-title">Beyond the Screen</span>
+                                <span class="fact-card-desc">Photography &bull; YouTube &bull; Chess</span>
+                            </div>
+                        </div>
+
+                        <!-- Core Portrait Frame -->
                         <div class="portrait-glass-housing">
                             <img src="assets/images/anup-profile.png" alt="Anup Paudel - Product Designer & Creative Technologist" class="portrait-primary-image" width="280" height="350" />
-                            <div class="portrait-light-glare" id="portraitLightGlare" aria-hidden="true"></div>
+                            <div class="portrait-interaction-pill">
+                                <span class="pill-sparkle">✦</span>
+                                <span class="pill-text">Hover to explore</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -942,6 +972,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=43"></script>
+    <script src="main.js?v=44"></script>
 </body>
 </html>

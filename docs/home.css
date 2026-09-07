@@ -196,151 +196,242 @@
 .designer-portrait-capsule {
     position: relative;
     width: 100%;
-    max-width: 290px;
-    border-radius: 16px;
-    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+    max-width: 280px;
+    border-radius: 20px;
     cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Nothing-Inspired Glyph Branch Schematic Overlay */
-.portrait-glyph-branches {
+/* Core Glass Housing Frame for Photo */
+.portrait-glass-housing {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: #090c13;
+    box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(124, 58, 237, 0.22);
+    z-index: 2;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.designer-portrait-capsule:hover .portrait-glass-housing,
+.designer-portrait-capsule.is-active .portrait-glass-housing {
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.9), 0 0 45px rgba(168, 85, 247, 0.35);
+}
+
+.portrait-primary-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.designer-portrait-capsule:hover .portrait-primary-image,
+.designer-portrait-capsule.is-active .portrait-primary-image {
+    transform: scale(1.025);
+}
+
+/* Subtle Interactive Exploration Pill on Portrait */
+.portrait-interaction-pill {
     position: absolute;
-    top: -45px;
-    left: -45px;
-    width: calc(100% + 90px);
-    height: calc(100% + 90px);
-    pointer-events: none;
-    z-index: 3;
-    overflow: visible;
-}
-
-.glyph-branch-path {
-    transition: stroke 0.35s ease, filter 0.35s ease;
-}
-
-.glyph-branch-node {
-    transition: transform 0.35s ease, filter 0.35s ease;
-    transform-origin: center;
-}
-
-.glyph-corner-bracket {
-    transition: stroke 0.35s ease;
-}
-
-/* Glyph Technical Schematic Data Chips */
-.glyph-chip {
-    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(11, 16, 30, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 5px 13px;
+    border-radius: 20px;
+    color: #f8fafc;
     font-family: var(--font-mono);
     font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #cbd5e1;
-    background: rgba(10, 15, 29, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 3px 8px;
-    border-radius: 4px;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    z-index: 3;
     pointer-events: none;
-    z-index: 4;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
 }
 
-.glyph-chip-top-right {
-    top: 5px;
-    right: -34px;
+.portrait-interaction-pill .pill-sparkle {
+    color: #c084fc;
+    animation: pillSparkle 2s infinite ease-in-out;
+}
+
+@keyframes pillSparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.designer-portrait-capsule:hover .portrait-interaction-pill,
+.designer-portrait-capsule.is-active .portrait-interaction-pill {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px);
+}
+
+/* ==========================================================================
+   Interactive Background Pop-Out Fact Cards
+   ========================================================================== */
+.popout-fact-card {
+    position: absolute;
+    z-index: 1;
+    width: 224px;
+    background: rgba(11, 16, 30, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 12px;
+    padding: 9px 12px;
     display: flex;
     align-items: center;
-    gap: 5px;
-}
-
-.glyph-chip-top-right .chip-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #a855f7;
-    box-shadow: 0 0 6px #a855f7;
-}
-
-.glyph-chip-mid-right {
-    top: 52%;
-    right: -42px;
-    color: #38bdf8;
-    border-color: rgba(56, 189, 248, 0.3);
-}
-
-.glyph-chip-bottom-left {
-    bottom: -15px;
-    left: -20px;
-    color: #94a3b8;
-}
-
-.glyph-status-pill {
-    position: absolute;
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: #f8fafc;
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(239, 68, 68, 0.4);
-    padding: 2px 7px;
-    border-radius: 3px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    z-index: 4;
+    gap: 10px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.2);
+    opacity: 0;
     pointer-events: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+    will-change: transform, opacity;
 }
 
-.glyph-status-top-left {
-    top: -10px;
-    left: 10px;
+/* Default Tucked Positions Behind Photo */
+.popout-card-tr {
+    top: 12%;
+    right: 8%;
+    transform: translate(0, 0) scale(0.65);
 }
 
-.glyph-rec-pip {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #ef4444;
-    box-shadow: 0 0 8px #ef4444;
-    animation: recBlink 1.8s infinite ease-in-out;
+.popout-card-tl {
+    top: 10%;
+    left: 8%;
+    transform: translate(0, 0) scale(0.65);
 }
 
-@keyframes recBlink {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.35; transform: scale(0.85); }
+.popout-card-bl {
+    bottom: 14%;
+    left: 8%;
+    transform: translate(0, 0) scale(0.65);
 }
 
-/* Hover & Active Illumination: Nothing Circuit Trace Animation */
-.designer-portrait-capsule:hover .glyph-branch-path,
-.designer-portrait-capsule.is-active .glyph-branch-path {
-    stroke: #ffffff;
-    filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.85));
+.popout-card-br {
+    bottom: 12%;
+    right: 8%;
+    transform: translate(0, 0) scale(0.65);
 }
 
-.designer-portrait-capsule:hover .glyph-branch-node,
-.designer-portrait-capsule.is-active .glyph-branch-node {
-    transform: scale(1.4);
-    filter: drop-shadow(0 0 8px #ffffff);
+/* Active / Hover Pop-Out Blooming Transitions */
+.designer-portrait-capsule:hover .popout-fact-card,
+.designer-portrait-capsule.is-active .popout-fact-card {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 5;
 }
 
-.designer-portrait-capsule:hover .glyph-chip,
-.designer-portrait-capsule.is-active .glyph-chip {
-    border-color: rgba(168, 85, 247, 0.6);
-    box-shadow: 0 6px 18px rgba(168, 85, 247, 0.35);
-    transform: translateY(-2px);
+.designer-portrait-capsule:hover .popout-card-tr,
+.designer-portrait-capsule.is-active .popout-card-tr {
+    transform: translate(112px, -24px) scale(1) rotate(1.5deg);
+    transition-delay: 0.03s;
+}
+
+.designer-portrait-capsule:hover .popout-card-tl,
+.designer-portrait-capsule.is-active .popout-card-tl {
+    transform: translate(-112px, -20px) scale(1) rotate(-1.5deg);
+    transition-delay: 0.08s;
+}
+
+.designer-portrait-capsule:hover .popout-card-bl,
+.designer-portrait-capsule.is-active .popout-card-bl {
+    transform: translate(-106px, 26px) scale(1) rotate(-1deg);
+    transition-delay: 0.13s;
+}
+
+.designer-portrait-capsule:hover .popout-card-br,
+.designer-portrait-capsule.is-active .popout-card-br {
+    transform: translate(106px, 30px) scale(1) rotate(1deg);
+    transition-delay: 0.18s;
+}
+
+/* Individual Card Hover Elevation */
+.popout-fact-card:hover {
+    border-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 24px rgba(168, 85, 247, 0.28);
+    filter: brightness(1.08);
+}
+
+/* Icon Badges */
+.fact-card-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.badge-purple {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+}
+
+.badge-cyan {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.badge-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.badge-rose {
+    background: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+    border: 1px solid rgba(244, 63, 94, 0.35);
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.2);
+}
+
+/* Typography inside Fact Cards */
+.fact-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.fact-card-tag {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.fact-card-title {
+    font-size: 0.78rem;
+    font-weight: 700;
     color: #ffffff;
+    line-height: 1.2;
 }
 
-.designer-portrait-capsule:hover .glyph-corner-bracket,
-.designer-portrait-capsule.is-active .glyph-corner-bracket {
-    stroke: #c084fc;
+.fact-card-desc {
+    font-size: 0.67rem;
+    color: #cbd5e1;
+    line-height: 1.25;
 }
 
 /* Responsive Stacking for Tablets & Mobile */
@@ -367,14 +458,56 @@
 
     .hero-portrait-stage {
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .designer-portrait-capsule {
-        max-width: 240px;
+        max-width: 480px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-items: center;
     }
 
     .portrait-glass-housing {
-        height: 290px;
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 250px;
+        height: auto;
+        order: -1;
+        margin-bottom: 12px;
+    }
+
+    .portrait-interaction-pill {
+        display: none;
+    }
+
+    .popout-fact-card {
+        position: static;
+        opacity: 1;
+        pointer-events: auto;
+        width: 100%;
+        max-width: 100%;
+        transform: none !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@media (max-width: 540px) {
+    .designer-portrait-capsule {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 320px;
+        gap: 10px;
+    }
+
+    .portrait-glass-housing {
+        order: -1;
+        width: 230px;
+        margin-bottom: 6px;
     }
 }
 
