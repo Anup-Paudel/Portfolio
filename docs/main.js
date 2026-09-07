@@ -156,12 +156,12 @@ function initPortfolio() {
             osc.type = 'sine';
             osc.frequency.setValueAtTime(freq, sharedAudioCtx.currentTime);
             osc.frequency.exponentialRampToValueAtTime(140, sharedAudioCtx.currentTime + 0.022);
-            gain.gain.setValueAtTime(0.04, sharedAudioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.0001, sharedAudioCtx.currentTime + 0.022);
+            gain.gain.setValueAtTime(0.09, sharedAudioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, sharedAudioCtx.currentTime + 0.032);
             osc.connect(gain);
             gain.connect(sharedAudioCtx.destination);
             osc.start();
-            osc.stop(sharedAudioCtx.currentTime + 0.025);
+            osc.stop(sharedAudioCtx.currentTime + 0.035);
         } catch (e) {}
     };
 
@@ -428,12 +428,12 @@ function initPortfolio() {
                 osc.type = 'sine';
                 osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
                 osc.frequency.exponentialRampToValueAtTime(120, audioCtx.currentTime + 0.02);
-                gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.02);
+                gain.gain.setValueAtTime(0.13, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.03);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
                 osc.start();
-                osc.stop(audioCtx.currentTime + 0.025);
+                osc.stop(audioCtx.currentTime + 0.035);
             } catch (err) {
                 // AudioContext not allowed or unsupported
             }
@@ -595,12 +595,12 @@ function initPortfolio() {
                 const gain = dialAudioCtx.createGain();
                 osc.type = 'triangle';
                 osc.frequency.setValueAtTime(freq, dialAudioCtx.currentTime);
-                gain.gain.setValueAtTime(0.025, dialAudioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.0001, dialAudioCtx.currentTime + 0.018);
+                gain.gain.setValueAtTime(0.06, dialAudioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, dialAudioCtx.currentTime + 0.028);
                 osc.connect(gain);
                 gain.connect(dialAudioCtx.destination);
                 osc.start();
-                osc.stop(dialAudioCtx.currentTime + 0.02);
+                osc.stop(dialAudioCtx.currentTime + 0.03);
             } catch (e) {}
         };
 
