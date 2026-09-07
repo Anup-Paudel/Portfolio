@@ -167,9 +167,9 @@
 
 .interactive-tag:hover {
     transform: translateY(-2px);
-    border-color: rgba(168, 85, 247, 0.6);
-    background: rgba(168, 85, 247, 0.16);
-    box-shadow: 0 4px 14px rgba(168, 85, 247, 0.25);
+    border-color: rgba(20, 184, 166, 0.65);
+    background: rgba(20, 184, 166, 0.16);
+    box-shadow: 0 4px 14px rgba(20, 184, 166, 0.25);
     color: #ffffff;
 }
 
