@@ -202,57 +202,145 @@
     cursor: pointer;
 }
 
-.portrait-ambient-backlight {
+/* Nothing-Inspired Glyph Branch Schematic Overlay */
+.portrait-glyph-branches {
     position: absolute;
-    inset: -18px;
-    background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.42), rgba(124, 58, 237, 0.22) 50%, transparent 72%);
-    border-radius: 28px;
-    filter: blur(24px);
+    top: -45px;
+    left: -45px;
+    width: calc(100% + 90px);
+    height: calc(100% + 90px);
     pointer-events: none;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-}
-
-.portrait-glass-housing {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    background: #090d16;
-    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(79, 70, 229, 0.2);
-    z-index: 2;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.designer-portrait-capsule:hover .portrait-glass-housing {
-    border-color: rgba(165, 180, 252, 0.45);
-    box-shadow: 0 25px 65px -10px rgba(0, 0, 0, 0.9), 0 0 45px rgba(99, 102, 241, 0.35);
-}
-
-.portrait-primary-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    filter: contrast(1.03) brightness(0.98);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.designer-portrait-capsule:hover .portrait-primary-image {
-    transform: scale(1.04);
-}
-
-.portrait-light-glare {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    mix-blend-mode: screen;
     z-index: 3;
+    overflow: visible;
+}
+
+.glyph-branch-path {
+    transition: stroke 0.35s ease, filter 0.35s ease;
+}
+
+.glyph-branch-node {
+    transition: transform 0.35s ease, filter 0.35s ease;
+    transform-origin: center;
+}
+
+.glyph-corner-bracket {
+    transition: stroke 0.35s ease;
+}
+
+/* Glyph Technical Schematic Data Chips */
+.glyph-chip {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #cbd5e1;
+    background: rgba(10, 15, 29, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 3px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 4;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glyph-chip-top-right {
+    top: 5px;
+    right: -34px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.glyph-chip-top-right .chip-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #a855f7;
+    box-shadow: 0 0 6px #a855f7;
+}
+
+.glyph-chip-mid-right {
+    top: 52%;
+    right: -42px;
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.glyph-chip-bottom-left {
+    bottom: -15px;
+    left: -20px;
+    color: #94a3b8;
+}
+
+.glyph-status-pill {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #f8fafc;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 2px 7px;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 4;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.glyph-status-top-left {
+    top: -10px;
+    left: 10px;
+}
+
+.glyph-rec-pip {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ef4444;
+    box-shadow: 0 0 8px #ef4444;
+    animation: recBlink 1.8s infinite ease-in-out;
+}
+
+@keyframes recBlink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+/* Hover & Active Illumination: Nothing Circuit Trace Animation */
+.designer-portrait-capsule:hover .glyph-branch-path,
+.designer-portrait-capsule.is-active .glyph-branch-path {
+    stroke: #ffffff;
+    filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.85));
+}
+
+.designer-portrait-capsule:hover .glyph-branch-node,
+.designer-portrait-capsule.is-active .glyph-branch-node {
+    transform: scale(1.4);
+    filter: drop-shadow(0 0 8px #ffffff);
+}
+
+.designer-portrait-capsule:hover .glyph-chip,
+.designer-portrait-capsule.is-active .glyph-chip {
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 6px 18px rgba(168, 85, 247, 0.35);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.designer-portrait-capsule:hover .glyph-corner-bracket,
+.designer-portrait-capsule.is-active .glyph-corner-bracket {
+    stroke: #c084fc;
 }
 
 /* Responsive Stacking for Tablets & Mobile */
@@ -389,32 +477,32 @@
     align-items: center;
     gap: 8px;
     min-height: 28px;
+    flex-wrap: wrap;
 }
 
 .sim-title {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: #38bdf8;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
+    letter-spacing: 0.04em;
     font-family: var(--font-mono);
 }
 
 .sim-status-pill {
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
-    padding: 3px 9px;
+    letter-spacing: 0.02em;
+    padding: 3px 8px;
     border-radius: 4px;
     transition: all 0.2s ease;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 95px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .sim-status-safe {
@@ -1037,47 +1125,94 @@
     transition: all 0.25s ease;
 }
 
-/* Interactive Pillar Sandbox Widgets */
+/* ==========================================================================
+   Elevated Tactile Sandboxes (Pillar 1: Tokens, Pillar 2: Kinetics, Pillar 3: Perf)
+   ========================================================================== */
+
 .pillar-sandbox-widget {
     margin-top: 1.25rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
+    gap: 12px;
+}
+
+/* Pillar 1: Live Design Token Interactive Component Card */
+.token-preview-component {
+    background: rgba(10, 15, 29, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.sandbox-label {
+.token-comp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.token-comp-tag {
     font-family: var(--font-mono);
-    font-size: 0.68rem;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #c084fc;
+    letter-spacing: 0.04em;
+    transition: color 0.2s ease;
 }
 
-.sandbox-controls-row {
+.token-comp-status {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: #94a3b8;
+}
+
+.token-comp-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
-    flex-wrap: wrap;
+    padding: 7px 12px;
+    border-radius: 6px;
+    background: #8b5cf6;
+    color: #ffffff;
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.token-comp-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+.token-comp-arrow {
+    transition: transform 0.2s ease;
+}
+
+.token-comp-btn:hover .token-comp-arrow {
+    transform: translateX(3px);
 }
 
 .token-btn-group {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     background: rgba(10, 15, 29, 0.6);
     padding: 3px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    width: fit-content;
 }
 
 .token-cadence-btn {
-    padding: 3px 9px;
+    padding: 4px 9px;
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
     color: #94a3b8;
     background: transparent;
@@ -1089,14 +1224,13 @@
 
 .token-cadence-btn:hover {
     color: #f8fafc;
-    background: rgba(255, 255, 255, 0.06);
 }
 
 .token-cadence-btn.is-active {
     color: #ffffff;
-    background: rgba(99, 102, 241, 0.35);
-    border: 1px solid rgba(99, 102, 241, 0.5);
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+    background: rgba(139, 92, 246, 0.35);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
 }
 
 .token-color-group {
@@ -1127,21 +1261,34 @@
     outline-offset: 1px;
 }
 
-.spring-controls-row {
+/* Pillar 2: Interactive Spring Physics Stage */
+.spring-profile-row {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.spring-profile-group {
+    display: inline-flex;
+    gap: 4px;
+    background: rgba(10, 15, 29, 0.6);
+    padding: 3px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
     justify-content: space-between;
-    gap: 6px;
 }
 
 .spring-profile-btn {
-    padding: 3px 8px;
+    flex: 1;
+    text-align: center;
+    padding: 4px 6px;
     font-family: var(--font-mono);
     font-size: 0.68rem;
     font-weight: 600;
     color: #94a3b8;
-    background: rgba(10, 15, 29, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -1153,8 +1300,153 @@
 
 .spring-profile-btn.is-active {
     color: #ffffff;
-    background: rgba(99, 102, 241, 0.35);
-    border-color: rgba(99, 102, 241, 0.6);
+    background: rgba(139, 92, 246, 0.35);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.25);
+}
+
+.spring-interactive-stage {
+    background: #090c13;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #1a2234;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.spring-waveform-canvas {
+    width: 100%;
+    height: 38px;
+    border-radius: 4px;
+    display: block;
+}
+
+.spring-trigger-disc {
+    width: 100%;
+    padding: 7px;
+    border-radius: 6px;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    color: #c084fc;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.spring-trigger-disc:hover {
+    background: rgba(139, 92, 246, 0.25);
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.35);
+}
+
+.spring-trigger-disc:active {
+    transform: scale(0.97);
+}
+
+/* Pillar 3: Hardware-Accelerated Oscilloscope */
+.perf-monitor-box {
+    background: #090c13;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #1a2234;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.perf-stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perf-fps-val {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #10b981;
+}
+
+.perf-ms-val {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
+
+.perf-badge-pill {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.perf-oscilloscope-canvas {
+    width: 100%;
+    height: 36px;
+    border-radius: 4px;
+    display: block;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.perf-run-test-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #10b981;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.perf-run-test-btn:hover {
+    background: rgba(16, 185, 129, 0.22);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.benchmark-pill {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: #a7f3d0;
+}
+
+.sandbox-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.sandbox-controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.spring-controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
 }
 
 .spring-pulse-test-btn {
@@ -1534,25 +1826,29 @@
 
 .gallery-close-button {
     background: rgba(11, 16, 30, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     width: 34px;
     height: 34px;
-    font-size: 1.35rem;
-    line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: #94a3b8;
+    color: #cbd5e1;
     transition: all 0.2s ease;
+    padding: 0;
+}
+
+.gallery-close-button svg {
+    display: block;
+    margin: 0 auto;
 }
 
 .gallery-close-button:hover {
-    background: rgba(79, 70, 229, 0.2);
-    color: #f8fafc;
-    border-color: rgba(99, 102, 241, 0.5);
-    transform: scale(1.05);
+    background: rgba(139, 92, 246, 0.25);
+    color: #ffffff;
+    border-color: rgba(139, 92, 246, 0.6);
+    transform: scale(1.08);
 }
 
 .travel-showcase-grid {
@@ -1667,17 +1963,21 @@
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.25);
     color: #ffffff;
-    font-size: 1.5rem;
-    line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 2;
     transition: all 0.2s ease;
+    padding: 0;
+}
+
+.lightbox-close-btn svg {
+    display: block;
+    margin: 0 auto;
 }
 
 .lightbox-close-btn:hover {

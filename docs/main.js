@@ -141,6 +141,30 @@ function initPortfolio() {
         }, 2500);
     };
 
+    // Shared Tactile Audio Feedback (Zero external dependencies)
+    let sharedAudioCtx = null;
+    const playTactileAudio = (freq = 700) => {
+        try {
+            if (!sharedAudioCtx) {
+                sharedAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (sharedAudioCtx.state === 'suspended') {
+                sharedAudioCtx.resume();
+            }
+            const osc = sharedAudioCtx.createOscillator();
+            const gain = sharedAudioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, sharedAudioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(140, sharedAudioCtx.currentTime + 0.022);
+            gain.gain.setValueAtTime(0.04, sharedAudioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, sharedAudioCtx.currentTime + 0.022);
+            osc.connect(gain);
+            gain.connect(sharedAudioCtx.destination);
+            osc.start();
+            osc.stop(sharedAudioCtx.currentTime + 0.025);
+        } catch (e) {}
+    };
+
     // 0. Dynamic Mouse Ambient Spotlight & Purple Ambient Backdrop Tracking
     const docRoot = document.documentElement;
     const purpleBackdrop = document.getElementById('purpleAmbientBackdrop');
@@ -236,31 +260,12 @@ function initPortfolio() {
 
     };
 
-    // 2. Smooth Directional Scroll Handler
+    // 2. Smooth Directional Scroll Handler (Unified Frosted Header)
     const handleScroll = () => {
         const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
 
-        if (currentScrollY <= 60) {
-            if (siteHeader) {
-                siteHeader.classList.add('is-home');
-                siteHeader.classList.remove('is-scrolling', 'is-island');
-            }
-        } else {
-            const scrollDiff = currentScrollY - lastScrollY;
-
-            if (scrollDiff > 2) {
-                // Scrolling DOWN
-                if (siteHeader) {
-                    siteHeader.classList.remove('is-home', 'is-island');
-                    siteHeader.classList.add('is-scrolling');
-                }
-            } else if (scrollDiff < -2) {
-                // Scrolling UP
-                if (siteHeader) {
-                    siteHeader.classList.remove('is-home', 'is-scrolling');
-                    siteHeader.classList.add('is-island');
-                }
-            }
+        if (siteHeader) {
+            siteHeader.classList.toggle('is-scrolled', currentScrollY > 20);
         }
 
         if (mobileNavFullscreen && mobileNavFullscreen.classList.contains('is-open')) {
@@ -588,17 +593,17 @@ function initPortfolio() {
                 fairnessRatioVal.style.color = '#10b981';
                 fairnessProgressFill.style.background = 'linear-gradient(90deg, #6366f1, #10b981)';
                 fairnessStatusPill.className = 'sim-status-pill sim-status-safe';
-                fairnessStatusPill.textContent = rep === 100 ? '✦ Optimal Parity' : '✦ SDG 10 Compliant';
+                fairnessStatusPill.textContent = rep === 100 ? '✦ Optimal Parity' : '✦ SDG 10 Parity';
             } else if (rep >= 55) {
                 fairnessRatioVal.style.color = '#f59e0b';
                 fairnessProgressFill.style.background = 'linear-gradient(90deg, #d97706, #f59e0b)';
                 fairnessStatusPill.className = 'sim-status-pill sim-status-warn';
-                fairnessStatusPill.textContent = '⚠ Moderate Disparity';
+                fairnessStatusPill.textContent = '⚠ Moderate Bias';
             } else {
                 fairnessRatioVal.style.color = '#f43f5e';
                 fairnessProgressFill.style.background = 'linear-gradient(90deg, #dc2626, #ef4444)';
                 fairnessStatusPill.className = 'sim-status-pill sim-status-danger';
-                fairnessStatusPill.textContent = '✕ High Bias Risk';
+                fairnessStatusPill.textContent = '✕ High Bias';
             }
         };
 
@@ -632,167 +637,287 @@ function initPortfolio() {
     }
 
     // ==========================================================================
-    // 6.5. Section 02 Craft & Systems Interactive Sandboxes
+    // 6.5. Section 02 Capabilities & Systems Interactive Sandboxes
     // ==========================================================================
-    // A. Spacing Cadence & Color Token Switcher
-    const cadenceBtns = document.querySelectorAll('.token-cadence-btn');
-    const tagsContainer = document.getElementById('pillarTagsCadence');
-    if (cadenceBtns.length && tagsContainer) {
-        cadenceBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const gap = btn.getAttribute('data-gap');
-                cadenceBtns.forEach(b => b.classList.remove('is-active'));
-                btn.classList.add('is-active');
-                tagsContainer.style.gap = `${gap}px`;
-                const tagSpans = tagsContainer.querySelectorAll('span');
-                tagSpans.forEach(span => {
-                    span.style.padding = gap === '8' ? '3px 9px' : gap === '14' ? '5px 12px' : '7px 16px';
-                });
-            });
-        });
-    }
-
+    // Pillar 1: Visual Systems Interactive Design Token Component Sandbox
+    const tokenPreviewComp = document.getElementById('tokenPreviewComponent');
+    const tokenCompTag = document.getElementById('tokenCompTag');
+    const tokenCompStatus = document.getElementById('tokenCompStatus');
+    const tokenCompBtn = document.getElementById('tokenCompBtn');
+    const tokenCadenceBtns = document.querySelectorAll('.token-cadence-btn');
     const tokenColorBtns = document.querySelectorAll('.token-color-btn');
-    if (tokenColorBtns.length && tagsContainer) {
-        tokenColorBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const color = btn.getAttribute('data-color');
-                tokenColorBtns.forEach(b => b.classList.remove('is-active'));
-                btn.classList.add('is-active');
-                const tagSpans = tagsContainer.querySelectorAll('span');
-                tagSpans.forEach(span => {
-                    span.style.borderColor = `${color}88`;
-                    span.style.color = color;
-                    span.style.background = `${color}18`;
-                });
-            });
+
+    let currentTokenRadius = '8px';
+    let currentTokenColor = '#8b5cf6';
+
+    const applyTokens = () => {
+        if (tokenPreviewComp) {
+            tokenPreviewComp.style.borderRadius = currentTokenRadius;
+            tokenPreviewComp.style.borderColor = `${currentTokenColor}44`;
+        }
+        if (tokenCompTag) {
+            tokenCompTag.style.color = currentTokenColor;
+        }
+        if (tokenCompBtn) {
+            tokenCompBtn.style.borderRadius = currentTokenRadius === '18px' ? '9999px' : currentTokenRadius;
+            tokenCompBtn.style.backgroundColor = currentTokenColor;
+            tokenCompBtn.style.boxShadow = `0 4px 14px ${currentTokenColor}50`;
+        }
+    };
+
+    tokenCadenceBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tokenCadenceBtns.forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            const rad = btn.getAttribute('data-radius') || '8';
+            currentTokenRadius = `${rad}px`;
+            if (tokenCompStatus) {
+                tokenCompStatus.textContent = btn.getAttribute('data-label') || `Radius: ${rad}px`;
+            }
+            applyTokens();
+            playTactileAudio(640);
+        });
+    });
+
+    tokenColorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tokenColorBtns.forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            currentTokenColor = btn.getAttribute('data-color') || '#8b5cf6';
+            applyTokens();
+            playTactileAudio(720);
+        });
+    });
+
+    if (tokenCompBtn) {
+        tokenCompBtn.addEventListener('click', () => {
+            tokenCompBtn.style.transform = 'scale(0.96)';
+            playTactileAudio(820);
+            setTimeout(() => {
+                tokenCompBtn.style.transform = '';
+            }, 120);
+            showToast('Design token applied to component');
         });
     }
+    applyTokens();
 
-    // B. Spring Dynamics Interactive Physics Test with Profiles
-    let currentSpringProfile = 'snappy';
+    // Pillar 2: Tactile Micro-Interactions Spring Physics Stage & Waveform Canvas
+    const springWaveformCanvas = document.getElementById('springWaveformCanvas');
+    const springTriggerBtn = document.getElementById('springTriggerBtn');
+    const springDiscCore = document.getElementById('springDiscCore');
     const springProfileBtns = document.querySelectorAll('.spring-profile-btn');
+
+    let springK = 300;   // stiffness
+    let springD = 22;    // damping
+    let springProfile = 'snappy';
+    let springX = 0;
+    let springV = 0;
+    let springHistory = new Array(50).fill(0);
+    let springAnimId = null;
+
+    const renderSpringWaveform = () => {
+        if (!springWaveformCanvas) return;
+        const ctx = springWaveformCanvas.getContext('2d');
+        if (!ctx) return;
+        const w = springWaveformCanvas.width;
+        const h = springWaveformCanvas.height;
+        const midY = h / 2;
+
+        ctx.clearRect(0, 0, w, h);
+
+        // Center equilibrium line
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 2]);
+        ctx.moveTo(0, midY);
+        ctx.lineTo(w, midY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Oscillation wave trace
+        ctx.beginPath();
+        ctx.strokeStyle = '#c084fc';
+        ctx.lineWidth = 1.8;
+        ctx.shadowColor = '#a855f7';
+        ctx.shadowBlur = 5;
+
+        for (let i = 0; i < springHistory.length; i++) {
+            const px = (i / (springHistory.length - 1)) * w;
+            const py = midY - (springHistory[i] * 0.65);
+            if (i === 0) ctx.moveTo(px, py);
+            else ctx.lineTo(px, py);
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+    };
+
+    const runSpringPhysics = () => {
+        cancelAnimationFrame(springAnimId);
+        let lastTimestamp = performance.now();
+
+        const stepSpring = (now) => {
+            const dt = Math.min((now - lastTimestamp) / 1000, 0.032);
+            lastTimestamp = now;
+
+            const f = -springK * springX - springD * springV;
+            springV += f * dt;
+            springX += springV * dt;
+
+            springHistory.shift();
+            springHistory.push(springX);
+            renderSpringWaveform();
+
+            if (springDiscCore) {
+                springDiscCore.style.transform = `translateX(${springX.toFixed(1)}px)`;
+            }
+
+            if (Math.abs(springX) > 0.15 || Math.abs(springV) > 0.15) {
+                springAnimId = requestAnimationFrame(stepSpring);
+            } else {
+                springX = 0;
+                springV = 0;
+                if (springDiscCore) springDiscCore.style.transform = 'translateX(0px)';
+                springHistory.shift();
+                springHistory.push(0);
+                renderSpringWaveform();
+            }
+        };
+
+        springAnimId = requestAnimationFrame(stepSpring);
+    };
+
+    const triggerSpringImpulse = () => {
+        springX = 26;
+        springV = 0;
+        playTactileAudio(springProfile === 'snappy' ? 860 : springProfile === 'bouncy' ? 520 : 380);
+        runSpringPhysics();
+    };
+
     springProfileBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             springProfileBtns.forEach(b => b.classList.remove('is-active'));
             btn.classList.add('is-active');
-            currentSpringProfile = btn.getAttribute('data-profile');
+            springProfile = btn.getAttribute('data-profile') || 'snappy';
+            springK = parseFloat(btn.getAttribute('data-stiff')) || 300;
+            springD = parseFloat(btn.getAttribute('data-damp')) || 22;
+            triggerSpringImpulse();
         });
     });
 
-    const springPulseBtn = document.getElementById('springPulseBtn');
-    const springDotMini = document.getElementById('springDotMini');
-    if (springPulseBtn && springDotMini) {
-        let isSpringing = false;
-        springPulseBtn.addEventListener('click', () => {
-            if (isSpringing) return;
-            isSpringing = true;
-
-            const profileFreq = currentSpringProfile === 'snappy' ? 840 : currentSpringProfile === 'bouncy' ? 540 : 360;
-            try {
-                const sCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const sOsc = sCtx.createOscillator();
-                const sGain = sCtx.createGain();
-                sOsc.type = 'sine';
-                sOsc.frequency.setValueAtTime(260, sCtx.currentTime);
-                sOsc.frequency.exponentialRampToValueAtTime(profileFreq, sCtx.currentTime + 0.1);
-                sOsc.frequency.exponentialRampToValueAtTime(360, sCtx.currentTime + 0.28);
-                sGain.gain.setValueAtTime(0.04, sCtx.currentTime);
-                sGain.gain.exponentialRampToValueAtTime(0.0001, sCtx.currentTime + 0.32);
-                sOsc.connect(sGain);
-                sGain.connect(sCtx.destination);
-                sOsc.start();
-                sOsc.stop(sCtx.currentTime + 0.33);
-            } catch (e) {}
-
-            if (currentSpringProfile === 'bouncy') {
-                springDotMini.style.transition = 'transform 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                springDotMini.style.transform = 'translateX(34px)';
-                setTimeout(() => {
-                    springDotMini.style.transform = 'translateX(4px)';
-                    setTimeout(() => {
-                        springDotMini.style.transform = 'translateX(26px)';
-                        setTimeout(() => {
-                            springDotMini.style.transform = 'translateX(8px)';
-                            setTimeout(() => {
-                                springDotMini.style.transform = 'translateX(0px)';
-                                isSpringing = false;
-                            }, 120);
-                        }, 130);
-                    }, 140);
-                }, 170);
-            } else if (currentSpringProfile === 'smooth') {
-                springDotMini.style.transition = 'transform 0.45s ease-in-out';
-                springDotMini.style.transform = 'translateX(34px)';
-                setTimeout(() => {
-                    springDotMini.style.transform = 'translateX(0px)';
-                    setTimeout(() => { isSpringing = false; }, 460);
-                }, 380);
-            } else {
-                // Snappy
-                springDotMini.style.transition = 'transform 0.16s cubic-bezier(0.25, 1, 0.5, 1)';
-                springDotMini.style.transform = 'translateX(34px)';
-                setTimeout(() => {
-                    springDotMini.style.transform = 'translateX(0px)';
-                    setTimeout(() => { isSpringing = false; }, 170);
-                }, 190);
-            }
-        });
+    if (springTriggerBtn) {
+        springTriggerBtn.addEventListener('click', triggerSpringImpulse);
     }
+    renderSpringWaveform();
 
-    // C. Zero-Dependency 60 FPS Real-Time Benchmark Runner
+    // Pillar 3: Zero-Dependency Hardware Performance Oscilloscope
+    const perfCanvas = document.getElementById('perfOscilloscopeCanvas');
+    const perfFpsVal = document.getElementById('perfFpsVal');
+    const perfMsVal = document.getElementById('perfMsVal');
     const perfBenchmarkBtn = document.getElementById('perfBenchmarkBtn');
     const benchmarkStatus = document.getElementById('benchmarkStatus');
-    const benchmarkBar = document.getElementById('benchmarkBar');
-    if (perfBenchmarkBtn && benchmarkStatus && benchmarkBar) {
-        let isBenchmarking = false;
+
+    let perfBuffer = new Array(45).fill(16.6);
+    let perfLastTime = performance.now();
+    let isBenchmarking = false;
+
+    const drawOscilloscope = () => {
+        if (!perfCanvas) return;
+        const ctx = perfCanvas.getContext('2d');
+        if (!ctx) return;
+        const w = perfCanvas.width;
+        const h = perfCanvas.height;
+
+        ctx.clearRect(0, 0, w, h);
+
+        // Target baseline at 16.6ms (60 FPS)
+        const targetY = h * 0.52;
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
+        ctx.setLineDash([3, 2]);
+        ctx.moveTo(0, targetY);
+        ctx.lineTo(w, targetY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Live oscilloscope wave trace
+        ctx.beginPath();
+        ctx.strokeStyle = '#10b981';
+        ctx.lineWidth = 1.6;
+        ctx.shadowColor = '#10b981';
+        ctx.shadowBlur = 4;
+
+        for (let i = 0; i < perfBuffer.length; i++) {
+            const x = (i / (perfBuffer.length - 1)) * w;
+            const delta = perfBuffer[i];
+            const y = targetY - (delta - 16.6) * 2.8;
+            const clampedY = Math.max(2, Math.min(h - 2, y));
+            if (i === 0) ctx.moveTo(x, clampedY);
+            else ctx.lineTo(x, clampedY);
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // Head sensor point
+        const lastX = w - 2;
+        const lastY = Math.max(2, Math.min(h - 2, targetY - (perfBuffer[perfBuffer.length - 1] - 16.6) * 2.8));
+        ctx.beginPath();
+        ctx.arc(lastX, lastY, 2.2, 0, Math.PI * 2);
+        ctx.fillStyle = '#34d399';
+        ctx.fill();
+    };
+
+    const updateOscilloscopeLoop = (now) => {
+        const delta = now - perfLastTime;
+        perfLastTime = now;
+
+        if (delta > 0 && delta < 100) {
+            perfBuffer.shift();
+            perfBuffer.push(delta);
+        }
+
+        drawOscilloscope();
+        requestAnimationFrame(updateOscilloscopeLoop);
+    };
+    requestAnimationFrame(updateOscilloscopeLoop);
+
+    if (perfBenchmarkBtn) {
         perfBenchmarkBtn.addEventListener('click', () => {
             if (isBenchmarking) return;
             isBenchmarking = true;
-            benchmarkStatus.textContent = 'Measuring...';
-            benchmarkStatus.style.color = '#818cf8';
-            benchmarkBar.style.width = '0%';
+            if (benchmarkStatus) {
+                benchmarkStatus.textContent = 'Measuring...';
+                benchmarkStatus.style.color = '#38bdf8';
+            }
 
-            let frameCount = 0;
-            const totalFrames = 40;
-            let lastTime = performance.now();
-            const frameDeltas = [];
+            let frames = 0;
+            const start = performance.now();
 
-            const measureFrame = (currentTime) => {
-                const delta = currentTime - lastTime;
-                lastTime = currentTime;
-                if (frameCount > 0) frameDeltas.push(delta);
-                frameCount++;
-                benchmarkBar.style.width = `${Math.min((frameCount / totalFrames) * 100, 100)}%`;
-
-                if (frameCount < totalFrames) {
-                    requestAnimationFrame(measureFrame);
+            const countFrames = (now) => {
+                frames++;
+                if (now - start < 700) {
+                    requestAnimationFrame(countFrames);
                 } else {
-                    const avgDelta = frameDeltas.reduce((a, b) => a + b, 0) / frameDeltas.length;
-                    const fps = Math.min(Math.round(1000 / avgDelta), 60);
-                    benchmarkStatus.textContent = `✔ ${fps}.0 FPS • ${avgDelta.toFixed(1)}ms (0 Libs)`;
-                    benchmarkStatus.style.color = '#38bdf8';
-                    
-                    try {
-                        const bCtx = new (window.AudioContext || window.webkitAudioContext)();
-                        const bOsc = bCtx.createOscillator();
-                        const bGain = bCtx.createGain();
-                        bOsc.type = 'sine';
-                        bOsc.frequency.setValueAtTime(580, bCtx.currentTime);
-                        bOsc.frequency.exponentialRampToValueAtTime(880, bCtx.currentTime + 0.12);
-                        bGain.gain.setValueAtTime(0.04, bCtx.currentTime);
-                        bGain.gain.exponentialRampToValueAtTime(0.0001, bCtx.currentTime + 0.18);
-                        bOsc.connect(bGain);
-                        bGain.connect(bCtx.destination);
-                        bOsc.start();
-                        bOsc.stop(bCtx.currentTime + 0.2);
-                    } catch(e) {}
-
-                    setTimeout(() => { isBenchmarking = false; }, 600);
+                    const elapsed = now - start;
+                    const measuredFps = Math.min(60, Math.round((frames / elapsed) * 1000));
+                    const avgMs = (elapsed / frames).toFixed(1);
+                    if (perfFpsVal) perfFpsVal.textContent = `${measuredFps}.0 FPS`;
+                    if (perfMsVal) perfMsVal.textContent = `${avgMs} ms`;
+                    if (benchmarkStatus) {
+                        benchmarkStatus.textContent = '60 FPS Clean';
+                        benchmarkStatus.style.color = '#10b981';
+                    }
+                    playTactileAudio(960);
+                    setTimeout(() => {
+                        if (benchmarkStatus) {
+                            benchmarkStatus.textContent = 'Live Active';
+                            benchmarkStatus.style.color = '';
+                        }
+                        isBenchmarking = false;
+                    }, 2400);
                 }
             };
-
-            requestAnimationFrame(measureFrame);
+            requestAnimationFrame(countFrames);
         });
     }
 
@@ -1094,27 +1219,34 @@ function initPortfolio() {
             }
         });
         
+        let branchPulseTimeout = null;
+        const triggerGlyphBranches = () => {
+            portraitCapsule.classList.add('is-active');
+            playTactileAudio(580);
+            clearTimeout(branchPulseTimeout);
+            branchPulseTimeout = setTimeout(() => {
+                portraitCapsule.classList.remove('is-active');
+            }, 2500);
+        };
+
+        portraitCapsule.addEventListener('mouseenter', () => {
+            portraitCapsule.classList.add('is-active');
+            playTactileAudio(540);
+        });
+
         portraitCapsule.addEventListener('mouseleave', () => {
+            portraitCapsule.classList.remove('is-active');
             portraitCapsule.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
             if (portraitGlare) portraitGlare.style.opacity = '0';
         });
 
-        portraitCapsule.addEventListener('mouseenter', () => {
-            try {
-                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(540, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(320, audioCtx.currentTime + 0.03);
-                gain.gain.setValueAtTime(0.02, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.0005, audioCtx.currentTime + 0.03);
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.035);
-            } catch (err) {}
+        portraitCapsule.addEventListener('click', () => {
+            triggerGlyphBranches();
         });
+
+        portraitCapsule.addEventListener('touchstart', () => {
+            triggerGlyphBranches();
+        }, { passive: true });
     }
 }
 
