@@ -793,6 +793,12 @@ p {
     line-height: 0.9;
 }
 
+@media (max-width: 767px) {
+    .footer-backdrop-text {
+        bottom: 12rem;
+    }
+}
+
 .footer-modern-inner {
     max-width: 1080px;
     margin: 0 auto;
