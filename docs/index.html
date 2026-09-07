@@ -1,25 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anup Paudel | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-
-</head>
-<body>
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
     <!-- Living Ambient Background Aurora Flow & Fine Architectural Dot Grid -->
     <div class="page-gradient-overlay" aria-hidden="true">
-        <div class="gradient-orb orb-primary"></div>
-        <div class="gradient-orb orb-secondary"></div>
-        <div class="gradient-orb orb-tertiary"></div>
-        <div class="gradient-orb orb-quaternary"></div>
+      <div class="gradient-orb orb-primary"></div>
+      <div class="gradient-orb orb-secondary"></div>
+      <div class="gradient-orb orb-tertiary"></div>
+      <div class="gradient-orb orb-quaternary"></div>
     </div>
     <div class="page-dot-pattern" aria-hidden="true"></div>
     <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
@@ -28,913 +27,1229 @@
 
     <!-- Cohesive Hybrid Header (Flat at Home & Centered Light Dynamic Island) -->
     <header class="site-header-wrapper is-home" id="siteHeader">
-        <div class="header-inner">
-            <div class="logo-container">
-                <a href="#hero" class="logo-link" aria-label="Go to Home">
-                    <img src="assets/images/APLOGO.png" alt="AP Logo" class="logo-img-home" width="30" height="30" />
-                    <span class="logo-text-full">Anup</span>
-                    <img src="assets/images/APLOGO.png" alt="AP Logo" class="logo-img-island" width="25" height="25" />
-                </a>
-            </div>
-
-            <nav class="main-nav" id="mainNav">
-                <!-- Hamburger Button for Mobile -->
-                <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false">
-                    <span class="nav-toggle-bar"></span>
-                    <span class="nav-toggle-bar"></span>
-                    <span class="nav-toggle-bar"></span>
-                </button>
-
-                <!-- Desktop Nav List (Streamlined & Unified SVGs) -->
-                <ul class="nav-list" id="navList">
-                    <li class="nav-item">
-                        <a href="#hero" class="nav-link active-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 9.5L12 3l9 6.5V20a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 20V9.5z"/>
-                                <polyline points="9 21 9 12 15 12 15 21"/>
-                            </svg>
-                            <span class="nav-text">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                            </svg>
-                            <span class="nav-text">Projects</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="4" y1="21" x2="4" y2="14"/>
-                                <line x1="4" y1="10" x2="4" y2="3"/>
-                                <line x1="12" y1="21" x2="12" y2="12"/>
-                                <line x1="12" y1="8" x2="12" y2="3"/>
-                                <line x1="20" y1="21" x2="20" y2="16"/>
-                                <line x1="20" y1="12" x2="20" y2="3"/>
-                                <line x1="1" y1="14" x2="7" y2="14"/>
-                                <line x1="9" y1="8" x2="15" y2="8"/>
-                                <line x1="17" y1="16" x2="23" y2="16"/>
-                            </svg>
-                            <span class="nav-text">Skills</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#playzone" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="6" width="20" height="12" rx="4"/>
-                                <line x1="6" y1="12" x2="10" y2="12"/>
-                                <line x1="8" y1="10" x2="8" y2="14"/>
-                                <circle cx="15" cy="13" r="1"/>
-                                <circle cx="18" cy="11" r="1"/>
-                            </svg>
-                            <span class="nav-text">Beyond Code</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            <span class="nav-text">Contact</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+      <div class="header-inner">
+        <div class="logo-container">
+          <a href="#hero" class="logo-link" aria-label="Go to Home">
+            <img src="assets/images/APLOGO.png" alt="AP Logo" class="logo-img-home" width="30" height="30" />
+            <span class="logo-text-full">Anup</span>
+            <img src="assets/images/APLOGO.png" alt="AP Logo" class="logo-img-island" width="25" height="25" />
+          </a>
         </div>
+
+        <nav class="main-nav" id="mainNav">
+          <!-- Hamburger Button for Mobile -->
+          <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+
+          <!-- Desktop Nav List (Streamlined & Unified SVGs) -->
+          <ul class="nav-list" id="navList">
+            <li class="nav-item">
+              <a href="#hero" class="nav-link active-link">
+                <svg
+                  class="nav-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 9.5L12 3l9 6.5V20a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 20V9.5z" />
+                  <polyline points="9 21 9 12 15 12 15 21" />
+                </svg>
+                <span class="nav-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                <span class="nav-text">Projects</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#skills" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="4" y1="21" x2="4" y2="14" />
+                  <line x1="4" y1="10" x2="4" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12" y2="3" />
+                  <line x1="20" y1="21" x2="20" y2="16" />
+                  <line x1="20" y1="12" x2="20" y2="3" />
+                  <line x1="1" y1="14" x2="7" y2="14" />
+                  <line x1="9" y1="8" x2="15" y2="8" />
+                  <line x1="17" y1="16" x2="23" y2="16" />
+                </svg>
+                <span class="nav-text">Skills</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#playzone" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="6" width="20" height="12" rx="4" />
+                  <line x1="6" y1="12" x2="10" y2="12" />
+                  <line x1="8" y1="10" x2="8" y2="14" />
+                  <circle cx="15" cy="13" r="1" />
+                  <circle cx="18" cy="11" r="1" />
+                </svg>
+                <span class="nav-text">Beyond Code</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span class="nav-text">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Dedicated Full-Screen Mobile Navigation Overlay (Strictly Hidden on Desktop) -->
     <div class="mobile-nav-fullscreen" id="mobileNavFullscreen" aria-hidden="true">
-        <button class="mobile-nav-close-btn" id="mobileNavClose" aria-label="Close navigation menu">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
+      <button class="mobile-nav-close-btn" id="mobileNavClose" aria-label="Close navigation menu">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="mobile-nav-fullscreen-list">
+        <li>
+          <a href="#hero" class="mobile-nav-fullscreen-link">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 9.5L12 3l9 6.5V20a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 20V9.5z" />
+              <polyline points="9 21 9 12 15 12 15 21" />
             </svg>
-        </button>
-        <ul class="mobile-nav-fullscreen-list">
-            <li>
-                <a href="#hero" class="mobile-nav-fullscreen-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 9.5L12 3l9 6.5V20a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 20V9.5z"/>
-                        <polyline points="9 21 9 12 15 12 15 21"/>
-                    </svg>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="#projects" class="mobile-nav-fullscreen-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                    </svg>
-                    <span>Projects</span>
-                </a>
-            </li>
-            <li>
-                <a href="#skills" class="mobile-nav-fullscreen-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="4" y1="21" x2="4" y2="14"/>
-                        <line x1="4" y1="10" x2="4" y2="3"/>
-                        <line x1="12" y1="21" x2="12" y2="12"/>
-                        <line x1="12" y1="8" x2="12" y2="3"/>
-                        <line x1="20" y1="21" x2="20" y2="16"/>
-                        <line x1="20" y1="12" x2="20" y2="3"/>
-                        <line x1="1" y1="14" x2="7" y2="14"/>
-                        <line x1="9" y1="8" x2="15" y2="8"/>
-                        <line x1="17" y1="16" x2="23" y2="16"/>
-                    </svg>
-                    <span>Skills</span>
-                </a>
-            </li>
-            <li>
-                <a href="#playzone" class="mobile-nav-fullscreen-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="6" width="20" height="12" rx="4"/>
-                        <line x1="6" y1="12" x2="10" y2="12"/>
-                        <line x1="8" y1="10" x2="8" y2="14"/>
-                        <circle cx="15" cy="13" r="1"/>
-                        <circle cx="18" cy="11" r="1"/>
-                    </svg>
-                    <span>Beyond Code</span>
-                </a>
-            </li>
-            <li>
-                <a href="#contact" class="mobile-nav-fullscreen-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                    <span>Contact</span>
-                </a>
-            </li>
-        </ul>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="mobile-nav-fullscreen-link">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+            <span>Projects</span>
+          </a>
+        </li>
+        <li>
+          <a href="#skills" class="mobile-nav-fullscreen-link">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="4" y1="21" x2="4" y2="14" />
+              <line x1="4" y1="10" x2="4" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12" y2="3" />
+              <line x1="20" y1="21" x2="20" y2="16" />
+              <line x1="20" y1="12" x2="20" y2="3" />
+              <line x1="1" y1="14" x2="7" y2="14" />
+              <line x1="9" y1="8" x2="15" y2="8" />
+              <line x1="17" y1="16" x2="23" y2="16" />
+            </svg>
+            <span>Skills</span>
+          </a>
+        </li>
+        <li>
+          <a href="#playzone" class="mobile-nav-fullscreen-link">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="6" width="20" height="12" rx="4" />
+              <line x1="6" y1="12" x2="10" y2="12" />
+              <line x1="8" y1="10" x2="8" y2="14" />
+              <circle cx="15" cy="13" r="1" />
+              <circle cx="18" cy="11" r="1" />
+            </svg>
+            <span>Beyond Code</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="mobile-nav-fullscreen-link">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
     </div>
 
     <main>
-        <!-- ==========================================================================
+      <!-- ==========================================================================
              Hero Section (#hero) - Designer Studio Statement
              ========================================================================== -->
-        <section id="hero" class="hero-section">
-            <div class="hero-container">
-                <!-- Left Column: Typographic Studio Statement & Actions -->
-                <div class="hero-content">
-                    <div class="hero-designer-eyebrow">
-                        <span class="glyph-rec-pip"></span>
-                        <span>PRODUCT DESIGNER</span>
-                    </div>
-                    <!-- Master Architectural Display Title (Interactive Typography) -->
-                    <h1 class="hero-display-title" id="heroInteractiveTitle" aria-label="Designing systems and building tactile digital products.">
-                        <span class="interactive-word" data-word="Designing">Designing</span>
-                        <span class="interactive-word word-accent-serif" data-word="systems">systems</span>
-                        <span class="interactive-word word-symbol" data-word="&amp;">&amp;</span>
-                        <br class="desktop-br" />
-                        <span class="interactive-word" data-word="building">building</span>
-                        <span class="interactive-word word-accent-tactile" data-word="tactile">tactile</span>
-                        <span class="interactive-word" data-word="digital">digital</span>
-                        <span class="interactive-word word-accent-products" data-word="products">products.</span>
-                    </h1>
-
-                    <!-- Crisp Human Designer Narrative with Interactive Exploration Pills -->
-                    <p class="hero-subtext" id="heroInteractiveSubtext">
-                        Hi, I'm <span class="interactive-tag tag-name" data-tag="name">Anup Paudel</span> &mdash; based in <span class="interactive-tag tag-location" data-tag="location">Dallas, TX 📍</span>. Bridging <span class="interactive-tag tag-design" data-tag="design">product design 🎨</span> and <span class="interactive-tag tag-code" data-tag="code">frontend engineering ⚡</span> to build thoughtful, high-precision software.
-                    </p>
-
-                    <!-- Dual Action Dock -->
-                    <div class="hero-cta-dock">
-                        <a href="#projects" class="cta-button hero-primary-cta">
-                            <span>View Selected Work</span>
-                            <span class="cta-arrow">&darr;</span>
-                        </a>
-                        <a href="assets/images/Anup_Resume.pdf" target="_blank" rel="noopener noreferrer" class="cta-button-ghost hero-resume-cta">
-                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                            </svg>
-                            <span>View Resume</span>
-                            <span class="cta-arrow">&nearr;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Column: Interactive Portrait with Background Pop-Out Fact Cards -->
-                <div class="hero-portrait-stage">
-                    <div class="designer-portrait-capsule" id="designerPortraitCapsule" role="region" aria-label="Anup Paudel Interactive Portrait - Hover to reveal background facts">
-                        <div class="portrait-ambient-backlight" aria-hidden="true"></div>
-
-                        <!-- Pop-Out Fact Card 1: Top-Right (Design & Systems) -->
-                        <div class="popout-fact-card popout-card-tr">
-                            <div class="fact-card-badge badge-purple" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                                    <path d="M2 2l7.586 7.586"></path>
-                                    <circle cx="11" cy="11" r="2"></circle>
-                                </svg>
-                            </div>
-                            <div class="fact-card-content">
-                                <span class="fact-card-tag">DESIGN &amp; CODE</span>
-                                <span class="fact-card-title">Product Designer</span>
-                                <span class="fact-card-desc">Figma systems &rarr; clean frontend</span>
-                            </div>
-                        </div>
-
-                        <!-- Pop-Out Fact Card 2: Top-Left (Location & Availability) -->
-                        <div class="popout-fact-card popout-card-tl">
-                            <div class="fact-card-badge badge-cyan" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                            </div>
-                            <div class="fact-card-content">
-                                <span class="fact-card-tag">LOCATION</span>
-                                <span class="fact-card-title">Dallas, Texas</span>
-                                <span class="fact-card-desc">Open for design &amp; dev roles</span>
-                            </div>
-                        </div>
-
-                        <!-- Pop-Out Fact Card 3: Bottom-Left (CS & Architecture) -->
-                        <div class="popout-fact-card popout-card-bl">
-                            <div class="fact-card-badge badge-emerald" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                                </svg>
-                            </div>
-                            <div class="fact-card-content">
-                                <span class="fact-card-tag">FOUNDATION</span>
-                                <span class="fact-card-title">Computer Science</span>
-                                <span class="fact-card-desc">UI architecture &amp; interaction</span>
-                            </div>
-                        </div>
-
-                        <!-- Pop-Out Fact Card 4: Bottom-Right (Creative Pursuits) -->
-                        <div class="popout-fact-card popout-card-br">
-                            <div class="fact-card-badge badge-rose" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                                </svg>
-                            </div>
-                            <div class="fact-card-content">
-                                <span class="fact-card-tag">CREATIVE PURSUITS</span>
-                                <span class="fact-card-title">Beyond the Screen</span>
-                                <span class="fact-card-desc">Photography &bull; YouTube &bull; Chess</span>
-                            </div>
-                        </div>
-
-                        <!-- Core Portrait Frame -->
-                        <div class="portrait-glass-housing">
-                            <img src="assets/images/anup-profile.png" alt="Anup Paudel - Product Designer & Creative Technologist" class="portrait-primary-image" width="280" height="350" />
-                            <div class="portrait-interaction-pill">
-                                <span class="pill-sparkle">✦</span>
-                                <span class="pill-text">Hover to explore</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section id="hero" class="hero-section">
+        <div class="hero-container">
+          <!-- Left Column: Typographic Studio Statement & Actions -->
+          <div class="hero-content">
+            <div class="hero-designer-eyebrow">
+              <span class="glyph-rec-pip"></span>
+              <span>PRODUCT DESIGNER</span>
             </div>
-        </section>
+            <!-- Master Architectural Display Title (Interactive Typography) -->
+            <h1 class="hero-display-title" id="heroInteractiveTitle" aria-label="Designing systems and building tactile digital products.">
+              <span class="interactive-word" data-word="Designing">Designing</span>
+              <span class="interactive-word word-accent-serif" data-word="systems">systems</span>
+              <span class="interactive-word word-symbol" data-word="&amp;">&amp;</span>
+              <br class="desktop-br" />
+              <span class="interactive-word" data-word="building">building</span>
+              <span class="interactive-word word-accent-tactile" data-word="tactile">tactile</span>
+              <span class="interactive-word" data-word="digital">digital</span>
+              <span class="interactive-word word-accent-products" data-word="products">products.</span>
+            </h1>
 
-        <!-- ==========================================================================
+            <!-- Crisp Human Designer Narrative with Interactive Exploration Pills -->
+            <p class="hero-subtext" id="heroInteractiveSubtext">
+              Hi, I'm <span class="interactive-tag tag-name" data-tag="name">Anup Paudel</span> &mdash; based in
+              <span class="interactive-tag tag-location" data-tag="location">Dallas, TX 📍</span>. Bridging
+              <span class="interactive-tag tag-design" data-tag="design">product design 🎨</span> and
+              <span class="interactive-tag tag-code" data-tag="code">frontend engineering ⚡</span> to build thoughtful, high-precision software.
+            </p>
+
+            <!-- Dual Action Dock -->
+            <div class="hero-cta-dock">
+              <a href="#projects" class="cta-button hero-primary-cta">
+                <span>View Selected Work</span>
+                <span class="cta-arrow">&darr;</span>
+              </a>
+              <a href="assets/images/Anup_Resume.pdf" target="_blank" rel="noopener noreferrer" class="cta-button-ghost hero-resume-cta">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <span>View Resume</span>
+                <span class="cta-arrow">&nearr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Portrait with Background Pop-Out Fact Cards -->
+          <div class="hero-portrait-stage">
+            <div
+              class="designer-portrait-capsule"
+              id="designerPortraitCapsule"
+              role="region"
+              aria-label="Anup Paudel Interactive Portrait - Hover to reveal background facts"
+            >
+              <div class="portrait-ambient-backlight" aria-hidden="true"></div>
+
+              <!-- Pop-Out Fact Card 1: Top-Right (Design & Systems) -->
+              <div class="popout-fact-card popout-card-tr">
+                <div class="fact-card-badge badge-purple" aria-hidden="true">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                    <path d="M2 2l7.586 7.586"></path>
+                    <circle cx="11" cy="11" r="2"></circle>
+                  </svg>
+                </div>
+                <div class="fact-card-content">
+                  <span class="fact-card-tag">DESIGN &amp; CODE</span>
+                  <span class="fact-card-title">Product Designer</span>
+                  <span class="fact-card-desc">Figma systems &rarr; clean frontend</span>
+                </div>
+              </div>
+
+              <!-- Pop-Out Fact Card 2: Top-Left (Location & Availability) -->
+              <div class="popout-fact-card popout-card-tl">
+                <div class="fact-card-badge badge-cyan" aria-hidden="true">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="fact-card-content">
+                  <span class="fact-card-tag">LOCATION</span>
+                  <span class="fact-card-title">Dallas, Texas</span>
+                  <span class="fact-card-desc">Open for design &amp; dev roles</span>
+                </div>
+              </div>
+
+              <!-- Pop-Out Fact Card 3: Bottom-Left (CS & Architecture) -->
+              <div class="popout-fact-card popout-card-bl">
+                <div class="fact-card-badge badge-emerald" aria-hidden="true">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div class="fact-card-content">
+                  <span class="fact-card-tag">FOUNDATION</span>
+                  <span class="fact-card-title">Computer Science</span>
+                  <span class="fact-card-desc">UI architecture &amp; interaction</span>
+                </div>
+              </div>
+
+              <!-- Pop-Out Fact Card 4: Bottom-Right (Creative Pursuits) -->
+              <div class="popout-fact-card popout-card-br">
+                <div class="fact-card-badge badge-rose" aria-hidden="true">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                  </svg>
+                </div>
+                <div class="fact-card-content">
+                  <span class="fact-card-tag">CREATIVE PURSUITS</span>
+                  <span class="fact-card-title">Beyond the Screen</span>
+                  <span class="fact-card-desc">Photography &bull; YouTube &bull; Chess</span>
+                </div>
+              </div>
+
+              <!-- Core Portrait Frame -->
+              <div class="portrait-glass-housing">
+                <img
+                  src="assets/images/anup-profile.png"
+                  alt="Anup Paudel - Product Designer & Creative Technologist"
+                  class="portrait-primary-image"
+                  width="280"
+                  height="350"
+                />
+                <div class="portrait-interaction-pill">
+                  <span class="pill-sparkle">✦</span>
+                  <span class="pill-text">Hover to explore</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
              Section 01: Featured Systems (#projects) - Front & Center
              ========================================================================== -->
-        <section id="projects" class="section-wrapper section-projects">
-            <div class="section-header">
-                <div class="section-eyebrow">[01] SELECTED WORK</div>
-                <h2 class="section-title">Featured Projects &amp; Systems</h2>
-                <div class="section-title-rule" aria-hidden="true"></div>
-                <p class="section-subtitle">Tactile digital products with working interactive prototypes, state logic, and visual systems.</p>
-            </div>
+      <section id="projects" class="section-wrapper section-projects">
+        <div class="section-header">
+          <div class="section-eyebrow">[01] SELECTED WORK</div>
+          <h2 class="section-title">Featured Projects &amp; Systems</h2>
+          <div class="section-title-rule" aria-hidden="true"></div>
+          <p class="section-subtitle">Tactile digital products with working interactive prototypes, state logic, and visual systems.</p>
+        </div>
 
-            <div class="projects-stack-container">
-                <!-- Project 1: Fairalyze AI (With Interactive Live Bias Simulator) -->
-                <div class="project-wrapper" id="project1">
-                    <article class="project-preview-card-pro">
-                        <div class="project-watermark-num" aria-hidden="true">01</div>
-                        <div class="project-card-image-box">
-                            <div class="fairalyze-sim-box">
-                                <div class="sim-header-row">
-                                    <span class="sim-title">Disparate Impact Ratio</span>
-                                    <span id="fairnessStatusPill" class="sim-status-pill sim-status-safe">✦ SDG 10 Compliant</span>
-                                </div>
-                                <div class="sim-bar-container">
-                                    <div class="sim-bar-label">
-                                        <span>Parity Impact Ratio (AIR)</span>
-                                        <strong id="fairnessRatioVal" style="color: #10b981;">0.84</strong>
-                                    </div>
-                                    <div class="sim-progress-track">
-                                        <div id="fairnessProgressFill" class="sim-progress-fill" style="width: 84%;"></div>
-                                    </div>
-                                </div>
-                                <div class="sim-slider-row">
-                                    <div class="sim-slider-label">
-                                        <span>Demographic Representation</span>
-                                        <span id="fairnessSliderVal">0.84</span>
-                                    </div>
-                                    <input type="range" id="fairnessSlider" min="20" max="100" value="84" class="sim-range-input" aria-label="Demographic balance slider" />
-                                </div>
-                                <!-- Preset Audit Benchmarks for Instant Feedback -->
-                                <div class="sim-presets-row">
-                                    <span class="presets-label">Instant Preset Audits:</span>
-                                    <div class="presets-btn-group">
-                                        <button type="button" class="sim-preset-btn is-active" data-val="84">✦ Balanced (0.84)</button>
-                                        <button type="button" class="sim-preset-btn" data-val="38">High Bias (0.38)</button>
-                                        <button type="button" class="sim-preset-btn" data-val="100">Ideal (1.00)</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card-content">
-                            <div>
-                                <div class="project-meta-row">
-                                    <span>GNEC Hackathon '25</span>
-                                    <span class="meta-sep">&bull;</span>
-                                    <span>AI Ethics &amp; Parity</span>
-                                    <span class="meta-sep">&bull;</span>
-                                    <span>Product Design</span>
-                                </div>
-                                <h3>Fairalyze AI: Bias Detection Tool</h3>
-                                <p>
-                                    An algorithmic fairness auditing platform designed during the GNEC Hackathon to help teams detect and resolve demographic disparities in AI predictive models. Features interactive parity visualizations, cohort risk scoring, and automated dataset balancing recommendations.
-                                </p>
-                                <div class="project-tech-clean">
-                                    <span>Product Design</span>
-                                    <span>Figma Tokens</span>
-                                    <span>Interactive Prototyping</span>
-                                    <span>JavaScript (ES6+)</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="repo-link-item">
-                                    <img src="assets/icons/github.svg?v=37" alt="GitHub" width="16" height="16" />
-                                    <span>GitHub Repo &rarr;</span>
-                                </a>
-                                <button type="button" class="case-study-toggle-btn case-study-toggle" data-target="cs-fairalyze">
-                                    <span class="case-study-label">View Case Study</span> &darr;
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Symmetrical 2x2 Case Study Breakdown -->
-                    <div class="case-study-panel" id="cs-fairalyze">
-                        <div class="cs-header-col">
-                            <h4>Case Study: Fairalyze AI (GNEC Hackathon 2025)</h4>
-                            <p>Auditing dashboard uncovering demographic bias in predictive models.</p>
-                        </div>
-                        <div class="cs-sections-grid">
-                            <div class="cs-section-box">
-                                <span class="cs-step-badge step-challenge">Phase 01 : The Challenge</span>
-                                <h5>Algorithmic Bias in Predictive Models</h5>
-                                <p>AI models can perpetuate societal bias. We built an intuitive dashboard to help product teams evaluate disparate impact prior to deployment.</p>
-                            </div>
-                            <div class="cs-section-box">
-                                <span class="cs-step-badge step-approach">Phase 02 : Role &amp; Strategy</span>
-                                <h5>Human-Centered Heuristics</h5>
-                                <p>Led UI/UX design and front-end development during the 48-hour sprint, turning complex mathematical equations into intuitive visual risk charts.</p>
-                            </div>
-                            <div class="cs-section-box">
-                                <span class="cs-step-badge step-solution">Phase 03 : Technical Solution</span>
-                                <h5>Live Parity Simulation &amp; Auditing</h5>
-                                <p>Designed visual parity gauges, demographic acceptance heatmaps, and clear data re-balancing workflows.</p>
-                            </div>
-                            <div class="cs-section-box">
-                                <span class="cs-step-badge step-outcome">Phase 04 : Outcome &amp; Impact</span>
-                                <h5>GNEC Hackathon Recognition</h5>
-                                <p>Presented to the GNEC jury with strong positive feedback, demonstrating high-velocity product thinking and rapid prototyping.</p>
-                            </div>
-                        </div>
+        <div class="projects-stack-container">
+          <!-- Project 1: Fairalyze AI (With Interactive Live Bias Simulator) -->
+          <div class="project-wrapper" id="project1">
+            <article class="project-preview-card-pro">
+              <div class="project-watermark-num" aria-hidden="true">01</div>
+              <div class="project-card-image-box">
+                <div class="fairalyze-sim-box">
+                  <div class="sim-header-row">
+                    <span class="sim-title">Disparate Impact Ratio</span>
+                    <span id="fairnessStatusPill" class="sim-status-pill sim-status-safe">✦ SDG 10 Compliant</span>
+                  </div>
+                  <div class="sim-bar-container">
+                    <div class="sim-bar-label">
+                      <span>Parity Impact Ratio (AIR)</span>
+                      <strong id="fairnessRatioVal" style="color: #10b981">0.84</strong>
                     </div>
-                </div>
-
-                <!-- Project 2: Calculator App (With Fully Operational Live Interactive Engine) -->
-                <div class="project-wrapper" id="project2">
-                    <article class="project-preview-card-pro">
-                        <div class="project-watermark-num" aria-hidden="true">02</div>
-                        <div class="project-card-image-box">
-                            <div class="calc-mockup-wrapper dieter-rams-chassis" id="liveCalcWidget">
-                                <div class="chassis-hardware-header">
-                                    <span class="hardware-screw screw-left"></span>
-                                    <span class="chassis-model-name">ET66</span>
-                                    <span class="hardware-screw screw-right"></span>
-                                </div>
-                                <div class="calc-mock-screen oled-display">
-                                    <div class="calc-mock-formula" id="calcFormula">128 &times; 4 + 16</div>
-                                    <div class="calc-mock-result" id="calcDisplay">56</div>
-                                </div>
-                                <div class="calc-mock-buttons rams-keypad">
-                                    <button type="button" class="calc-btn action-key rams-orange" data-action="clear">AC</button>
-                                    <button type="button" class="calc-btn action-key rams-slate" data-action="sign">&plusmn;</button>
-                                    <button type="button" class="calc-btn action-key rams-slate" data-action="percent">%</button>
-                                    <button type="button" class="calc-btn op-key rams-dark" data-op="/">&divide;</button>
-                                    
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="7">7</button>
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="8">8</button>
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="9">9</button>
-                                    <button type="button" class="calc-btn op-key rams-dark" data-op="*">&times;</button>
-                                    
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="4">4</button>
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="5">5</button>
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="6">6</button>
-                                    <button type="button" class="calc-btn op-key rams-dark" data-op="-">&minus;</button>
-                                    
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="1">1</button>
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="2">2</button>
-                                    <button type="button" class="calc-btn num-key rams-cream" data-num="3">3</button>
-                                    <button type="button" class="calc-btn op-key rams-dark" data-op="+">+</button>
-                                    
-                                    <button type="button" class="calc-btn wide-key num-key rams-cream" data-num="0">0</button>
-                                    <button type="button" class="calc-btn num-key rams-cream" data-action="decimal">.</button>
-                                    <button type="button" class="calc-btn eq-key rams-orange" data-action="equals">=</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card-content">
-                            <div>
-                                <div class="project-meta-row">
-                                    <span>Industrial Study</span>
-                                    <span class="meta-sep">&bull;</span>
-                                    <span>Sound &amp; Haptics</span>
-                                </div>
-                                <h3>Tactile Calculator</h3>
-                                <p>
-                                    An interactive hardware calculator exploring physical button haptics, keyboard input, and Web Audio in the browser.
-                                </p>
-                                <div class="project-tech-clean">
-                                    <span>Interaction Design</span>
-                                    <span>Web Audio FX</span>
-                                    <span>CSS Grid</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="repo-link-item">
-                                    <img src="assets/icons/github.svg?v=37" alt="GitHub" width="16" height="16" />
-                                    <span>GitHub Repo &rarr;</span>
-                                </a>
-                                <button type="button" class="case-study-toggle-btn case-study-toggle" data-target="cs-calculator">
-                                    <span class="case-study-label">View Case Study</span> &darr;
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Symmetrical 2x2 Case Study Breakdown -->
-                    <div class="case-study-panel" id="cs-calculator">
-                        <div class="cs-header-col">
-                            <h4>Case Study: Tactile Calculator</h4>
-                            <p>Hardware-inspired interaction design and micro-haptics in the browser.</p>
-                        </div>
-                        <div class="cs-sections-grid">
-                            <div class="cs-section-box">
-                                <span class="cs-step-badge step-challenge">01 : Focus</span>
-                                <h5>Tactile Feedback</h5>
-                                <p>Recreating the satisfying physical resistance and feel of classic industrial electronics using pure web primitives.</p>
-                            </div>
-                            <div class="cs-section-box">
-                                <span class="cs-step-badge step-approach">02 : Interface</span>
-                                <h5>Responsive Keypad</h5>
-                                <p>Curated button clusters with spring push states and full physical keyboard input listener.</p>
-                            </div>
-                            <div class="cs-section-box">
-                                <span class="cs-step-badge step-solution">03 : Sound</span>
-                                <h5>Web Audio Micro-Clicks</h5>
-                                <p>Custom frequency synthesized mechanical click tones providing instant haptic confirmation on every press.</p>
-                            </div>
-                            <div class="cs-section-box">
-                                <span class="cs-step-badge step-outcome">04 : Execution</span>
-                                <h5>Functional Prototype</h5>
-                                <p>A zero-dependency operational calculator transforming utility into an interactive design artifact.</p>
-                            </div>
-                        </div>
+                    <div class="sim-progress-track">
+                      <div id="fairnessProgressFill" class="sim-progress-fill" style="width: 84%"></div>
                     </div>
+                  </div>
+                  <div class="sim-slider-row">
+                    <div class="sim-slider-label">
+                      <span>Demographic Representation</span>
+                      <span id="fairnessSliderVal">0.84</span>
+                    </div>
+                    <input
+                      type="range"
+                      id="fairnessSlider"
+                      min="20"
+                      max="100"
+                      value="84"
+                      class="sim-range-input"
+                      aria-label="Demographic balance slider"
+                    />
+                  </div>
+                  <!-- Preset Audit Benchmarks for Instant Feedback -->
+                  <div class="sim-presets-row">
+                    <span class="presets-label">Instant Preset Audits:</span>
+                    <div class="presets-btn-group">
+                      <button type="button" class="sim-preset-btn is-active" data-val="84">✦ Balanced (0.84)</button>
+                      <button type="button" class="sim-preset-btn" data-val="38">High Bias (0.38)</button>
+                      <button type="button" class="sim-preset-btn" data-val="100">Ideal (1.00)</button>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </section>
+              </div>
+              <div class="project-card-content">
+                <div>
+                  <div class="project-meta-row">
+                    <span>GNEC Hackathon '25</span>
+                    <span class="meta-sep">&bull;</span>
+                    <span>AI Ethics &amp; Parity</span>
+                    <span class="meta-sep">&bull;</span>
+                    <span>Product Design</span>
+                  </div>
+                  <h3>Fairalyze AI: Bias Detection Tool</h3>
+                  <p>
+                    An algorithmic fairness auditing platform designed during the GNEC Hackathon to help teams detect and resolve demographic
+                    disparities in AI predictive models. Features interactive parity visualizations, cohort risk scoring, and automated dataset
+                    balancing recommendations.
+                  </p>
+                  <div class="project-tech-clean">
+                    <span>Product Design</span>
+                    <span>Figma Tokens</span>
+                    <span>Interactive Prototyping</span>
+                    <span>JavaScript (ES6+)</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="repo-link-item">
+                    <img src="assets/icons/github.svg?v=37" alt="GitHub" width="16" height="16" />
+                    <span>GitHub Repo &rarr;</span>
+                  </a>
+                  <button type="button" class="case-study-toggle-btn case-study-toggle" data-target="cs-fairalyze">
+                    <span class="case-study-label">View Case Study</span> &darr;
+                  </button>
+                </div>
+              </div>
+            </article>
 
-        <!-- ==========================================================================
+            <!-- Symmetrical 2x2 Case Study Breakdown -->
+            <div class="case-study-panel" id="cs-fairalyze">
+              <div class="cs-header-col">
+                <h4>Case Study: Fairalyze AI (GNEC Hackathon 2025)</h4>
+                <p>Auditing dashboard uncovering demographic bias in predictive models.</p>
+              </div>
+              <div class="cs-sections-grid">
+                <div class="cs-section-box">
+                  <span class="cs-step-badge step-challenge">Phase 01 : The Challenge</span>
+                  <h5>Algorithmic Bias in Predictive Models</h5>
+                  <p>
+                    AI models can perpetuate societal bias. We built an intuitive dashboard to help product teams evaluate disparate impact prior to
+                    deployment.
+                  </p>
+                </div>
+                <div class="cs-section-box">
+                  <span class="cs-step-badge step-approach">Phase 02 : Role &amp; Strategy</span>
+                  <h5>Human-Centered Heuristics</h5>
+                  <p>
+                    Led UI/UX design and front-end development during the 48-hour sprint, turning complex mathematical equations into intuitive visual
+                    risk charts.
+                  </p>
+                </div>
+                <div class="cs-section-box">
+                  <span class="cs-step-badge step-solution">Phase 03 : Technical Solution</span>
+                  <h5>Live Parity Simulation &amp; Auditing</h5>
+                  <p>Designed visual parity gauges, demographic acceptance heatmaps, and clear data re-balancing workflows.</p>
+                </div>
+                <div class="cs-section-box">
+                  <span class="cs-step-badge step-outcome">Phase 04 : Outcome &amp; Impact</span>
+                  <h5>GNEC Hackathon Recognition</h5>
+                  <p>Presented to the GNEC jury with strong positive feedback, demonstrating high-velocity product thinking and rapid prototyping.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Calculator App (With Fully Operational Live Interactive Engine) -->
+          <div class="project-wrapper" id="project2">
+            <article class="project-preview-card-pro">
+              <div class="project-watermark-num" aria-hidden="true">02</div>
+              <div class="project-card-image-box">
+                <div class="calc-mockup-wrapper dieter-rams-chassis" id="liveCalcWidget">
+                  <div class="chassis-hardware-header">
+                    <span class="hardware-screw screw-left"></span>
+                    <span class="chassis-model-name">ET66</span>
+                    <span class="hardware-screw screw-right"></span>
+                  </div>
+                  <div class="calc-mock-screen oled-display">
+                    <div class="calc-mock-formula" id="calcFormula">128 &times; 4 + 16</div>
+                    <div class="calc-mock-result" id="calcDisplay">56</div>
+                  </div>
+                  <div class="calc-mock-buttons rams-keypad">
+                    <button type="button" class="calc-btn action-key rams-orange" data-action="clear">AC</button>
+                    <button type="button" class="calc-btn action-key rams-slate" data-action="sign">&plusmn;</button>
+                    <button type="button" class="calc-btn action-key rams-slate" data-action="percent">%</button>
+                    <button type="button" class="calc-btn op-key rams-dark" data-op="/">&divide;</button>
+
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="7">7</button>
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="8">8</button>
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="9">9</button>
+                    <button type="button" class="calc-btn op-key rams-dark" data-op="*">&times;</button>
+
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="4">4</button>
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="5">5</button>
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="6">6</button>
+                    <button type="button" class="calc-btn op-key rams-dark" data-op="-">&minus;</button>
+
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="1">1</button>
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="2">2</button>
+                    <button type="button" class="calc-btn num-key rams-cream" data-num="3">3</button>
+                    <button type="button" class="calc-btn op-key rams-dark" data-op="+">+</button>
+
+                    <button type="button" class="calc-btn wide-key num-key rams-cream" data-num="0">0</button>
+                    <button type="button" class="calc-btn num-key rams-cream" data-action="decimal">.</button>
+                    <button type="button" class="calc-btn eq-key rams-orange" data-action="equals">=</button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-card-content">
+                <div>
+                  <div class="project-meta-row">
+                    <span>Industrial Study</span>
+                    <span class="meta-sep">&bull;</span>
+                    <span>Sound &amp; Haptics</span>
+                  </div>
+                  <h3>Tactile Calculator</h3>
+                  <p>An interactive hardware calculator exploring physical button haptics, keyboard input, and Web Audio in the browser.</p>
+                  <div class="project-tech-clean">
+                    <span>Interaction Design</span>
+                    <span>Web Audio FX</span>
+                    <span>CSS Grid</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="repo-link-item">
+                    <img src="assets/icons/github.svg?v=37" alt="GitHub" width="16" height="16" />
+                    <span>GitHub Repo &rarr;</span>
+                  </a>
+                  <button type="button" class="case-study-toggle-btn case-study-toggle" data-target="cs-calculator">
+                    <span class="case-study-label">View Case Study</span> &darr;
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Symmetrical 2x2 Case Study Breakdown -->
+            <div class="case-study-panel" id="cs-calculator">
+              <div class="cs-header-col">
+                <h4>Case Study: Tactile Calculator</h4>
+                <p>Hardware-inspired interaction design and micro-haptics in the browser.</p>
+              </div>
+              <div class="cs-sections-grid">
+                <div class="cs-section-box">
+                  <span class="cs-step-badge step-challenge">01 : Focus</span>
+                  <h5>Tactile Feedback</h5>
+                  <p>Recreating the satisfying physical resistance and feel of classic industrial electronics using pure web primitives.</p>
+                </div>
+                <div class="cs-section-box">
+                  <span class="cs-step-badge step-approach">02 : Interface</span>
+                  <h5>Responsive Keypad</h5>
+                  <p>Curated button clusters with spring push states and full physical keyboard input listener.</p>
+                </div>
+                <div class="cs-section-box">
+                  <span class="cs-step-badge step-solution">03 : Sound</span>
+                  <h5>Web Audio Micro-Clicks</h5>
+                  <p>Custom frequency synthesized mechanical click tones providing instant haptic confirmation on every press.</p>
+                </div>
+                <div class="cs-section-box">
+                  <span class="cs-step-badge step-outcome">04 : Execution</span>
+                  <h5>Functional Prototype</h5>
+                  <p>A zero-dependency operational calculator transforming utility into an interactive design artifact.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
              Section 02: Skills & Systems (#skills)
              ========================================================================== -->
-        <section id="skills" class="section-wrapper section-craft">
-            <div class="section-header">
-                <div class="section-eyebrow">[02] SKILLS</div>
-                <h2 class="section-title">Technical Skills &amp; Design Systems</h2>
-                <div class="section-title-rule" aria-hidden="true"></div>
-                <p class="section-subtitle">How I architect scalable token systems, engineer tactile motion, and write production frontend software.</p>
+      <section id="skills" class="section-wrapper section-craft">
+        <div class="section-header">
+          <div class="section-eyebrow">[02] SKILLS</div>
+          <h2 class="section-title">Technical Skills &amp; Design Systems</h2>
+          <div class="section-title-rule" aria-hidden="true"></div>
+          <p class="section-subtitle">How I architect scalable token systems, engineer tactile motion, and write production frontend software.</p>
+        </div>
+
+        <!-- 3 Designer Craft Pillars Grid with Interactive Sandboxes -->
+        <div class="craft-pillars-grid">
+          <!-- Pillar 1: Design Systems & Token Architecture -->
+          <div class="craft-pillar-card hover-lift" id="pillarArchitecture">
+            <div class="pillar-icon-box">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
             </div>
+            <span class="pillar-num">01 / ARCHITECTURE</span>
+            <h3 class="pillar-title">Visual Systems &amp; Tokens</h3>
+            <p class="pillar-desc">
+              Fluid typography, 8pt spatial cadence, and semantic design tokens engineered for effortless scalability and WCAG AAA contrast
+              compliance.
+            </p>
 
-            <!-- 3 Designer Craft Pillars Grid with Interactive Sandboxes -->
-            <div class="craft-pillars-grid">
-                <!-- Pillar 1: Design Systems & Token Architecture -->
-                <div class="craft-pillar-card hover-lift" id="pillarArchitecture">
-                    <div class="pillar-icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="3" y1="9" x2="21" y2="9"></line>
-                            <line x1="9" y1="21" x2="9" y2="9"></line>
-                        </svg>
-                    </div>
-                    <span class="pillar-num">01 / ARCHITECTURE</span>
-                    <h3 class="pillar-title">Visual Systems &amp; Tokens</h3>
-                    <p class="pillar-desc">
-                        Fluid typography, 8pt spatial cadence, and semantic design tokens engineered for effortless scalability and WCAG AAA contrast compliance.
-                    </p>
-
-                    <!-- Live Interactive Design Token Component Sandbox -->
-                    <div class="pillar-sandbox-widget">
-                        <div class="token-preview-component" id="tokenPreviewComponent">
-                            <div class="token-comp-header">
-                                <span class="token-comp-tag" id="tokenCompTag">✦ UI Token Active</span>
-                                <span class="token-comp-status" id="tokenCompStatus">Radius: 8px</span>
-                            </div>
-                            <button type="button" class="token-comp-btn" id="tokenCompBtn">
-                                <span>Execute Action</span>
-                                <span class="token-comp-arrow">&rarr;</span>
-                            </button>
-                        </div>
-                        <div class="sandbox-controls-row">
-                            <div class="token-btn-group">
-                                <button type="button" class="token-cadence-btn" data-radius="4" data-label="Radius: 4px">Sharp</button>
-                                <button type="button" class="token-cadence-btn is-active" data-radius="8" data-label="Radius: 8px">Smooth</button>
-                                <button type="button" class="token-cadence-btn" data-radius="18" data-label="Radius: 18px">Pill</button>
-                            </div>
-                            <div class="token-color-group" id="tokenColorGroup">
-                                <button type="button" class="token-color-btn is-active" data-color="#8b5cf6" style="background:#8b5cf6;" title="Purple Token" aria-label="Purple"></button>
-                                <button type="button" class="token-color-btn" data-color="#38bdf8" style="background:#38bdf8;" title="Cyan Token" aria-label="Cyan"></button>
-                                <button type="button" class="token-color-btn" data-color="#10b981" style="background:#10b981;" title="Emerald Token" aria-label="Emerald"></button>
-                                <button type="button" class="token-color-btn" data-color="#f43f5e" style="background:#f43f5e;" title="Rose Token" aria-label="Rose"></button>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Live Interactive Design Token Component Sandbox -->
+            <div class="pillar-sandbox-widget">
+              <div class="token-preview-component" id="tokenPreviewComponent">
+                <div class="token-comp-header">
+                  <span class="token-comp-tag" id="tokenCompTag">✦ UI Token Active</span>
+                  <span class="token-comp-status" id="tokenCompStatus">Radius: 8px</span>
                 </div>
-
-                <!-- Pillar 2: Tactile Motion & Spring Dynamics -->
-                <div class="craft-pillar-card hover-lift" id="pillarKinetics">
-                    <div class="pillar-icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 12h4l3-8 4 16 3-8h6"></path>
-                        </svg>
-                    </div>
-                    <span class="pillar-num">02 / KINETICS</span>
-                    <h3 class="pillar-title">Tactile Micro-Interactions</h3>
-                    <p class="pillar-desc">
-                        Damped spring transitions, sub-16ms layout animations, and responsive push states that make digital software feel like a precision physical instrument.
-                    </p>
-
-                    <!-- Live Interactive Spring Physics Playground -->
-                    <div class="pillar-sandbox-widget">
-                        <div class="spring-profile-row">
-                            <div class="spring-profile-group">
-                                <button type="button" class="spring-profile-btn is-active" data-profile="snappy" data-stiff="300" data-damp="22">Snappy</button>
-                                <button type="button" class="spring-profile-btn" data-profile="bouncy" data-stiff="150" data-damp="10">Bouncy</button>
-                                <button type="button" class="spring-profile-btn" data-profile="smooth" data-stiff="90" data-damp="26">Smooth</button>
-                            </div>
-                        </div>
-                        <div class="spring-interactive-stage" id="springStage">
-                            <canvas id="springWaveformCanvas" class="spring-waveform-canvas" width="280" height="38" aria-hidden="true"></canvas>
-                            <button type="button" class="spring-trigger-disc" id="springTriggerBtn" aria-label="Test physical spring impulse">
-                                <div class="spring-disc-core" id="springDiscCore">✦ PULL / CLICK</div>
-                            </button>
-                        </div>
-                    </div>
+                <button type="button" class="token-comp-btn" id="tokenCompBtn">
+                  <span>Execute Action</span>
+                  <span class="token-comp-arrow">&rarr;</span>
+                </button>
+              </div>
+              <div class="sandbox-controls-row">
+                <div class="token-btn-group">
+                  <button type="button" class="token-cadence-btn" data-radius="4" data-label="Radius: 4px">Sharp</button>
+                  <button type="button" class="token-cadence-btn is-active" data-radius="8" data-label="Radius: 8px">Smooth</button>
+                  <button type="button" class="token-cadence-btn" data-radius="18" data-label="Radius: 18px">Pill</button>
                 </div>
-
-                <!-- Pillar 3: Zero-Dependency Performance -->
-                <div class="craft-pillar-card hover-lift" id="pillarPerformance">
-                    <div class="pillar-icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                        </svg>
-                    </div>
-                    <span class="pillar-num">03 / PERFORMANCE</span>
-                    <h3 class="pillar-title">Zero-Dependency Frontend</h3>
-                    <p class="pillar-desc">
-                        Pure browser primitives, vanilla ES6+, 60 FPS hardware-accelerated canvas, and sub-50KB weight ensuring lightning-fast execution on any screen.
-                    </p>
-
-                    <!-- Live Real-Time Hardware Performance Oscilloscope -->
-                    <div class="pillar-sandbox-widget">
-                        <div class="perf-monitor-box" id="perfMonitorBox">
-                            <div class="perf-stats-row">
-                                <span class="perf-fps-val" id="perfFpsVal">60.0 FPS</span>
-                                <span class="perf-ms-val" id="perfMsVal">16.6 ms</span>
-                                <span class="perf-badge-pill">0 LIBS</span>
-                            </div>
-                            <canvas id="perfOscilloscopeCanvas" class="perf-oscilloscope-canvas" width="280" height="36" aria-hidden="true"></canvas>
-                            <button type="button" class="perf-run-test-btn" id="perfBenchmarkBtn">
-                                <span>✦ Benchmark Engine</span>
-                                <span id="benchmarkStatus" class="benchmark-pill">Live Active</span>
-                            </button>
-                        </div>
-                    </div>
+                <div class="token-color-group" id="tokenColorGroup">
+                  <button
+                    type="button"
+                    class="token-color-btn is-active"
+                    data-color="#8b5cf6"
+                    style="background: #8b5cf6"
+                    title="Purple Token"
+                    aria-label="Purple"
+                  ></button>
+                  <button
+                    type="button"
+                    class="token-color-btn"
+                    data-color="#38bdf8"
+                    style="background: #38bdf8"
+                    title="Cyan Token"
+                    aria-label="Cyan"
+                  ></button>
+                  <button
+                    type="button"
+                    class="token-color-btn"
+                    data-color="#10b981"
+                    style="background: #10b981"
+                    title="Emerald Token"
+                    aria-label="Emerald"
+                  ></button>
+                  <button
+                    type="button"
+                    class="token-color-btn"
+                    data-color="#f43f5e"
+                    style="background: #f43f5e"
+                    title="Rose Token"
+                    aria-label="Rose"
+                  ></button>
                 </div>
+              </div>
             </div>
+          </div>
 
-            <!-- Cross-Disciplinary Foundation Ethos (Architectural Callout) -->
-            <div class="craft-ethos-footnote">
-                <div class="footnote-left">
-                    <span class="footnote-badge">CROSS-DISCIPLINARY FOUNDATION</span>
-                    <p class="footnote-text">
-                        Computer Science foundation (Data Structures, Algorithmic Analysis, and Computational Systems) bridging senior design leadership and production software engineering.
-                    </p>
-                </div>
-                <div class="footnote-right">
-                    <a href="assets/images/Anup_Resume.pdf" target="_blank" rel="noopener noreferrer" class="footnote-cv-link">
-                        <span>View Full Resume &amp; Experience</span> &nearr;
-                    </a>
-                </div>
+          <!-- Pillar 2: Tactile Motion & Spring Dynamics -->
+          <div class="craft-pillar-card hover-lift" id="pillarKinetics">
+            <div class="pillar-icon-box">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 12h4l3-8 4 16 3-8h6"></path>
+              </svg>
             </div>
-        </section>
+            <span class="pillar-num">02 / KINETICS</span>
+            <h3 class="pillar-title">Tactile Micro-Interactions</h3>
+            <p class="pillar-desc">
+              Damped spring transitions, sub-16ms layout animations, and responsive push states that make digital software feel like a precision
+              physical instrument.
+            </p>
 
-        <!-- ==========================================================================
+            <!-- Live Interactive Spring Physics Playground -->
+            <div class="pillar-sandbox-widget">
+              <div class="spring-profile-row">
+                <div class="spring-profile-group">
+                  <button type="button" class="spring-profile-btn is-active" data-profile="snappy" data-stiff="300" data-damp="22">Snappy</button>
+                  <button type="button" class="spring-profile-btn" data-profile="bouncy" data-stiff="150" data-damp="10">Bouncy</button>
+                  <button type="button" class="spring-profile-btn" data-profile="smooth" data-stiff="90" data-damp="26">Smooth</button>
+                </div>
+              </div>
+              <div class="spring-interactive-stage" id="springStage">
+                <canvas id="springWaveformCanvas" class="spring-waveform-canvas" width="280" height="38" aria-hidden="true"></canvas>
+                <button type="button" class="spring-trigger-disc" id="springTriggerBtn" aria-label="Test physical spring impulse">
+                  <div class="spring-disc-core" id="springDiscCore">✦ PULL / CLICK</div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Zero-Dependency Performance -->
+          <div class="craft-pillar-card hover-lift" id="pillarPerformance">
+            <div class="pillar-icon-box">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <span class="pillar-num">03 / PERFORMANCE</span>
+            <h3 class="pillar-title">Zero-Dependency Frontend</h3>
+            <p class="pillar-desc">
+              Pure browser primitives, vanilla ES6+, 60 FPS hardware-accelerated canvas, and sub-50KB weight ensuring lightning-fast execution on any
+              screen.
+            </p>
+
+            <!-- Live Real-Time Hardware Performance Oscilloscope -->
+            <div class="pillar-sandbox-widget">
+              <div class="perf-monitor-box" id="perfMonitorBox">
+                <div class="perf-stats-row">
+                  <span class="perf-fps-val" id="perfFpsVal">60.0 FPS</span>
+                  <span class="perf-ms-val" id="perfMsVal">16.6 ms</span>
+                  <span class="perf-badge-pill">0 LIBS</span>
+                </div>
+                <canvas id="perfOscilloscopeCanvas" class="perf-oscilloscope-canvas" width="280" height="36" aria-hidden="true"></canvas>
+                <button type="button" class="perf-run-test-btn" id="perfBenchmarkBtn">
+                  <span>✦ Benchmark Engine</span>
+                  <span id="benchmarkStatus" class="benchmark-pill">Live Active</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cross-Disciplinary Foundation Ethos (Architectural Callout) -->
+        <div class="craft-ethos-footnote">
+          <div class="footnote-left">
+            <span class="footnote-badge">CROSS-DISCIPLINARY FOUNDATION</span>
+            <p class="footnote-text">
+              Computer Science foundation (Data Structures, Algorithmic Analysis, and Computational Systems) bridging senior design leadership and
+              production software engineering.
+            </p>
+          </div>
+          <div class="footnote-right">
+            <a href="assets/images/Anup_Resume.pdf" target="_blank" rel="noopener noreferrer" class="footnote-cv-link">
+              <span>View Full Resume &amp; Experience</span> &nearr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
              Section 03: About Me & Life Beyond Code (#playzone)
              ========================================================================== -->
-        <section id="playzone" class="section-wrapper section-playzone">
-            <div class="section-header">
-                <div class="section-eyebrow">[03] ABOUT ME &amp; BEYOND</div>
-                <h2 class="section-title interactive-section-title" id="aboutInteractiveTitle">
-                    <span class="interactive-word" data-word="Life">Life</span>
-                    <span class="interactive-word word-accent-serif" data-word="Beyond">Beyond</span>
-                    <span class="interactive-word" data-word="Code">Code</span>
-                </h2>
-                <div class="section-title-rule" aria-hidden="true"></div>
-                <p class="section-subtitle">Photography, YouTube visual production, chess strategy, and the personal journey behind the craft.</p>
+      <section id="playzone" class="section-wrapper section-playzone">
+        <div class="section-header">
+          <div class="section-eyebrow">[03] ABOUT ME &amp; BEYOND</div>
+          <h2 class="section-title interactive-section-title" id="aboutInteractiveTitle">
+            <span class="interactive-word" data-word="Life">Life</span>
+            <span class="interactive-word word-accent-serif" data-word="Beyond">Beyond</span>
+            <span class="interactive-word" data-word="Code">Code</span>
+          </h2>
+          <div class="section-title-rule" aria-hidden="true"></div>
+          <p class="section-subtitle">Photography, YouTube visual production, chess strategy, and the personal journey behind the craft.</p>
+        </div>
+
+        <!-- Interactive Human Story Milestones Strip -->
+        <div class="about-interactive-story-strip" id="aboutStoryStrip">
+          <div class="about-story-header">
+            <span class="story-tag">✦ HUMAN STORY // JOURNEY</span>
+            <span class="story-hint">Hover milestones to explore background</span>
+          </div>
+          <div class="about-milestones-grid">
+            <button
+              type="button"
+              class="story-milestone-pill is-active"
+              data-detail="Born and raised in Nepal, cultivating a deep early curiosity for computing logic, physics, and creative visual craft."
+            >
+              <span class="milestone-icon">🇳🇵</span>
+              <span class="milestone-label">Roots in Nepal</span>
+            </button>
+            <button
+              type="button"
+              class="story-milestone-pill"
+              data-detail="Pursuing Computer Science in the USA, mastering algorithmic thinking, data structures, and human-computer interaction."
+            >
+              <span class="milestone-icon">🎓</span>
+              <span class="milestone-label">CS in the USA</span>
+            </button>
+            <button
+              type="button"
+              class="story-milestone-pill"
+              data-detail="Bridging high-fidelity Figma design tokens with zero-dependency, sub-50KB frontend engineering and tactile kinetics."
+            >
+              <span class="milestone-icon">⚡</span>
+              <span class="milestone-label">Design &rarr; Code</span>
+            </button>
+            <button
+              type="button"
+              class="story-milestone-pill"
+              data-detail="Visual framing in 35mm film photography, YouTube creative production, and analytical chess endgame strategy."
+            >
+              <span class="milestone-icon">♟️</span>
+              <span class="milestone-label">Strategy &amp; Visuals</span>
+            </button>
+          </div>
+          <div class="about-story-detail-box" id="aboutStoryDetail">
+            Born and raised in Nepal, cultivating a deep early curiosity for computing logic, physics, and creative visual craft.
+          </div>
+        </div>
+
+        <!-- 4 Consistent Experimental Cards -->
+        <div class="playzone-cards-row">
+          <!-- 1. YouTube -->
+          <div class="playzone-card-item pz-youtube hover-lift">
+            <div class="pz-icon-wrapper">
+              <img src="assets/icons/icon-youtube.svg" alt="YouTube" width="24" height="24" />
             </div>
+            <h4>YouTube Channel</h4>
+            <div class="pz-metric-badge">45,000+ Views</div>
+            <p class="pz-card-desc">Tech tutorials &amp; creative digital production</p>
+            <a href="https://www.youtube.com/@anup-paudel" target="_blank" rel="noopener noreferrer" class="pz-card-action-link"
+              >Visit Channel &rarr;</a
+            >
+          </div>
 
-            <!-- Interactive Human Story Milestones Strip -->
-            <div class="about-interactive-story-strip" id="aboutStoryStrip">
-                <div class="about-story-header">
-                    <span class="story-tag">✦ HUMAN STORY // JOURNEY</span>
-                    <span class="story-hint">Hover milestones to explore background</span>
-                </div>
-                <div class="about-milestones-grid">
-                    <button type="button" class="story-milestone-pill is-active" data-detail="Born and raised in Nepal, cultivating a deep early curiosity for computing logic, physics, and creative visual craft.">
-                        <span class="milestone-icon">🇳🇵</span>
-                        <span class="milestone-label">Roots in Nepal</span>
-                    </button>
-                    <button type="button" class="story-milestone-pill" data-detail="Pursuing Computer Science in the USA, mastering algorithmic thinking, data structures, and human-computer interaction.">
-                        <span class="milestone-icon">🎓</span>
-                        <span class="milestone-label">CS in the USA</span>
-                    </button>
-                    <button type="button" class="story-milestone-pill" data-detail="Bridging high-fidelity Figma design tokens with zero-dependency, sub-50KB frontend engineering and tactile kinetics.">
-                        <span class="milestone-icon">⚡</span>
-                        <span class="milestone-label">Design &rarr; Code</span>
-                    </button>
-                    <button type="button" class="story-milestone-pill" data-detail="Visual framing in 35mm film photography, YouTube creative production, and analytical chess endgame strategy.">
-                        <span class="milestone-icon">♟️</span>
-                        <span class="milestone-label">Strategy &amp; Visuals</span>
-                    </button>
-                </div>
-                <div class="about-story-detail-box" id="aboutStoryDetail">
-                    Born and raised in Nepal, cultivating a deep early curiosity for computing logic, physics, and creative visual craft.
-                </div>
+          <!-- 2. Travel -->
+          <div class="playzone-card-item pz-travel hover-lift">
+            <div class="pz-icon-wrapper">
+              <img src="assets/icons/icon-travel.svg" alt="Travel" width="24" height="24" />
             </div>
+            <h4>Travel &amp; Culture</h4>
+            <div class="pz-metric-badge">Cultural Immersion</div>
+            <p class="pz-card-desc">Texas &bull; Maryland &bull; Missouri &bull; Nepal</p>
+            <span class="pz-card-meta">Exploration &amp; Landscapes</span>
+          </div>
 
-            <!-- 4 Consistent Experimental Cards -->
-            <div class="playzone-cards-row">
-                <!-- 1. YouTube -->
-                <div class="playzone-card-item pz-youtube hover-lift">
-                    <div class="pz-icon-wrapper">
-                        <img src="assets/icons/icon-youtube.svg" alt="YouTube" width="24" height="24" />
-                    </div>
-                    <h4>YouTube Channel</h4>
-                    <div class="pz-metric-badge">45,000+ Views</div>
-                    <p class="pz-card-desc">Tech tutorials &amp; creative digital production</p>
-                    <a href="https://www.youtube.com/@anup-paudel" target="_blank" rel="noopener noreferrer" class="pz-card-action-link">Visit Channel &rarr;</a>
-                </div>
-
-                <!-- 2. Travel -->
-                <div class="playzone-card-item pz-travel hover-lift">
-                    <div class="pz-icon-wrapper">
-                        <img src="assets/icons/icon-travel.svg" alt="Travel" width="24" height="24" />
-                    </div>
-                    <h4>Travel &amp; Culture</h4>
-                    <div class="pz-metric-badge">Cultural Immersion</div>
-                    <p class="pz-card-desc">Texas &bull; Maryland &bull; Missouri &bull; Nepal</p>
-                    <span class="pz-card-meta">Exploration &amp; Landscapes</span>
-                </div>
-
-                <!-- 3. Chess -->
-                <div class="playzone-card-item pz-chess hover-lift">
-                    <div class="pz-icon-wrapper">
-                        <img src="assets/icons/icon-chess.svg" alt="Chess" width="24" height="24" />
-                    </div>
-                    <h4>Chess Strategy</h4>
-                    <div class="pz-metric-badge">Active Player</div>
-                    <p class="pz-card-desc">Tactical foresight, patience &amp; calculation</p>
-                    <a href="https://www.chess.com/member/anuppaudel05" target="_blank" rel="noopener noreferrer" class="pz-card-action-link">Chess.com Profile &rarr;</a>
-                </div>
-
-                <!-- 4. Photography -->
-                <div class="playzone-card-item pz-photo hover-lift">
-                    <div class="pz-icon-wrapper">
-                        <img src="assets/icons/icon-camera.svg" alt="Photography" width="24" height="24" />
-                    </div>
-                    <h4>Photography</h4>
-                    <div class="pz-metric-badge">Visual Perspective</div>
-                    <p class="pz-card-desc">Cityscapes, natural light &amp; spatial framing</p>
-                    <button type="button" id="toggleGalleryBtn" class="pz-gallery-action-btn" aria-expanded="false" aria-controls="photoGalleryDrawer">
-                        <span>Explore Captures</span>
-                        <span class="gallery-chevron">&darr;</span>
-                    </button>
-                </div>
+          <!-- 3. Chess -->
+          <div class="playzone-card-item pz-chess hover-lift">
+            <div class="pz-icon-wrapper">
+              <img src="assets/icons/icon-chess.svg" alt="Chess" width="24" height="24" />
             </div>
+            <h4>Chess Strategy</h4>
+            <div class="pz-metric-badge">Active Player</div>
+            <p class="pz-card-desc">Tactical foresight, patience &amp; calculation</p>
+            <a href="https://www.chess.com/member/anuppaudel05" target="_blank" rel="noopener noreferrer" class="pz-card-action-link"
+              >Chess.com Profile &rarr;</a
+            >
+          </div>
 
-            <!-- Collapsible Architectural Photography Showcase Drawer -->
-            <div class="photo-gallery-drawer" id="photoGalleryDrawer" aria-hidden="true">
-                <div class="gallery-drawer-inner">
-                    <div class="gallery-drawer-top">
-                        <div class="gallery-title-meta">
-                            <h4>Selected Visual Captures</h4>
-                            <span>Missouri &amp; Maryland</span>
-                        </div>
-                        <button type="button" id="closeGalleryBtn" class="gallery-close-button" aria-label="Close Gallery">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="travel-showcase-grid">
-                        <div class="travel-card-box hover-lift photo-lightbox-trigger" data-full="assets/images/saint_louis.jpg" data-title="Saint Louis, Missouri" data-camera="35mm &bull; f/2.0" role="button" tabindex="0" aria-label="View Saint Louis capture full size">
-                            <img src="assets/images/saint_louis.jpg" alt="Saint Louis Gateway Arch" loading="lazy" width="350" height="180" />
-                            <div class="travel-card-title">
-                                <span>Saint Louis, Missouri</span>
-                                <small>35mm &bull; f/2.0 &bull; Click to Expand &rarr;</small>
-                            </div>
-                        </div>
-                        <div class="travel-card-box hover-lift photo-lightbox-trigger" data-full="assets/images/baltimore.jpg" data-title="Baltimore, Maryland" data-camera="50mm &bull; f/1.8" role="button" tabindex="0" aria-label="View Baltimore capture full size">
-                            <img src="assets/images/baltimore.jpg" alt="Baltimore Inner Harbor" loading="lazy" width="350" height="180" />
-                            <div class="travel-card-title">
-                                <span>Baltimore, Maryland</span>
-                                <small>50mm &bull; f/1.8 &bull; Click to Expand &rarr;</small>
-                            </div>
-                        </div>
-                        <div class="travel-card-box hover-lift photo-lightbox-trigger" data-full="assets/images/ocean_city.jpg" data-title="Ocean City, Maryland" data-camera="24mm &bull; f/4.0" role="button" tabindex="0" aria-label="View Ocean City capture full size">
-                            <img src="assets/images/ocean_city.jpg" alt="Ocean City Boardwalk and Pier" loading="lazy" width="350" height="180" />
-                            <div class="travel-card-title">
-                                <span>Ocean City, Maryland</span>
-                                <small>24mm &bull; f/4.0 &bull; Click to Expand &rarr;</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <!-- 4. Photography -->
+          <div class="playzone-card-item pz-photo hover-lift">
+            <div class="pz-icon-wrapper">
+              <img src="assets/icons/icon-camera.svg" alt="Photography" width="24" height="24" />
             </div>
-        </section>
+            <h4>Photography</h4>
+            <div class="pz-metric-badge">Visual Perspective</div>
+            <p class="pz-card-desc">Cityscapes, natural light &amp; spatial framing</p>
+            <button type="button" id="toggleGalleryBtn" class="pz-gallery-action-btn" aria-expanded="false" aria-controls="photoGalleryDrawer">
+              <span>Explore Captures</span>
+              <span class="gallery-chevron">&darr;</span>
+            </button>
+          </div>
+        </div>
 
-        <!-- ==========================================================================
+        <!-- Collapsible Architectural Photography Showcase Drawer -->
+        <div class="photo-gallery-drawer" id="photoGalleryDrawer" aria-hidden="true">
+          <div class="gallery-drawer-inner">
+            <div class="gallery-drawer-top">
+              <div class="gallery-title-meta">
+                <h4>Selected Visual Captures</h4>
+                <span>Missouri &amp; Maryland</span>
+              </div>
+              <button type="button" id="closeGalleryBtn" class="gallery-close-button" aria-label="Close Gallery">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="travel-showcase-grid">
+              <div
+                class="travel-card-box hover-lift photo-lightbox-trigger"
+                data-full="assets/images/saint_louis.jpg"
+                data-title="Saint Louis, Missouri"
+                data-camera="35mm &bull; f/2.0"
+                role="button"
+                tabindex="0"
+                aria-label="View Saint Louis capture full size"
+              >
+                <img src="assets/images/saint_louis.jpg" alt="Saint Louis Gateway Arch" loading="lazy" width="350" height="180" />
+                <div class="travel-card-title">
+                  <span>Saint Louis, Missouri</span>
+                  <small>35mm &bull; f/2.0 &bull; Click to Expand &rarr;</small>
+                </div>
+              </div>
+              <div
+                class="travel-card-box hover-lift photo-lightbox-trigger"
+                data-full="assets/images/baltimore.jpg"
+                data-title="Baltimore, Maryland"
+                data-camera="50mm &bull; f/1.8"
+                role="button"
+                tabindex="0"
+                aria-label="View Baltimore capture full size"
+              >
+                <img src="assets/images/baltimore.jpg" alt="Baltimore Inner Harbor" loading="lazy" width="350" height="180" />
+                <div class="travel-card-title">
+                  <span>Baltimore, Maryland</span>
+                  <small>50mm &bull; f/1.8 &bull; Click to Expand &rarr;</small>
+                </div>
+              </div>
+              <div
+                class="travel-card-box hover-lift photo-lightbox-trigger"
+                data-full="assets/images/ocean_city.jpg"
+                data-title="Ocean City, Maryland"
+                data-camera="24mm &bull; f/4.0"
+                role="button"
+                tabindex="0"
+                aria-label="View Ocean City capture full size"
+              >
+                <img src="assets/images/ocean_city.jpg" alt="Ocean City Boardwalk and Pier" loading="lazy" width="350" height="180" />
+                <div class="travel-card-title">
+                  <span>Ocean City, Maryland</span>
+                  <small>24mm &bull; f/4.0 &bull; Click to Expand &rarr;</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
              Section 04: Unified Contact Studio (#contact)
              ========================================================================== -->
-        <section id="contact" class="section-wrapper section-contact">
-            <div class="section-header">
-                <div class="section-eyebrow">[04] CONTACT</div>
-                <h2 class="section-title">Let's Collaborate</h2>
-                <div class="section-title-rule" aria-hidden="true"></div>
-                <p class="section-subtitle">Open for product design and front-end engineering roles, collaborative projects, or a conversation.</p>
+      <section id="contact" class="section-wrapper section-contact">
+        <div class="section-header">
+          <div class="section-eyebrow">[04] CONTACT</div>
+          <h2 class="section-title">Let's Collaborate</h2>
+          <div class="section-title-rule" aria-hidden="true"></div>
+          <p class="section-subtitle">Open for product design and front-end engineering roles, collaborative projects, or a conversation.</p>
+        </div>
+
+        <!-- Unified 2-Column Split: Direct Channels & Interactive Message Terminal -->
+        <div class="contact-dual-grid">
+          <!-- Left Column: Direct Channels -->
+          <div class="contact-channels-panel">
+            <h3 class="contact-panel-title">Direct Channels</h3>
+            <p class="contact-panel-desc">Reach out directly via your preferred platform:</p>
+
+            <div class="contact-channel-tiles">
+              <!-- Direct Email Tile with Instant Copy -->
+              <div class="channel-tile-item email-tile">
+                <div class="channel-tile-left">
+                  <div class="channel-tile-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#4f46e5"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="20"
+                      height="20"
+                    >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="channel-tile-details">
+                    <span class="channel-tile-name">Email</span>
+                    <span class="channel-tile-handle">anuppaudel0562@gmail.com</span>
+                  </div>
+                </div>
+                <div class="channel-email-actions">
+                  <button type="button" id="copyEmailBtn" class="contact-action-btn copy-btn" aria-label="Copy Email to Clipboard">
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Copy Email</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/anuppaudel25/" target="_blank" rel="noopener noreferrer" class="channel-tile-item hover-lift">
+                <div class="channel-tile-left">
+                  <div class="channel-tile-icon">
+                    <img src="assets/icons/linkedin-icon.png" alt="LinkedIn" width="22" height="22" />
+                  </div>
+                  <div class="channel-tile-details">
+                    <span class="channel-tile-name">LinkedIn</span>
+                    <span class="channel-tile-handle">anuppaudel25</span>
+                  </div>
+                </div>
+                <span class="channel-tile-arrow">&nearr;</span>
+              </a>
+
+              <!-- GitHub -->
+              <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="channel-tile-item hover-lift">
+                <div class="channel-tile-left">
+                  <div class="channel-tile-icon">
+                    <img src="assets/icons/github.svg?v=37" alt="GitHub" width="22" height="22" />
+                  </div>
+                  <div class="channel-tile-details">
+                    <span class="channel-tile-name">GitHub</span>
+                    <span class="channel-tile-handle">Anup-Paudel</span>
+                  </div>
+                </div>
+                <span class="channel-tile-arrow">&nearr;</span>
+              </a>
+
+              <!-- Discord -->
+              <a href="https://discordapp.com/users/anup_29731" target="_blank" rel="noopener noreferrer" class="channel-tile-item hover-lift">
+                <div class="channel-tile-left">
+                  <div class="channel-tile-icon">
+                    <img src="assets/icons/discord-icon.png" alt="Discord" width="22" height="22" />
+                  </div>
+                  <div class="channel-tile-details">
+                    <span class="channel-tile-name">Discord</span>
+                    <span class="channel-tile-handle">anup_29731</span>
+                  </div>
+                </div>
+                <span class="channel-tile-arrow">&nearr;</span>
+              </a>
             </div>
 
-            <!-- Unified 2-Column Split: Direct Channels & Interactive Message Terminal -->
-            <div class="contact-dual-grid">
-                <!-- Left Column: Direct Channels -->
-                <div class="contact-channels-panel">
-                    <h3 class="contact-panel-title">Direct Channels</h3>
-                    <p class="contact-panel-desc">Reach out directly via your preferred platform:</p>
-
-                    <div class="contact-channel-tiles">
-                        <!-- Direct Email Tile with Instant Copy -->
-                        <div class="channel-tile-item email-tile">
-                            <div class="channel-tile-left">
-                                <div class="channel-tile-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="channel-tile-details">
-                                    <span class="channel-tile-name">Email</span>
-                                    <span class="channel-tile-handle">anuppaudel0562@gmail.com</span>
-                                </div>
-                            </div>
-                            <div class="channel-email-actions">
-                                <button type="button" id="copyEmailBtn" class="contact-action-btn copy-btn" aria-label="Copy Email to Clipboard">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                    </svg>
-                                    <span>Copy Email</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/in/anuppaudel25/" target="_blank" rel="noopener noreferrer" class="channel-tile-item hover-lift">
-                            <div class="channel-tile-left">
-                                <div class="channel-tile-icon">
-                                    <img src="assets/icons/linkedin-icon.png" alt="LinkedIn" width="22" height="22" />
-                                </div>
-                                <div class="channel-tile-details">
-                                    <span class="channel-tile-name">LinkedIn</span>
-                                    <span class="channel-tile-handle">anuppaudel25</span>
-                                </div>
-                            </div>
-                            <span class="channel-tile-arrow">&nearr;</span>
-                        </a>
-
-                        <!-- GitHub -->
-                        <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="channel-tile-item hover-lift">
-                            <div class="channel-tile-left">
-                                <div class="channel-tile-icon">
-                                    <img src="assets/icons/github.svg?v=37" alt="GitHub" width="22" height="22" />
-                                </div>
-                                <div class="channel-tile-details">
-                                    <span class="channel-tile-name">GitHub</span>
-                                    <span class="channel-tile-handle">Anup-Paudel</span>
-                                </div>
-                            </div>
-                            <span class="channel-tile-arrow">&nearr;</span>
-                        </a>
-
-                        <!-- Discord -->
-                        <a href="https://discordapp.com/users/anup_29731" target="_blank" rel="noopener noreferrer" class="channel-tile-item hover-lift">
-                            <div class="channel-tile-left">
-                                <div class="channel-tile-icon">
-                                    <img src="assets/icons/discord-icon.png" alt="Discord" width="22" height="22" />
-                                </div>
-                                <div class="channel-tile-details">
-                                    <span class="channel-tile-name">Discord</span>
-                                    <span class="channel-tile-handle">anup_29731</span>
-                                </div>
-                            </div>
-                            <span class="channel-tile-arrow">&nearr;</span>
-                        </a>
-                    </div>
-
-                    <div class="contact-location-badge">
-                        <span>Based in Dallas / Plano, Texas &bull; Available for Design Roles</span>
-                    </div>
-                </div>
-
-                <!-- Right Column: Clean Message Form -->
-                <div class="contact-form-panel">
-                    <h3 class="contact-panel-title">Send a Message</h3>
-                    <p class="contact-panel-desc">Have a role, question, or project? Drop a note below:</p>
-
-                    <form id="contactForm" novalidate>
-                        <div class="form-field-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
-                            <span class="field-error">Please enter your name</span>
-                        </div>
-
-                        <div class="form-field-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
-                            <span class="field-error">Please enter a valid email address</span>
-                        </div>
-
-                        <div class="form-field-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Hello Anup, I would like to discuss..." required></textarea>
-                            <span class="field-error">Message cannot be empty</span>
-                        </div>
-
-                        <button type="submit" id="submitContactBtn" class="btn-submit-message">Send Message &rarr;</button>
-                        <p id="formStatus" class="form-status-message" aria-live="polite"></p>
-                    </form>
-                </div>
+            <div class="contact-location-badge">
+              <span>Based in Dallas / Plano, Texas &bull; Available for Design Roles</span>
             </div>
-        </section>
+          </div>
+
+          <!-- Right Column: Clean Message Form -->
+          <div class="contact-form-panel">
+            <h3 class="contact-panel-title">Send a Message</h3>
+            <p class="contact-panel-desc">Have a role, question, or project? Drop a note below:</p>
+
+            <form id="contactForm" novalidate>
+              <div class="form-field-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
+                <span class="field-error">Please enter your name</span>
+              </div>
+
+              <div class="form-field-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
+                <span class="field-error">Please enter a valid email address</span>
+              </div>
+
+              <div class="form-field-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Hello Anup, I would like to discuss..." required></textarea>
+                <span class="field-error">Message cannot be empty</span>
+              </div>
+
+              <button type="submit" id="submitContactBtn" class="btn-submit-message">Send Message &rarr;</button>
+              <p id="formStatus" class="form-status-message" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Dedicated Architectural Photography Lightbox Modal -->
     <div class="photo-lightbox-modal" id="photoLightboxModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photography Lightbox">
-        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
-        <div class="lightbox-dialog">
-            <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="lightbox-image-container">
-                <img src="" alt="Full view capture" id="lightboxImage" class="lightbox-image" />
-            </div>
-            <div class="lightbox-caption-bar">
-                <div class="lightbox-meta">
-                    <h4 id="lightboxTitle" class="lightbox-title">Photo Title</h4>
-                    <span id="lightboxCamera" class="lightbox-camera">Camera Details</span>
-                </div>
-                <a href="#" target="_blank" rel="noopener noreferrer" id="lightboxFullLink" class="lightbox-link-btn">
-                    <span>View Original</span> &nearr;
-                </a>
-            </div>
+      <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+      <div class="lightbox-dialog">
+        <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="lightbox-image-container">
+          <img src="" alt="Full view capture" id="lightboxImage" class="lightbox-image" />
         </div>
+        <div class="lightbox-caption-bar">
+          <div class="lightbox-meta">
+            <h4 id="lightboxTitle" class="lightbox-title">Photo Title</h4>
+            <span id="lightboxCamera" class="lightbox-camera">Camera Details</span>
+          </div>
+          <a href="#" target="_blank" rel="noopener noreferrer" id="lightboxFullLink" class="lightbox-link-btn">
+            <span>View Original</span> &nearr;
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Toast Notification Container -->
@@ -942,76 +1257,75 @@
 
     <!-- Master Footer with Structured Grid, Branding, Navigation, and Back-to-Top -->
     <footer class="site-footer-modern">
-        <div class="footer-backdrop-text" aria-hidden="true">ANUP PAUDEL</div>
-        <div class="footer-modern-inner">
-            <div class="footer-grid-layout">
-                <!-- Column 1: Brand & Tagline -->
-                <div class="footer-col-brand">
-                    <a href="#hero" class="footer-brand-link">
-                        <img src="assets/images/APLOGO.png" alt="AP Logo" width="28" height="28" />
-                        <span class="footer-brand-name">Anup Paudel</span>
-                    </a>
-                    <p class="footer-brand-bio">
-                        Product Designer &bull; UI/UX &bull; Interaction Design. Crafting thoughtful digital products, scalable design systems, and delightful user experiences.
-                    </p>
-                    <div class="footer-clock-meta">
-                        <span id="dallasTime">--:--:-- CST</span> &bull; Dallas, TX
-                    </div>
-                </div>
+      <div class="footer-backdrop-text" aria-hidden="true">ANUP PAUDEL</div>
+      <div class="footer-modern-inner">
+        <div class="footer-grid-layout">
+          <!-- Column 1: Brand & Tagline -->
+          <div class="footer-col-brand">
+            <a href="#hero" class="footer-brand-link">
+              <img src="assets/images/APLOGO.png" alt="AP Logo" width="28" height="28" />
+              <span class="footer-brand-name">Anup Paudel</span>
+            </a>
+            <p class="footer-brand-bio">
+              Product Designer &bull; UI/UX &bull; Interaction Design. Crafting thoughtful digital products, scalable design systems, and delightful
+              user experiences.
+            </p>
+            <div class="footer-clock-meta"><span id="dallasTime">--:--:-- CST</span> &bull; Dallas, TX</div>
+          </div>
 
-                <!-- Column 2: Navigation -->
-                <div class="footer-col-nav">
-                    <h4 class="footer-col-heading">Navigation</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="#hero" class="footer-link">Home</a></li>
-                        <li><a href="#projects" class="footer-link">Projects</a></li>
-                        <li><a href="#craft" class="footer-link">Craft</a></li>
-                        <li><a href="#playzone" class="footer-link">Beyond Code</a></li>
-                        <li><a href="#contact" class="footer-link">Contact</a></li>
-                    </ul>
-                </div>
+          <!-- Column 2: Navigation -->
+          <div class="footer-col-nav">
+            <h4 class="footer-col-heading">Navigation</h4>
+            <ul class="footer-nav-list">
+              <li><a href="#hero" class="footer-link">Home</a></li>
+              <li><a href="#projects" class="footer-link">Projects</a></li>
+              <li><a href="#craft" class="footer-link">Craft</a></li>
+              <li><a href="#playzone" class="footer-link">Beyond Code</a></li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
 
-                <!-- Column 3: Connect & Social -->
-                <div class="footer-col-connect">
-                    <h4 class="footer-col-heading">Connect</h4>
-                    <ul class="footer-nav-list">
-                        <li>
-                            <a href="mailto:anuppaudel0562@gmail.com" class="footer-link">
-                                <span>Email</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/anuppaudel25/" target="_blank" rel="noopener noreferrer" class="footer-link">
-                                <span>LinkedIn</span> &nearr;
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="footer-link">
-                                <span>GitHub</span> &nearr;
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://discordapp.com/users/anup_29731" target="_blank" rel="noopener noreferrer" class="footer-link">
-                                <span>Discord</span> &nearr;
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Bottom Sub-Bar -->
-            <div class="footer-bottom-bar">
-                <p class="footer-copyright-text">
-                    &copy; <span id="currentYear"></span> Anup Paudel. Designed with craft &bull; Built with modern web standards.
-                </p>
-                <button type="button" id="backToTopBtn" class="back-to-top-button" aria-label="Back to top of page">
-                    <span>Back to Top</span>
-                    <span class="back-top-arrow">&uarr;</span>
-                </button>
-            </div>
+          <!-- Column 3: Connect & Social -->
+          <div class="footer-col-connect">
+            <h4 class="footer-col-heading">Connect</h4>
+            <ul class="footer-nav-list">
+              <li>
+                <a href="mailto:anuppaudel0562@gmail.com" class="footer-link">
+                  <span>Email</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/anuppaudel25/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                  <span>LinkedIn</span> &nearr;
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Anup-Paudel" target="_blank" rel="noopener noreferrer" class="footer-link">
+                  <span>GitHub</span> &nearr;
+                </a>
+              </li>
+              <li>
+                <a href="https://discordapp.com/users/anup_29731" target="_blank" rel="noopener noreferrer" class="footer-link">
+                  <span>Discord</span> &nearr;
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Bottom Sub-Bar -->
+        <div class="footer-bottom-bar">
+          <p class="footer-copyright-text">
+            &copy; <span id="currentYear"></span> Anup Paudel. Designed with craft &bull; Built with modern web standards.
+          </p>
+          <button type="button" id="backToTopBtn" class="back-to-top-button" aria-label="Back to top of page">
+            <span>Back to Top</span>
+            <span class="back-top-arrow">&uarr;</span>
+          </button>
+        </div>
+      </div>
     </footer>
 
     <script src="main.js?v=45"></script>
-</body>
+  </body>
 </html>
