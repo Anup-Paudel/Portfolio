@@ -201,7 +201,66 @@ function initPortfolio() {
             }
             requestAnimationFrame(lerpBackdrop);
         }
-        requestAnimationFrame(lerpBackdrop);
+    }
+
+    // ==========================================================================
+    // 0.8. Interactive Kinetic Typography (Harmonic Musical Pentatonic Chimes)
+    // ==========================================================================
+    const interactiveWords = document.querySelectorAll('.interactive-word');
+    const pentatonicScale = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50]; // C5, D5, E5, G5, A5, C6
+
+    interactiveWords.forEach((word, idx) => {
+        const freq = pentatonicScale[idx % pentatonicScale.length];
+        word.addEventListener('mouseenter', () => {
+            playTactileAudio(freq);
+        });
+        word.addEventListener('click', () => {
+            playTactileAudio(freq * 1.33);
+            word.style.transform = 'translateY(-8px) scale(1.14)';
+            setTimeout(() => {
+                word.style.transform = '';
+            }, 180);
+        });
+    });
+
+    const interactiveTags = document.querySelectorAll('.interactive-tag');
+    interactiveTags.forEach((tag, idx) => {
+        tag.addEventListener('mouseenter', () => {
+            playTactileAudio(600 + idx * 75);
+        });
+        tag.addEventListener('click', () => {
+            playTactileAudio(880);
+            tag.style.transform = 'translateY(-4px) scale(1.08)';
+            setTimeout(() => {
+                tag.style.transform = '';
+            }, 180);
+        });
+    });
+
+    // About Section Interactive Story Milestones
+    const storyPills = document.querySelectorAll('.story-milestone-pill');
+    const storyDetailBox = document.getElementById('aboutStoryDetail');
+    if (storyPills.length && storyDetailBox) {
+        storyPills.forEach((pill, idx) => {
+            const updateDetail = () => {
+                if (pill.classList.contains('is-active')) return;
+                storyPills.forEach(p => p.classList.remove('is-active'));
+                pill.classList.add('is-active');
+                const detailText = pill.getAttribute('data-detail');
+                if (detailText) {
+                    storyDetailBox.style.opacity = '0.3';
+                    storyDetailBox.style.transform = 'translateY(4px)';
+                    setTimeout(() => {
+                        storyDetailBox.textContent = detailText;
+                        storyDetailBox.style.opacity = '1';
+                        storyDetailBox.style.transform = 'translateY(0)';
+                    }, 120);
+                }
+                playTactileAudio(520 + idx * 80);
+            };
+            pill.addEventListener('mouseenter', updateDetail);
+            pill.addEventListener('click', updateDetail);
+        });
     }
 
     // Back to Top Button

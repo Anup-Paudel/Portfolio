@@ -6,9 +6,10 @@
     <title>Anup Paudel | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="global.css?v=43" />
-    <link rel="stylesheet" href="home.css?v=43" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -65,7 +66,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#capabilities" class="nav-link">
+                        <a href="#skills" class="nav-link">
                             <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="4" y1="21" x2="4" y2="14"/>
                                 <line x1="4" y1="10" x2="4" y2="3"/>
@@ -77,7 +78,7 @@
                                 <line x1="9" y1="8" x2="15" y2="8"/>
                                 <line x1="17" y1="16" x2="23" y2="16"/>
                             </svg>
-                            <span class="nav-text">Capabilities</span>
+                            <span class="nav-text">Skills</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -134,7 +135,7 @@
                 </a>
             </li>
             <li>
-                <a href="#capabilities" class="mobile-nav-fullscreen-link">
+                <a href="#skills" class="mobile-nav-fullscreen-link">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="4" y1="21" x2="4" y2="14"/>
                         <line x1="4" y1="10" x2="4" y2="3"/>
@@ -146,7 +147,7 @@
                         <line x1="9" y1="8" x2="15" y2="8"/>
                         <line x1="17" y1="16" x2="23" y2="16"/>
                     </svg>
-                    <span>Capabilities</span>
+                    <span>Skills</span>
                 </a>
             </li>
             <li>
@@ -185,15 +186,21 @@
                         <span class="glyph-rec-pip"></span>
                         <span>PRODUCT DESIGNER // CREATIVE TECHNOLOGIST</span>
                     </div>
-                    <!-- Master Architectural Display Title (Clean Pure White, High Contrast) -->
-                    <h1 class="hero-display-title">
-                        Designing systems &amp;<br />
-                        building tactile digital products.
+                    <!-- Master Architectural Display Title (Interactive Typography) -->
+                    <h1 class="hero-display-title" id="heroInteractiveTitle" aria-label="Designing systems and building tactile digital products.">
+                        <span class="interactive-word" data-word="Designing">Designing</span>
+                        <span class="interactive-word word-accent-serif" data-word="systems">systems</span>
+                        <span class="interactive-word word-symbol" data-word="&amp;">&amp;</span>
+                        <br class="desktop-br" />
+                        <span class="interactive-word" data-word="building">building</span>
+                        <span class="interactive-word word-accent-tactile" data-word="tactile">tactile</span>
+                        <span class="interactive-word" data-word="digital">digital</span>
+                        <span class="interactive-word word-accent-products" data-word="products">products.</span>
                     </h1>
 
-                    <!-- Crisp Human Designer Narrative -->
-                    <p class="hero-subtext">
-                        Hi, I'm Anup Paudel &mdash; based in Dallas, TX. Bridging product design leadership and frontend engineering to build thoughtful, high-precision software.
+                    <!-- Crisp Human Designer Narrative with Interactive Exploration Pills -->
+                    <p class="hero-subtext" id="heroInteractiveSubtext">
+                        Hi, I'm <span class="interactive-tag tag-name" data-tag="name">Anup Paudel</span> &mdash; based in <span class="interactive-tag tag-location" data-tag="location">Dallas, TX 📍</span>. Bridging <span class="interactive-tag tag-design" data-tag="design">product design 🎨</span> and <span class="interactive-tag tag-code" data-tag="code">frontend engineering ⚡</span> to build thoughtful, high-precision software.
                     </p>
 
                     <!-- Dual Action Dock -->
@@ -512,12 +519,12 @@
         </section>
 
         <!-- ==========================================================================
-             Section 02: Capabilities & Systems (#capabilities)
+             Section 02: Skills & Systems (#skills)
              ========================================================================== -->
-        <section id="capabilities" class="section-wrapper section-craft">
+        <section id="skills" class="section-wrapper section-craft">
             <div class="section-header">
-                <div class="section-eyebrow">[02] CAPABILITIES</div>
-                <h2 class="section-title">Design Systems &amp; Technical Capabilities</h2>
+                <div class="section-eyebrow">[02] SKILLS</div>
+                <h2 class="section-title">Technical Skills &amp; Design Systems</h2>
                 <div class="section-title-rule" aria-hidden="true"></div>
                 <p class="section-subtitle">How I architect scalable token systems, engineer tactile motion, and write production frontend software.</p>
             </div>
@@ -646,14 +653,47 @@
         </section>
 
         <!-- ==========================================================================
-             Section 03: Life Beyond Code (#playzone)
+             Section 03: About Me & Life Beyond Code (#playzone)
              ========================================================================== -->
         <section id="playzone" class="section-wrapper section-playzone">
             <div class="section-header">
-                <div class="section-eyebrow">[03] BEYOND THE SCREEN</div>
-                <h2 class="section-title">Life Beyond Code</h2>
+                <div class="section-eyebrow">[03] ABOUT ME &amp; BEYOND</div>
+                <h2 class="section-title interactive-section-title" id="aboutInteractiveTitle">
+                    <span class="interactive-word" data-word="Life">Life</span>
+                    <span class="interactive-word word-accent-serif" data-word="Beyond">Beyond</span>
+                    <span class="interactive-word" data-word="Code">Code</span>
+                </h2>
                 <div class="section-title-rule" aria-hidden="true"></div>
-                <p class="section-subtitle">Photography, YouTube visual production, chess strategy, and moments outside design and engineering.</p>
+                <p class="section-subtitle">Photography, YouTube visual production, chess strategy, and the personal journey behind the craft.</p>
+            </div>
+
+            <!-- Interactive Human Story Milestones Strip -->
+            <div class="about-interactive-story-strip" id="aboutStoryStrip">
+                <div class="about-story-header">
+                    <span class="story-tag">✦ HUMAN STORY // JOURNEY</span>
+                    <span class="story-hint">Hover milestones to explore background</span>
+                </div>
+                <div class="about-milestones-grid">
+                    <button type="button" class="story-milestone-pill is-active" data-detail="Born and raised in Nepal, cultivating a deep early curiosity for computing logic, physics, and creative visual craft.">
+                        <span class="milestone-icon">🇳🇵</span>
+                        <span class="milestone-label">Roots in Nepal</span>
+                    </button>
+                    <button type="button" class="story-milestone-pill" data-detail="Pursuing Computer Science in the USA, mastering algorithmic thinking, data structures, and human-computer interaction.">
+                        <span class="milestone-icon">🎓</span>
+                        <span class="milestone-label">CS in the USA</span>
+                    </button>
+                    <button type="button" class="story-milestone-pill" data-detail="Bridging high-fidelity Figma design tokens with zero-dependency, sub-50KB frontend engineering and tactile kinetics.">
+                        <span class="milestone-icon">⚡</span>
+                        <span class="milestone-label">Design &rarr; Code</span>
+                    </button>
+                    <button type="button" class="story-milestone-pill" data-detail="Visual framing in 35mm film photography, YouTube creative production, and analytical chess endgame strategy.">
+                        <span class="milestone-icon">♟️</span>
+                        <span class="milestone-label">Strategy &amp; Visuals</span>
+                    </button>
+                </div>
+                <div class="about-story-detail-box" id="aboutStoryDetail">
+                    Born and raised in Nepal, cultivating a deep early curiosity for computing logic, physics, and creative visual craft.
+                </div>
             </div>
 
             <!-- 4 Consistent Experimental Cards -->
@@ -972,6 +1012,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=44"></script>
+    <script src="main.js?v=45"></script>
 </body>
 </html>
